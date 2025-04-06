@@ -4,7 +4,7 @@ extends CharacterBody2D
 var livingData: LivingEntity
 @export var _speed : float = 300
 @export var dashMultiplier : float = 50
-@export var dashDuration : float = 3
+@export var dashDuration : float = 0.2
 @export var dashCooldown : float = 5
 @export var isDashing : bool = false
 var dashCooldownTimer : Timer
@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	if(isDashing):
 		dash()
 		
-	if(!canDash):
+	if(!canDash && dashCooldownTimer != null):
 		print(dashCooldownTimer.time_left)
 	
 
@@ -50,13 +50,14 @@ func dash():
 	if(direction != Vector2.ZERO):
 		velocity = direction * (dashMultiplier * _speed)
 		move_and_slide()
+		canDash = false
+
 		
 		isDashing = false
 		dashTimer.wait_time = dashDuration
 
 func _onDashTimeout():
 	isDashing = false
-	canDash = false
 	dashCooldownTimer = Timer.new()
 	dashCooldownTimer.one_shot = true
 	dashCooldownTimer.wait_time = dashCooldown
