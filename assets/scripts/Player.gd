@@ -2,11 +2,22 @@
 extends CharacterBody2D
 
 var livingData: LivingEntity
-var _speed : float = 700
+@export var _speed : float = 300
+@export var dashMultiplier : float = 50
+@export var dashDuration : float = 3
+@export var dashCooldown : float = 5
+@export var isDashing : bool = false
+var dashCooldownTimer : Timer
+var canDash : bool = true
+
+var dashTimer : Timer 
 
 func _ready():
 	if livingData == null:
 		livingData = LivingEntity.new("Player", 100)
+	dashTimer = $DashTimer
+	dashTimer.wait_time = dashDuration
+	dashTimer.timeout.connect(self._onDashTimeout)
 	print("Mi nombre es: ", livingData.name)
 	print("Salud actual: ", livingData.currentHealth)
 
@@ -17,9 +28,46 @@ func take_damage(amount):
 
 
 func _physics_process(delta: float) -> void:
+	move()
+	if(Input.is_action_just_released("dash") && canDash):
+		isDashing = true
+		dashTimer.start()
+	if(isDashing):
+		dash()
+		
+	if(!canDash):
+		print(dashCooldownTimer.time_left)
+	
+
+func move():
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity = direction * _speed
 	move_and_slide()
+	
+func dash():
+	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+	print("Dashing for ",dashTimer.time_left)
+	if(direction != Vector2.ZERO):
+		velocity = direction * (dashMultiplier * _speed)
+		move_and_slide()
+		
+		isDashing = false
+		dashTimer.wait_time = dashDuration
+
+func _onDashTimeout():
+	isDashing = false
+	canDash = false
+	dashCooldownTimer = Timer.new()
+	dashCooldownTimer.one_shot = true
+	dashCooldownTimer.wait_time = dashCooldown
+	dashCooldownTimer.timeout.connect(self._ondashCooldownTimeout)
+	add_child(dashCooldownTimer)
+	dashCooldownTimer.start()
+	
+func _ondashCooldownTimeout():
+	canDash = true
+	print("Puedes Dashear!")
+
 
 func die():
 	queue_free()
