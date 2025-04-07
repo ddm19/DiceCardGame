@@ -2,6 +2,8 @@
 extends CharacterBody2D
 
 var livingData: LivingEntity
+var animationController : PlayerAnimationController
+@onready var playerSprite : Sprite2D = $Sprite2D
 @export var _speed : float = 300
 @export var dashMultiplier : float = 50
 @export var dashDuration : float = 0.2
@@ -15,6 +17,8 @@ var dashTimer : Timer
 func _ready():
 	if livingData == null:
 		livingData = LivingEntity.new("Player", 100)
+	animationController = playerSprite.get_script()
+	
 	dashTimer = $DashTimer
 	dashTimer.wait_time = dashDuration
 	dashTimer.timeout.connect(self._onDashTimeout)
@@ -38,10 +42,16 @@ func _physics_process(delta: float) -> void:
 	if(!canDash && dashCooldownTimer != null):
 		print(dashCooldownTimer.time_left)
 	
+		
+	
 
 func move():
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity = direction * _speed
+	if(direction != Vector2.ZERO):
+		animationController.updateAnimationState(animationController.ANIMATIONS.MOVE)
+	else:
+		animationController.updateAnimationState(animationController.ANIMATIONS.IDLE)
 	move_and_slide()
 	
 func dash():
