@@ -2,7 +2,6 @@
 extends CharacterBody2D
 
 var livingData: LivingEntity
-var animationController : PlayerAnimationController
 @onready var playerSprite : Sprite2D = $Sprite2D
 @export var _speed : float = 300
 @export var dashMultiplier : float = 50
@@ -17,13 +16,13 @@ var dashTimer : Timer
 func _ready():
 	if livingData == null:
 		livingData = LivingEntity.new("Player", 100)
-	animationController = playerSprite
 	
 	dashTimer = $DashTimer
 	dashTimer.wait_time = dashDuration
 	dashTimer.timeout.connect(self._onDashTimeout)
 	print("Mi nombre es: ", livingData.name)
 	print("Salud actual: ", livingData.currentHealth)
+	
 
 func take_damage(amount):
 	livingData.take_damage(amount)
@@ -49,13 +48,10 @@ func _physics_process(delta: float) -> void:
 
 func move():
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+	$AnimationTree.set("parameters/IDLE/blend_position",direction)
 	velocity = direction * _speed
-	if(direction != Vector2.ZERO):
-		animationController.updateAnimationState(animationController.ANIMATIONS.MOVE)
-	else:
-		animationController.updateAnimationState(animationController.ANIMATIONS.IDLE)
 	move_and_slide()
-	
+
 func dash():
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	print("Dashing for ",dashTimer.time_left)
@@ -63,8 +59,6 @@ func dash():
 		velocity = direction * (dashMultiplier * _speed)
 		move_and_slide()
 		canDash = false
-
-		
 		isDashing = false
 		dashTimer.wait_time = dashDuration
 
