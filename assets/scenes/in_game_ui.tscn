@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dboh1i82pvtjo"]
+[gd_scene load_steps=7 format=3 uid="uid://dboh1i82pvtjo"]
 
-[ext_resource type="Texture2D" uid="uid://b4881egkuknia" path="res://assets/sprites/backgrounds/Tile Background.png" id="1_qb8k6"]
+[ext_resource type="Texture2D" uid="uid://kuvrxrc7u3ub" path="res://assets/sprites/backgrounds/Interface_Background_Full.png" id="1_sfixx"]
+[ext_resource type="Texture2D" uid="uid://diqjn4ccn358o" path="res://assets/sprites/backgrounds/Interface_Buttons.png" id="2_rpebj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gldp3"]
+texture = ExtResource("2_rpebj")
+region_rect = Rect2(29, 6, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_syaxo"]
+texture = ExtResource("2_rpebj")
+region_rect = Rect2(6, 6, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfixx"]
+texture = ExtResource("2_rpebj")
+region_rect = Rect2(75, 6, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpebj"]
+texture = ExtResource("2_rpebj")
+region_rect = Rect2(52, 6, 22, 22)
 
 [node name="inGameUi" type="Control"]
 layout_mode = 3
@@ -10,7 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="popUpMenu" type="MarginContainer" parent="."]
+[node name="interfaceManu" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,23 +35,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="popUpMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="interfaceManu"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_constants/separation = 30
 
-[node name="baseMenuScreen" type="MarginContainer" parent="popUpMenu/VBoxContainer"]
+[node name="baseMenuScreen" type="MarginContainer" parent="interfaceManu/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
-[node name="NinePatchRect" type="NinePatchRect" parent="popUpMenu/VBoxContainer/baseMenuScreen"]
+[node name="NinePatchRect" type="NinePatchRect" parent="interfaceManu/VBoxContainer/baseMenuScreen"]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
-texture = ExtResource("1_qb8k6")
-region_rect = Rect2(0, 0, 32, 32)
+texture = ExtResource("1_sfixx")
+region_rect = Rect2(0, 0, 103, 34)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="popUpMenu/VBoxContainer/baseMenuScreen/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,13 +60,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_top = 35
 theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_bottom = 35
 
-[node name="Button" type="Button" parent="popUpMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer"]
-custom_minimum_size = Vector2(75, 75)
+[node name="HBoxContainer" type="HBoxContainer" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer"]
+layout_direction = 3
 layout_mode = 2
 
-[node name="Separator" type="Control" parent="popUpMenu/VBoxContainer"]
+[node name="buttonContainer" type="HBoxContainer" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="settingsButton2" type="Button" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer/buttonContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_gldp3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gldp3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_syaxo")
+
+[node name="inventoryButton" type="Button" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer/buttonContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_sfixx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sfixx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rpebj")

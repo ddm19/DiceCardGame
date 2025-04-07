@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4881egkuknia"
-path="res://.godot/imported/Tile Background.png-7a299b521774a09010ddd1a04337db1c.ctex"
+uid="uid://diqjn4ccn358o"
+path="res://.godot/imported/Interface_Buttons.png-924b37ce98fe53901fbc6a70f32ecffa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/backgrounds/Tile Background.png"
-dest_files=["res://.godot/imported/Tile Background.png-7a299b521774a09010ddd1a04337db1c.ctex"]
+source_file="res://assets/sprites/backgrounds/Interface_Buttons.png"
+dest_files=["res://.godot/imported/Interface_Buttons.png-924b37ce98fe53901fbc6a70f32ecffa.ctex"]
 
 [params]
 
