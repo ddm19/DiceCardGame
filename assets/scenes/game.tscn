@@ -703,6 +703,13 @@ position = Vector2(6028, -365)
 scale = Vector2(7.46465, 7.46465)
 script = ExtResource("1_cb66b")
 
+[node name="Camera2D" type="Camera2D" parent="Player2"]
+position = Vector2(4.95673, 5.09066)
+scale = Vector2(0.133965, -0.246495)
+zoom = Vector2(0.7, 0.7)
+process_callback = 0
+position_smoothing_enabled = true
+
 [node name="Sprite2D" type="Sprite2D" parent="Player2"]
 z_index = 1
 position = Vector2(5.22463, 4.68877)
@@ -713,12 +720,6 @@ hframes = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 position = Vector2(5.22463, 4.9567)
 shape = SubResource("CapsuleShape2D_cb5na")
-
-[node name="Camera2D" type="Camera2D" parent="Player2"]
-position = Vector2(4.9567, 5.09066)
-scale = Vector2(0.133965, -0.246495)
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
 
 [node name="DashTimer" type="Timer" parent="Player2"]
 one_shot = true
