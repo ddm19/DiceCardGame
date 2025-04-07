@@ -1,4 +1,4 @@
-# Player.gd
+ # Player.gd
 extends CharacterBody2D
 
 var livingData: LivingEntity
@@ -33,7 +33,9 @@ func take_damage(amount):
 
 func _physics_process(delta: float) -> void:
 	move()
-	if(Input.is_action_just_released("dash") && canDash):
+	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+
+	if(Input.is_action_just_released("dash") && canDash && direction != Vector2.ZERO):
 		isDashing = true
 		dashTimer.start()
 	if(isDashing):
