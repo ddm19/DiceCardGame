@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dboh1i82pvtjo"]
+[gd_scene load_steps=7 format=3 uid="uid://b6qmq1ltrs8ry"]
 
-[ext_resource type="Texture2D" uid="uid://kuvrxrc7u3ub" path="res://assets/sprites/backgrounds/Interface_Background_Full.png" id="1_sfixx"]
-[ext_resource type="Texture2D" uid="uid://diqjn4ccn358o" path="res://assets/sprites/backgrounds/Interface_Buttons.png" id="2_rpebj"]
+[ext_resource type="Texture2D" uid="uid://kuvrxrc7u3ub" path="res://assets/sprites/interface/Interface_Background_Full.png" id="1_sfixx"]
+[ext_resource type="Texture2D" uid="uid://diqjn4ccn358o" path="res://assets/sprites/interface/Interface_Buttons.png" id="2_rpebj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gldp3"]
 texture = ExtResource("2_rpebj")
@@ -27,7 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="interfaceManu" type="MarginContainer" parent="."]
+[node name="interfaceMenu" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,14 +35,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="interfaceManu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="interfaceMenu"]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="baseMenuScreen" type="MarginContainer" parent="interfaceManu/VBoxContainer"]
+[node name="baseMenuScreen" type="MarginContainer" parent="interfaceMenu/VBoxContainer"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="interfaceManu/VBoxContainer/baseMenuScreen"]
+[node name="NinePatchRect" type="NinePatchRect" parent="interfaceMenu/VBoxContainer/baseMenuScreen"]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 texture = ExtResource("1_sfixx")
@@ -52,7 +52,7 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,17 +64,17 @@ theme_override_constants/margin_top = 35
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 35
 
-[node name="HBoxContainer" type="HBoxContainer" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer"]
 layout_direction = 3
 layout_mode = 2
 
-[node name="buttonContainer" type="HBoxContainer" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer"]
+[node name="buttonContainer" type="HBoxContainer" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/separation = 6
 
-[node name="settingsButton2" type="Button" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer/buttonContainer"]
+[node name="settingsButton2" type="Button" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer/buttonContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -83,7 +83,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_gldp3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gldp3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_syaxo")
 
-[node name="inventoryButton" type="Button" parent="interfaceManu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer/buttonContainer"]
+[node name="inventoryButton" type="Button" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer/buttonContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
