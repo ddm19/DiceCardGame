@@ -17,7 +17,7 @@ var dashTimer : Timer
 func _ready():
 	if livingData == null:
 		livingData = LivingEntity.new("Player", 100)
-	animationController = playerSprite.get_script()
+	animationController = playerSprite
 	
 	dashTimer = $DashTimer
 	dashTimer.wait_time = dashDuration
