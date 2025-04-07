@@ -13,4 +13,4 @@ enum ANIMATIONS {
 func updateAnimationState(state: ANIMATIONS):
 	match state:
 		ANIMATIONS.IDLE:
-			animationPlayer.play(ANIMATIONS.IDLE)
+			animationPlayer.play("IDLE")
