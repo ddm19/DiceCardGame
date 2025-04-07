@@ -48,7 +48,13 @@ func _physics_process(delta: float) -> void:
 
 func move():
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-	$AnimationTree.set("parameters/IDLE/blend_position",direction)
+	if(direction == Vector2.ZERO):
+		$AnimationTree.get("parameters/playback").travel("IDLE")
+	else:
+		$AnimationTree.get("parameters/playback").travel("IDLE")
+		$AnimationTree.set("parameters/WALKING/blend_position",direction)
+		$AnimationTree.set("parameters/IDLE/blend_position",direction)
+
 	velocity = direction * _speed
 	move_and_slide()
 
