@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://7halnlk3iywh"]
+[gd_scene load_steps=41 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
 [ext_resource type="Texture2D" uid="uid://bhqb6wrc8td6c" path="res://icon.svg" id="2_dis88"]
@@ -12,8 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://d2nauyp25l01r" path="res://assets/sprites/Dicey/Spritesheet_Left_Idle_Dicey.png" id="10_pkhv0"]
 [ext_resource type="Texture2D" uid="uid://chvwe5vxgty8j" path="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Left_Dicey_.png" id="11_i358u"]
 [ext_resource type="Texture2D" uid="uid://huo71bogy2pp" path="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Right_Dicey_.png" id="12_pkhv0"]
-
-[sub_resource type="GDScript" id="GDScript_pw37s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 2.81329
@@ -625,7 +623,28 @@ _data = {
 &"RESET": SubResource("Animation_5aext")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kc0sw"]
+animation = &"IDLE_LEFT"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fqk1v"]
+animation = &"IDLE_LEFT_UP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5jdip"]
+animation = &"IDLE_RIGHT_UP"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3cnnv"]
+animation = &"IDLE_RIGHT"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pkhv0"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_kc0sw")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_fqk1v")
+blend_point_1/pos = Vector2(-1, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_5jdip")
+blend_point_2/pos = Vector2(1, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_3cnnv")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k2t1h"]
 animation = &"MOVE_LEFT_DOWN"
@@ -660,19 +679,17 @@ blend_point_5/node = SubResource("AnimationNodeAnimation_fc420")
 blend_point_5/pos = Vector2(1, 0)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s2rys"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_au80e"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pkhv0"]
-switch_mode = 2
-advance_mode = 2
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_52jqy"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5jdip"]
 states/IDLE/node = SubResource("AnimationNodeBlendSpace2D_pkhv0")
 states/IDLE/position = Vector2(399.333, 55.5556)
 states/WALKING/node = SubResource("AnimationNodeBlendSpace2D_kc0sw")
 states/WALKING/position = Vector2(636.667, 56.5679)
-transitions = ["IDLE", "WALKING", SubResource("AnimationNodeStateMachineTransition_s2rys"), "Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_pkhv0")]
+transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_au80e"), "WALKING", "IDLE", SubResource("AnimationNodeStateMachineTransition_52jqy")]
 
 [node name="Game" type="Node2D"]
 
@@ -692,7 +709,6 @@ position = Vector2(5.22463, 4.68877)
 scale = Vector2(0.337724, 0.337724)
 texture = ExtResource("3_5gf0t")
 hframes = 5
-script = SubResource("GDScript_pw37s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 position = Vector2(5.22463, 4.9567)
@@ -715,5 +731,5 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="Player2"]
 tree_root = SubResource("AnimationNodeStateMachine_5jdip")
 anim_player = NodePath("../AnimationPlayer")
-parameters/IDLE/blend_position = Vector2(0, 0)
+parameters/IDLE/blend_position = Vector2(0.323777, -0.138211)
 parameters/WALKING/blend_position = Vector2(0.524469, -0.701897)

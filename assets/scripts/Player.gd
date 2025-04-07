@@ -51,7 +51,7 @@ func move():
 	if(direction == Vector2.ZERO):
 		$AnimationTree.get("parameters/playback").travel("IDLE")
 	else:
-		$AnimationTree.get("parameters/playback").travel("IDLE")
+		$AnimationTree.get("parameters/playback").travel("WALKING")
 		$AnimationTree.set("parameters/WALKING/blend_position",direction)
 		$AnimationTree.set("parameters/IDLE/blend_position",direction)
 
