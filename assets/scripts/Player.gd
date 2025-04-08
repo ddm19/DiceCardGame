@@ -30,6 +30,8 @@ func _ready():
 	print("Mi nombre es: ", livingData.name)
 	print("Salud actual: ", livingData.currentHealth)
 	$AnimationTree.set("parameters/WALKING/blend_position",Vector2.ZERO)
+	$AnimationTree.set("parameters/IDLE/blend_position",Vector2.ZERO)
+	$AnimationTree.set("parameters/DASH/blend_position",Vector2.ZERO)
 
 	
 
@@ -54,6 +56,8 @@ func _physics_process(delta: float) -> void:
 			updateState(ANIMATIONSTATES.WALKING)
 			$AnimationTree.set("parameters/WALKING/blend_position",direction)
 			$AnimationTree.set("parameters/IDLE/blend_position",direction)
+			$AnimationTree.set("parameters/DASH/blend_position",direction)
+
 	if(isDashing):
 		dash()
 	if(!canDash && dashCooldownTimer != null):
