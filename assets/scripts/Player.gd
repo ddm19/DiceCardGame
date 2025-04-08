@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	if(Input.is_action_just_released("dash") && canDash && direction != Vector2.ZERO):
 		updateState(ANIMATIONSTATES.DASH)
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.05).timeout
 		isDashing = true
 		dashTimer.start()
 	if(!isDashing && currentState != ANIMATIONSTATES.DASH):

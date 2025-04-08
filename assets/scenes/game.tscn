@@ -1,6 +1,7 @@
-[gd_scene load_steps=52 format=3 uid="uid://7halnlk3iywh"]
+[gd_scene load_steps=53 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
+[ext_resource type="Script" uid="uid://3sk4n8xqdib1" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
 [ext_resource type="Texture2D" uid="uid://bhqb6wrc8td6c" path="res://icon.svg" id="2_dis88"]
 [ext_resource type="Texture2D" uid="uid://gbdhtqbk385q" path="res://assets/sprites/Dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
 [ext_resource type="Shader" uid="uid://btmf5sbgdykuu" path="res://assets/shaders/dash.gdshader" id="4_fc420"]
@@ -35,7 +36,7 @@ tracks/0/path = NodePath("Sprite2D:material")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [SubResource("ShaderMaterial_kc0sw"), null]
@@ -47,31 +48,31 @@ tracks/1/path = NodePath("Sprite2D:material:shader")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("4_kc0sw"), null]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("Sprite2D:material:shader_parameter/fade_line")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.402069, 0.6),
+"times": PackedFloat32Array(0, 0.2, 0.4, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.8, 0.8, 0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("Sprite2D:material:shader_parameter/fade_width")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.402069, 0.6),
+"times": PackedFloat32Array(0, 0.2, 0.402069, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.55, 0.55, 0.0]
@@ -83,7 +84,7 @@ tracks/4/path = NodePath("../Camera2D:position_smoothing_speed")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 3.0]
@@ -951,44 +952,46 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Game" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(6069.96, -336.367)
 scale = Vector2(0.133965, 0.453551)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.7, 0.7)
 process_callback = 0
-limit_smoothed = true
-position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+script = ExtResource("1_fqk1v")
+player = NodePath("../Player")
+speedMultiplier = 2.0
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(5563, -485)
 scale = Vector2(8.05576, 6.71272)
 texture = ExtResource("2_dis88")
 
-[node name="Player2" type="CharacterBody2D" parent="."]
-position = Vector2(6065, -327)
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(6069.96, -336.367)
 script = ExtResource("1_cb66b")
+_speed = 200.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 z_index = 1
 position = Vector2(5.22463, 4.68877)
 texture = ExtResource("3_5gf0t")
 hframes = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(5.49256, 5.76048)
 shape = SubResource("CapsuleShape2D_cb5na")
 
-[node name="DashTimer" type="Timer" parent="Player2"]
+[node name="DashTimer" type="Timer" parent="Player"]
 one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
 &"": SubResource("AnimationLibrary_3w2km")
 }
 autoplay = "IDLE_RIGHT"
 
-[node name="AnimationTree" type="AnimationTree" parent="Player2"]
+[node name="AnimationTree" type="AnimationTree" parent="Player"]
 tree_root = SubResource("AnimationNodeStateMachine_5jdip")
 anim_player = NodePath("../AnimationPlayer")
 parameters/IDLE/blend_position = Vector2(0.102706, 0.0413625)
