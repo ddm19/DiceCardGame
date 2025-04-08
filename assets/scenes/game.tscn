@@ -1,8 +1,10 @@
-[gd_scene load_steps=47 format=3 uid="uid://7halnlk3iywh"]
+[gd_scene load_steps=52 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
 [ext_resource type="Texture2D" uid="uid://bhqb6wrc8td6c" path="res://icon.svg" id="2_dis88"]
 [ext_resource type="Texture2D" uid="uid://gbdhtqbk385q" path="res://assets/sprites/Dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
+[ext_resource type="Shader" uid="uid://btmf5sbgdykuu" path="res://assets/shaders/dash.gdshader" id="4_fc420"]
+[ext_resource type="Shader" uid="uid://bjilgan5m7dap" path="res://assets/shaders/dicey.gdshader" id="4_kc0sw"]
 [ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/Dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
 [ext_resource type="Texture2D" uid="uid://bsnhyvr0lht2b" path="res://assets/sprites/Dicey/Spritesheet_Up_Left_Dicey_.png" id="6_5aext"]
 [ext_resource type="Texture2D" uid="uid://b7h2eayt1qc3d" path="res://assets/sprites/Dicey/Spritesheet_Left_Down_Dicey.png" id="7_3w2km"]
@@ -16,8 +18,76 @@
 [ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/Dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
-radius = 2.41138
-height = 12.0568
+radius = 2.2774
+height = 10.9851
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kc0sw"]
+shader = ExtResource("4_fc420")
+
+[sub_resource type="Animation" id="Animation_fqk1v"]
+resource_name = "DASH"
+length = 1.60002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_kc0sw"), null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:material:shader")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_kc0sw"), null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:material:shader_parameter/fade_line")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.402069, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.8, 0.8, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:material:shader_parameter/fade_width")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.402069, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.55, 0.55, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Camera2D:position_smoothing_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0]
+}
 
 [sub_resource type="Animation" id="Animation_k2t1h"]
 resource_name = "IDLE_LEFT"
@@ -717,9 +787,70 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:material")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:material:shader")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_fc420")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:material:shader_parameter/fade_line")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:material:shader_parameter/fade_width")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Camera2D:position_smoothing_speed")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3w2km"]
 _data = {
+&"DASH": SubResource("Animation_fqk1v"),
 &"IDLE_LEFT": SubResource("Animation_k2t1h"),
 &"IDLE_LEFT_DOWN": SubResource("Animation_fc420"),
 &"IDLE_LEFT_UP": SubResource("Animation_phsto"),
@@ -734,6 +865,9 @@ _data = {
 &"MOVE_RIGHT_UP": SubResource("Animation_i358u"),
 &"RESET": SubResource("Animation_5aext")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rojm1"]
+animation = &"DASH"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kc0sw"]
 animation = &"IDLE_LEFT"
@@ -807,6 +941,8 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_52jqy"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5jdip"]
+states/DASH/node = SubResource("AnimationNodeAnimation_rojm1")
+states/DASH/position = Vector2(580.667, 163.333)
 states/IDLE/node = SubResource("AnimationNodeBlendSpace2D_pkhv0")
 states/IDLE/position = Vector2(399.333, 55.5556)
 states/WALKING/node = SubResource("AnimationNodeBlendSpace2D_kc0sw")
@@ -815,34 +951,32 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Game" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(5563, -485)
-scale = Vector2(8.05576, 6.71272)
-texture = ExtResource("2_dis88")
-
-[node name="Player2" type="CharacterBody2D" parent="."]
-position = Vector2(6028, -365)
-scale = Vector2(7.46465, 7.46465)
-script = ExtResource("1_cb66b")
-
-[node name="Camera2D" type="Camera2D" parent="Player2"]
-position = Vector2(4.95673, 5.09066)
-scale = Vector2(0.133965, -0.246495)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(6069.96, -336.367)
+scale = Vector2(0.133965, 0.453551)
 zoom = Vector2(0.5, 0.5)
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(5563, -485)
+scale = Vector2(8.05576, 6.71272)
+texture = ExtResource("2_dis88")
+
+[node name="Player2" type="CharacterBody2D" parent="."]
+position = Vector2(6065, -327)
+script = ExtResource("1_cb66b")
+
 [node name="Sprite2D" type="Sprite2D" parent="Player2"]
 z_index = 1
 position = Vector2(5.22463, 4.68877)
-scale = Vector2(0.337724, 0.337724)
 texture = ExtResource("3_5gf0t")
 hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
-position = Vector2(5.89445, 5.76048)
+position = Vector2(5.49256, 5.76048)
 shape = SubResource("CapsuleShape2D_cb5na")
 
 [node name="DashTimer" type="Timer" parent="Player2"]
