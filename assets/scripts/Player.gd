@@ -22,6 +22,8 @@ func _ready():
 	dashTimer.timeout.connect(self._onDashTimeout)
 	print("Mi nombre es: ", livingData.name)
 	print("Salud actual: ", livingData.currentHealth)
+	$AnimationTree.set("parameters/WALKING/blend_position",Vector2.ZERO)
+
 	
 
 func take_damage(amount):
