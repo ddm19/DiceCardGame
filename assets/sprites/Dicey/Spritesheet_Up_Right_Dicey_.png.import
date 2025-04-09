@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dac73j8r50gt6"
-path="res://.godot/imported/exampleSprite.png-5ef8f7e96e580c408703dcf111fa9a13.ctex"
+uid="uid://co1ecisyayloi"
+path="res://.godot/imported/Spritesheet_Up_Right_Dicey_.png-0c62923fdb86500a631630851c1770e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/exampleSprite.png"
-dest_files=["res://.godot/imported/exampleSprite.png-5ef8f7e96e580c408703dcf111fa9a13.ctex"]
+source_file="res://assets/sprites/Dicey/Spritesheet_Up_Right_Dicey_.png"
+dest_files=["res://.godot/imported/Spritesheet_Up_Right_Dicey_.png-0c62923fdb86500a631630851c1770e6.ctex"]
 
 [params]
 
