@@ -20,8 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basic_melee_card.tscn" id="18_5jdip"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
-radius = 5.08789
-height = 28.0
+radius = 2.2774
+height = 10.9851
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kc0sw"]
 shader = ExtResource("4_fc420")
@@ -1420,21 +1420,19 @@ position = Vector2(5563, -485)
 scale = Vector2(8.05576, 6.71272)
 texture = ExtResource("2_dis88")
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("cardsList")]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(6099, -348)
 script = ExtResource("1_cb66b")
 _speed = 200.0
-cardsList = [NodePath("../BasicMeleeCard")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 z_index = 1
-position = Vector2(-0.999979, -3.00001)
+position = Vector2(5.22463, 4.68877)
 texture = ExtResource("3_5gf0t")
 hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-0.000115871, 4.00001)
-scale = Vector2(0.9827, 0.981672)
+position = Vector2(5.49256, 5.76048)
 shape = SubResource("CapsuleShape2D_cb5na")
 
 [node name="DashTimer" type="Timer" parent="Player"]
@@ -1454,5 +1452,3 @@ parameters/IDLE/blend_position = Vector2(0.102706, 0.0413625)
 parameters/WALKING/blend_position = Vector2(0.249827, -0.0656934)
 
 [node name="BasicMeleeCard" parent="." instance=ExtResource("18_5jdip")]
-position = Vector2(5993, -459)
-cooldown = 0.5
