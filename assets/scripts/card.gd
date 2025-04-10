@@ -45,3 +45,4 @@ func _ready() -> void:
 func onCardCooldownFinished():
 	print("Lanzable")
 	canAttack = true
+	
