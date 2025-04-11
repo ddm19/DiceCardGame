@@ -22,7 +22,7 @@ window/size/viewport_height=360
 window/size/mode=2
 window/size/initial_screen=1
 window/stretch/mode="canvas_items"
-window/stretch/scale=1.5
+window/stretch/scale=2.0
 window/stretch/scale_mode="integer"
 
 [input]

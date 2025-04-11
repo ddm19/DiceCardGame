@@ -12,6 +12,8 @@ var livingData: LivingEntity
 @export var isDashing : bool = false
 @export var isAttacking : bool = false
 @export var cardsList : Array[Card] = []
+@export var audioPlayer : AudioStreamPlayer2D
+
 var dashCooldownTimer : Timer
 var canDash : bool = true
 
@@ -40,7 +42,7 @@ func _ready():
 
 	
 
-func take_damage(amount):
+func takeDamage(amount):
 	livingData.take_damage(amount)
 	if(livingData.currentHealth <= 0):
 		die()
@@ -93,12 +95,14 @@ func move():
 
 func dash():
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-	print("Dashing for ",dashTimer.time_left)
 	if(direction != Vector2.ZERO):
 		velocity = direction * (dashMultiplier * _speed)
 		move_and_slide()
 		canDash = false
 		dashTimer.wait_time = dashDuration
+		if(!audioPlayer.playing):
+			audioPlayer.play()
+	
 
 func _onDashTimeout():
 	isDashing = false
