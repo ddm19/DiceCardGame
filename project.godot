@@ -30,6 +30,7 @@ window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+
 [input]
 
 ui_left={
@@ -74,3 +75,4 @@ dash={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+lightmapping/lightmap_gi/use_bicubic_filter=false
