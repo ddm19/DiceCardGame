@@ -1,93 +1,420 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6qmq1ltrs8ry"]
+[gd_scene load_steps=26 format=3 uid="uid://b6qmq1ltrs8ry"]
 
-[ext_resource type="Texture2D" uid="uid://kuvrxrc7u3ub" path="res://assets/sprites/interface/Interface_Background_Full.png" id="1_sfixx"]
-[ext_resource type="Texture2D" uid="uid://diqjn4ccn358o" path="res://assets/sprites/interface/Interface_Buttons.png" id="2_rpebj"]
+[ext_resource type="Script" uid="uid://n6661wsqfv1r" path="res://assets/scripts/in_game_ui.gd" id="1_l5x5i"]
+[ext_resource type="Texture2D" uid="uid://byg67xxlf86c5" path="res://assets/sprites/interface/HUD_BottomBox.png" id="1_qb8k6"]
+[ext_resource type="Texture2D" uid="uid://b7qe33ajarptl" path="res://assets/sprites/interface/Exit_Button.png" id="2_csxqu"]
+[ext_resource type="Texture2D" uid="uid://drra3j2ec8qef" path="res://assets/sprites/interface/Ilustracion_sin_titulo-2.png.png" id="3_6hcns"]
+[ext_resource type="Texture2D" uid="uid://b4xy8vcdqgt4t" path="res://assets/sprites/interface/Settings_Button.png" id="3_cjvv2"]
+[ext_resource type="Texture2D" uid="uid://coosncavlqc44" path="res://assets/sprites/interface/Exit_Button_Pressed.png" id="3_par0i"]
+[ext_resource type="Texture2D" uid="uid://t0uhilpo4usw" path="res://assets/sprites/interface/Settings_Pressed.png" id="4_grbm3"]
+[ext_resource type="Texture2D" uid="uid://o6rufnupube5" path="res://assets/sprites/interface/Exit_Button_Hover.png" id="4_l5x5i"]
+[ext_resource type="Texture2D" uid="uid://c1uu7ffx8v8ty" path="res://assets/sprites/interface/Settings_Hover.png" id="5_6hcns"]
+[ext_resource type="Texture2D" uid="uid://dav5g1o0w7ic" path="res://assets/sprites/interface/Inventory_Button.png" id="5_grbm3"]
+[ext_resource type="Texture2D" uid="uid://bwbn7xapblvm1" path="res://assets/sprites/interface/Inventory_Pressed.png" id="6_6hcns"]
+[ext_resource type="FontFile" uid="uid://bkp4s1vnkof4s" path="res://assets/fonts/Pixelfont.ttf" id="6_a0tli"]
+[ext_resource type="Texture2D" uid="uid://drgdowo7ghyvl" path="res://assets/sprites/interface/Quit_Button.png" id="6_bnqwo"]
+[ext_resource type="Texture2D" uid="uid://rn4hp47m8led" path="res://assets/sprites/interface/Ilustracion_sin_titulo-1.png.png" id="6_cjvv2"]
+[ext_resource type="Texture2D" uid="uid://455rmrdcuobt" path="res://assets/sprites/interface/Quit_Button_Pressed.png" id="7_8ju7j"]
+[ext_resource type="Texture2D" uid="uid://bhcdjjn7aeuxp" path="res://assets/sprites/interface/Inventory_Hover.png" id="8_ksudb"]
+[ext_resource type="Texture2D" uid="uid://ddos7xg54r3vi" path="res://assets/sprites/interface/Quit_Button_Hover.png" id="8_lo7nl"]
+[ext_resource type="Texture2D" uid="uid://byc64gvo01tc1" path="res://assets/sprites/interface/Object_Slot.png" id="10_ksudb"]
+[ext_resource type="Script" uid="uid://mehgf7m842tc" path="res://assets/scripts/sprite_dice.gd" id="11_i6e05"]
+[ext_resource type="Texture2D" uid="uid://bl62g4qpiv1v7" path="res://assets/sprites/interface/Dices.png" id="12_bffew"]
+[ext_resource type="Texture2D" uid="uid://cggud2x458lgb" path="res://assets/sprites/interface/Dash_Image.png" id="12_csxqu"]
+[ext_resource type="Texture2D" uid="uid://rdfcma20f33r" path="res://assets/sprites/interface/Card_Slot.png" id="13_mhv7j"]
+[ext_resource type="AudioStream" uid="uid://ci0expaqvgqsw" path="res://assets/sounds/Dice_Roll.mp3" id="19_hbamy"]
+[ext_resource type="Texture2D" uid="uid://c0xrki0x0g1d7" path="res://assets/sprites/interface/Progress_Bar_Left.png" id="20_8ju7j"]
+[ext_resource type="Texture2D" uid="uid://mr3ikso2r0n5" path="res://assets/sprites/interface/Progress_Bar_Right.png" id="21_lo7nl"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gldp3"]
-texture = ExtResource("2_rpebj")
-region_rect = Rect2(29, 6, 22, 22)
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_l5x5i")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_syaxo"]
-texture = ExtResource("2_rpebj")
-region_rect = Rect2(6, 6, 22, 22)
+[node name="Inventory_Menu" type="CanvasLayer" parent="."]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfixx"]
-texture = ExtResource("2_rpebj")
-region_rect = Rect2(75, 6, 22, 22)
+[node name="Inventory_Container" type="NinePatchRect" parent="Inventory_Menu"]
+offset_left = 100.0
+offset_top = 122.0
+offset_right = 1820.0
+offset_bottom = 852.0
+texture = ExtResource("1_qb8k6")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpebj"]
-texture = ExtResource("2_rpebj")
-region_rect = Rect2(52, 6, 22, 22)
-
-[node name="inGameUi" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="interfaceMenu" type="MarginContainer" parent="."]
+[node name="Inventory_Exit_Button" type="TextureButton" parent="Inventory_Menu/Inventory_Container"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -104.0
+offset_top = 23.0
+offset_right = -26.0
+offset_bottom = 101.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_csxqu")
+texture_pressed = ExtResource("3_par0i")
+texture_hover = ExtResource("4_l5x5i")
+stretch_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="interfaceMenu"]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="baseMenuScreen" type="MarginContainer" parent="interfaceMenu/VBoxContainer"]
-layout_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="interfaceMenu/VBoxContainer/baseMenuScreen"]
-custom_minimum_size = Vector2(500, 200)
-layout_mode = 2
-texture = ExtResource("1_sfixx")
-region_rect = Rect2(0, 0, 103, 34)
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-
-[node name="MarginContainer" type="MarginContainer" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect"]
+[node name="GridContainer" type="GridContainer" parent="Inventory_Menu/Inventory_Container"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -20.0
+offset_right = 59.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 35
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 35
 
-[node name="HBoxContainer" type="HBoxContainer" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer"]
-layout_direction = 3
-layout_mode = 2
+[node name="Settings_Menu" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="buttonContainer" type="HBoxContainer" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-theme_override_constants/separation = 6
+[node name="Settings_Container" type="NinePatchRect" parent="Settings_Menu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -430.0
+offset_top = 122.0
+offset_right = 430.0
+offset_bottom = 852.0
+grow_horizontal = 2
+texture = ExtResource("1_qb8k6")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
-[node name="settingsButton2" type="Button" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer/buttonContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/hover = SubResource("StyleBoxTexture_gldp3")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_gldp3")
-theme_override_styles/normal = SubResource("StyleBoxTexture_syaxo")
+[node name="Settings_Exit_Button" type="TextureButton" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_top = 23.0
+offset_right = -26.0
+offset_bottom = 101.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_csxqu")
+texture_pressed = ExtResource("3_par0i")
+texture_hover = ExtResource("4_l5x5i")
+stretch_mode = 0
 
-[node name="inventoryButton" type="Button" parent="interfaceMenu/VBoxContainer/baseMenuScreen/NinePatchRect/MarginContainer/HBoxContainer/buttonContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/hover = SubResource("StyleBoxTexture_sfixx")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_sfixx")
-theme_override_styles/normal = SubResource("StyleBoxTexture_rpebj")
+[node name="Label" type="Label" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 156.0
+offset_right = 200.0
+offset_bottom = 244.0
+grow_horizontal = 2
+pivot_offset = Vector2(200, 25)
+theme_override_colors/font_color = Color(0, 0, 0, 0.611765)
+theme_override_fonts/font = ExtResource("6_a0tli")
+theme_override_font_sizes/font_size = 72
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 299.0
+offset_right = 200.0
+offset_bottom = 387.0
+grow_horizontal = 2
+pivot_offset = Vector2(200, 25)
+theme_override_colors/font_color = Color(0, 0, 0, 0.611765)
+theme_override_fonts/font = ExtResource("6_a0tli")
+theme_override_font_sizes/font_size = 72
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music_Slider" type="HSlider" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 240.0
+offset_right = 280.0
+offset_bottom = 256.0
+grow_horizontal = 2
+pivot_offset = Vector2(280, 8)
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("6_cjvv2")
+max_value = 1.0
+step = 0.1
+
+[node name="Sound_Slider" type="HSlider" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 383.0
+offset_right = 280.0
+offset_bottom = 399.0
+grow_horizontal = 2
+pivot_offset = Vector2(280, 8)
+focus_mode = 0
+max_value = 1.0
+step = 0.1
+
+[node name="QuitGame_Button" type="TextureButton" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -214.0
+offset_right = 78.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(78, 39)
+texture_normal = ExtResource("6_bnqwo")
+texture_pressed = ExtResource("7_8ju7j")
+texture_hover = ExtResource("8_lo7nl")
+
+[node name="LowerHUD" type="TextureRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_qb8k6")
+
+[node name="Settings_Slot" type="TextureButton" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -37.5
+offset_right = -47.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("3_cjvv2")
+texture_pressed = ExtResource("4_grbm3")
+texture_hover = ExtResource("5_6hcns")
+stretch_mode = 0
+
+[node name="Inventory_Slot" type="TextureButton" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -37.5
+offset_right = -141.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("5_grbm3")
+texture_pressed = ExtResource("6_6hcns")
+texture_hover = ExtResource("8_ksudb")
+stretch_mode = 0
+
+[node name="Dash_Slot" type="TextureButton" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 47.0
+offset_top = -37.5
+offset_right = 127.0
+offset_bottom = 37.5
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("10_ksudb")
+stretch_mode = 0
+
+[node name="Item_Slot" type="TextureButton" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 141.0
+offset_top = -37.5
+offset_right = 221.0
+offset_bottom = 37.5
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("10_ksudb")
+stretch_mode = 0
+
+[node name="Card_Slot_1" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(349.5, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("13_mhv7j")
+
+[node name="Card_Slot_2" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(566, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("13_mhv7j")
+
+[node name="Card_Slot_3" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(783, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("13_mhv7j")
+
+[node name="Card_Slot_4" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(1136, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("13_mhv7j")
+
+[node name="Card_Slot_5" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(1353, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("13_mhv7j")
+
+[node name="Card_Slot_6" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(1570, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("13_mhv7j")
+
+[node name="Dices" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(960, 75)
+scale = Vector2(2.75714, 2.75714)
+texture = ExtResource("12_bffew")
+region_enabled = true
+region_rect = Rect2(0, 0, 35, 35)
+script = ExtResource("11_i6e05")
+
+[node name="Roll_Sound" type="AudioStreamPlayer" parent="LowerHUD/Dices"]
+stream = ExtResource("19_hbamy")
+volume_db = -6.222
+pitch_scale = 0.86
+bus = &"SFX"
+
+[node name="Dash_Image" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(86, 75.625)
+scale = Vector2(2.47727, 2.51137)
+texture = ExtResource("12_csxqu")
+
+[node name="Left_Load" type="TextureProgressBar" parent="LowerHUD"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 960.0
+texture_progress = ExtResource("20_8ju7j")
+
+[node name="Right_Load" type="TextureProgressBar" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -960.0
+offset_top = -15.0
+grow_horizontal = 0
+fill_mode = 1
+texture_progress = ExtResource("21_lo7nl")
+
+[node name="Heart_1" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = -501.0
+offset_right = 89.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("6_cjvv2")
+texture_disabled = ExtResource("3_6hcns")
+stretch_mode = 0
+
+[node name="Heart_2" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -501.0
+offset_right = 134.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("6_cjvv2")
+texture_disabled = ExtResource("3_6hcns")
+stretch_mode = 0
+
+[node name="Heart_3" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 133.0
+offset_top = -501.0
+offset_right = 179.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("6_cjvv2")
+texture_disabled = ExtResource("3_6hcns")
+stretch_mode = 0
+
+[node name="Heart_4" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 178.0
+offset_top = -501.0
+offset_right = 224.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("6_cjvv2")
+texture_disabled = ExtResource("3_6hcns")
+stretch_mode = 0
+
+[node name="Heart_5" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 223.0
+offset_top = -501.0
+offset_right = 269.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("6_cjvv2")
+texture_disabled = ExtResource("3_6hcns")
+stretch_mode = 0
+
+[node name="Heart_6" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 268.0
+offset_top = -501.0
+offset_right = 314.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("6_cjvv2")
+texture_disabled = ExtResource("3_6hcns")
+stretch_mode = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk1xhi55swdng"
-path="res://.godot/imported/exampleSprite2.png-be1c81aa70ac519bf3bb1c6e2819a42d.ctex"
+uid="uid://mr3ikso2r0n5"
+path="res://.godot/imported/Progress_Bar_Right.png-55ecce51cddf091e80e012957da5c010.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entitites/exampleSprite2.png"
-dest_files=["res://.godot/imported/exampleSprite2.png-be1c81aa70ac519bf3bb1c6e2819a42d.ctex"]
+source_file="res://assets/sprites/interface/Progress_Bar_Right.png"
+dest_files=["res://.godot/imported/Progress_Bar_Right.png-55ecce51cddf091e80e012957da5c010.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diqjn4ccn358o"
-path="res://.godot/imported/Interface_Buttons.png-a046437f9464c9a3c84716d695594e10.ctex"
+uid="uid://byc64gvo01tc1"
+path="res://.godot/imported/Object_Slot.png-40c5f425197b780bb9ed1f880ec2a813.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/interface/Interface_Buttons.png"
-dest_files=["res://.godot/imported/Interface_Buttons.png-a046437f9464c9a3c84716d695594e10.ctex"]
+source_file="res://assets/sprites/interface/Object_Slot.png"
+dest_files=["res://.godot/imported/Object_Slot.png-40c5f425197b780bb9ed1f880ec2a813.ctex"]
 
 [params]
 

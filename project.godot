@@ -10,15 +10,23 @@ config_version=5
 
 [application]
 
-config/name="CardDice"
+config/name="DiceLock"
 run/main_scene="uid://7halnlk3iywh"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://assets/sounds/Default_bus_layout.tres"
+
+[autoload]
+
+InGameUi="*res://assets/scenes/in_game_ui.tscn"
+
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=640
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

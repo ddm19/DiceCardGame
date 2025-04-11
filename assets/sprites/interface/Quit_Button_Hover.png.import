@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk1xhi55swdng"
-path="res://.godot/imported/exampleSprite2.png-be1c81aa70ac519bf3bb1c6e2819a42d.ctex"
+uid="uid://ddos7xg54r3vi"
+path="res://.godot/imported/Quit_Button_Hover.png-88d26ce8f6be927759a4b1b03eed3817.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entitites/exampleSprite2.png"
-dest_files=["res://.godot/imported/exampleSprite2.png-be1c81aa70ac519bf3bb1c6e2819a42d.ctex"]
+source_file="res://assets/sprites/interface/Quit_Button_Hover.png"
+dest_files=["res://.godot/imported/Quit_Button_Hover.png-88d26ce8f6be927759a4b1b03eed3817.ctex"]
 
 [params]
 
