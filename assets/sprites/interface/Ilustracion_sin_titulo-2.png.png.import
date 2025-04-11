@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuwmgt2hbwhlg"
-path="res://.godot/imported/Spritesheet_Idle_Dicey.png-4fd966e25dff57ab4acfe16607846582.ctex"
+uid="uid://drra3j2ec8qef"
+path="res://.godot/imported/Ilustracion_sin_titulo-2.png.png-0017d0c833c51b2009ff281ff86778ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicey/Spritesheet_Idle_Dicey.png"
-dest_files=["res://.godot/imported/Spritesheet_Idle_Dicey.png-4fd966e25dff57ab4acfe16607846582.ctex"]
+source_file="res://assets/sprites/interface/Ilustracion_sin_titulo-2.png.png"
+dest_files=["res://.godot/imported/Ilustracion_sin_titulo-2.png.png-0017d0c833c51b2009ff281ff86778ff.ctex"]
 
 [params]
 

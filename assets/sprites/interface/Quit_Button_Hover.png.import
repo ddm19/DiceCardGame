@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuwmgt2hbwhlg"
-path="res://.godot/imported/Spritesheet_Idle_Dicey.png-4fd966e25dff57ab4acfe16607846582.ctex"
+uid="uid://ddos7xg54r3vi"
+path="res://.godot/imported/Quit_Button_Hover.png-88d26ce8f6be927759a4b1b03eed3817.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicey/Spritesheet_Idle_Dicey.png"
-dest_files=["res://.godot/imported/Spritesheet_Idle_Dicey.png-4fd966e25dff57ab4acfe16607846582.ctex"]
+source_file="res://assets/sprites/interface/Quit_Button_Hover.png"
+dest_files=["res://.godot/imported/Quit_Button_Hover.png-88d26ce8f6be927759a4b1b03eed3817.ctex"]
 
 [params]
 

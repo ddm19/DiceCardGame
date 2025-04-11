@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuwmgt2hbwhlg"
-path="res://.godot/imported/Spritesheet_Idle_Dicey.png-4fd966e25dff57ab4acfe16607846582.ctex"
+uid="uid://dav5g1o0w7ic"
+path="res://.godot/imported/Inventory_Button.png-1c442ef2dee427a1b611aeec40365fbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicey/Spritesheet_Idle_Dicey.png"
-dest_files=["res://.godot/imported/Spritesheet_Idle_Dicey.png-4fd966e25dff57ab4acfe16607846582.ctex"]
+source_file="res://assets/sprites/interface/Inventory_Button.png"
+dest_files=["res://.godot/imported/Inventory_Button.png-1c442ef2dee427a1b611aeec40365fbd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuwmgt2hbwhlg"
-path="res://.godot/imported/Spritesheet_Idle_Dicey.png-4fd966e25dff57ab4acfe16607846582.ctex"
+uid="uid://rdfcma20f33r"
+path="res://.godot/imported/Card_Slot.png-7d9d55379166bfadbc42c7d4c9a3747a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicey/Spritesheet_Idle_Dicey.png"
-dest_files=["res://.godot/imported/Spritesheet_Idle_Dicey.png-4fd966e25dff57ab4acfe16607846582.ctex"]
+source_file="res://assets/sprites/interface/Card_Slot.png"
+dest_files=["res://.godot/imported/Card_Slot.png-7d9d55379166bfadbc42c7d4c9a3747a.ctex"]
 
 [params]
 

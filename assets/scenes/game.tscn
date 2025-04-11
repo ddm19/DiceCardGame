@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ctebihq8iurkf" path="res://assets/sprites/Dicey/Spritesheet_Idle_Left_Down_Dicey.png" id="13_i358u"]
 [ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/Dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
 
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 2.2774
 height = 10.9851
@@ -1415,12 +1416,13 @@ player = NodePath("../Player")
 speedMultiplier = 2.0
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(5563, -485)
-scale = Vector2(8.05576, 6.71272)
+position = Vector2(960, 539)
+scale = Vector2(14.9375, 8.4375)
 texture = ExtResource("2_dis88")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(6099, -348)
+
 script = ExtResource("1_cb66b")
 _speed = 200.0
 
