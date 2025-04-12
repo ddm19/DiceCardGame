@@ -1,0 +1,247 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg1gna3dgtk2l"]
+
+[ext_resource type="Texture2D" uid="uid://0aokfb3wg1nj" path="res://assets/sprites/StaffMouth.png" id="1_uikax"]
+[ext_resource type="Script" uid="uid://dfwbry7v030ab" path="res://assets/cards/basicMeleeCard.gd" id="2_drig3"]
+[ext_resource type="Texture2D" uid="uid://deihlaqmdxxmi" path="res://assets/sprites/basicMelee/basicMeleeSlash.png" id="3_i16rj"]
+
+[sub_resource type="Animation" id="Animation_2nle1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackSprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9, 3)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.53456]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.148728, 0.274969)]
+}
+
+[sub_resource type="Animation" id="Animation_kum14"]
+resource_name = "Slash"
+length = 0.36667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_i16rj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackSprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0685639, 0.101897, 0.135231, 0.168564, 0.201476, 0.234177, 0.267299, 0.300422, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0333333, 0.0833333, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(9.14414, 7.96425), Vector2(8, 1), Vector2(8.84917, 5.60447), Vector2(7.66928, 4.42458), Vector2(-2.06481, 0.884917), Vector2(-5.3095, 6.19442), Vector2(-2.94972, 7.37431), Vector2(-1.76983, 7.3743), Vector2(-7.96425, -2.94972)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0333333, 0.0833333, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1.53456, 1.22207, 1.22207, 0.971657, 0.515668, -0.0187692, -0.286931, -0.469711, -0.656184]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0333333, 0.0833333, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0.148728, 0.274969), Vector2(0.232484, 0.498125), Vector2(0.232484, 0.498125), Vector2(0.297191, 0.797613), Vector2(0.793169, 0.986192), Vector2(1.02739, 1.07663), Vector2(1.02728, 1.07386), Vector2(1.02728, 1.07386), Vector2(0.766191, 0.520772)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_akcxk"]
+_data = {
+&"RESET": SubResource("Animation_2nle1"),
+&"Slash": SubResource("Animation_kum14")
+}
+
+[node name="BasicMeleeCard" type="Node2D"]
+script = ExtResource("2_drig3")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(583, 281)
+texture = ExtResource("1_uikax")
+
+[node name="CardController" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_akcxk")
+}
+speed_scale = 0.786
+
+[node name="AttackSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(1.69508, 1.21834)
+hframes = 5
+vframes = 2
+frame = 9
+
+[node name="Area2D" type="Area2D" parent="AttackSprite"]
+position = Vector2(0, 5.74552)
+rotation = -0.356839
+scale = Vector2(2.06172, 2.73717)
+skew = 0.16658
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackSprite/Area2D"]
+position = Vector2(9, 3)
+rotation = 1.53456
+scale = Vector2(0.148728, 0.274969)
+polygon = PackedVector2Array(20, 5, 25, 3, 28, -2, 29, -11, 25, -19, 16, -24, 6, -26, -5, -25, -11, -22, -15, -19, -10, -14, -4, -10, 0, -12, 7, -13, 14, -9, 20, -5, 19, 1)
+disabled = true
+
+[connection signal="body_entered" from="AttackSprite/Area2D" to="." method="_on_area_2d_body_entered"]

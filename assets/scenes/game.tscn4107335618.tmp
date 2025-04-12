@@ -1,9 +1,9 @@
-[gd_scene load_steps=80 format=3 uid="uid://7halnlk3iywh"]
+[gd_scene load_steps=62 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
-[ext_resource type="Script" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
+[ext_resource type="Script" uid="uid://3sk4n8xqdib1" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
 [ext_resource type="Texture2D" uid="uid://bhqb6wrc8td6c" path="res://icon.svg" id="2_dis88"]
-[ext_resource type="Texture2D" uid="uid://cuwmgt2hbwhlg" path="res://assets/sprites/Dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
+[ext_resource type="Texture2D" uid="uid://gbdhtqbk385q" path="res://assets/sprites/Dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
 [ext_resource type="Shader" uid="uid://btmf5sbgdykuu" path="res://assets/shaders/dash.gdshader" id="4_fc420"]
 [ext_resource type="Shader" uid="uid://bjilgan5m7dap" path="res://assets/shaders/dicey.gdshader" id="4_kc0sw"]
 [ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/Dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
@@ -18,232 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://ctebihq8iurkf" path="res://assets/sprites/Dicey/Spritesheet_Idle_Left_Down_Dicey.png" id="13_i358u"]
 [ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/Dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
 [ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basic_melee_card.tscn" id="18_5jdip"]
-[ext_resource type="Texture2D" uid="uid://c5lkhqbh7e67g" path="res://assets/sprites/Dicey/Animacion_Left_Attack_Dicey_.png" id="18_rojm1"]
-[ext_resource type="Texture2D" uid="uid://c0wgq2yirt7n6" path="res://assets/sprites/Dicey/Animacion_Right_Attack_Dicey_.png" id="19_pnywb"]
-[ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/Dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
-[ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
-[ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
-[ext_resource type="Script" uid="uid://ch26emp2fd58r" path="res://assets/scripts/EnemyBasic.gd" id="24_fx2rd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
-radius = 5.08789
-height = 28.0
-
-[sub_resource type="Animation" id="Animation_h5j7u"]
-resource_name = "ATTACK_LEFT"
-length = 0.80002
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("18_rojm1")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_xe33q"]
-resource_name = "ATTACK_LEFT_DOWN"
-length = 0.80002
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("21_jdjof")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_8vm3o"]
-resource_name = "ATTACK_RIGHT"
-length = 0.80002
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("19_pnywb")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_p2xyf"]
-resource_name = "ATTACK_RIGHT_DOWN"
-length = 0.80002
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("20_fx2rd")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
+radius = 2.2774
+height = 10.9851
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kc0sw"]
 shader = ExtResource("4_fc420")
@@ -1502,10 +1280,6 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3w2km"]
 _data = {
-&"ATTACK_LEFT": SubResource("Animation_h5j7u"),
-&"ATTACK_LEFT_DOWN": SubResource("Animation_xe33q"),
-&"ATTACK_RIGHT": SubResource("Animation_8vm3o"),
-&"ATTACK_RIGHT_DOWN": SubResource("Animation_p2xyf"),
 &"DASH_DOWN": SubResource("Animation_52jqy"),
 &"DASH_LEFT": SubResource("Animation_5jdip"),
 &"DASH_RIGHT": SubResource("Animation_fqk1v"),
@@ -1582,39 +1356,6 @@ blend_point_5/node = SubResource("AnimationNodeAnimation_52jqy")
 blend_point_5/pos = Vector2(-1, 1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h5j7u"]
-animation = &"IDLE_LEFT_UP"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8vm3o"]
-animation = &"ATTACK_LEFT"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p2xyf"]
-animation = &"ATTACK_RIGHT"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xe33q"]
-animation = &"IDLE_RIGHT_UP"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1q3k2"]
-animation = &"ATTACK_LEFT_DOWN"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4hayi"]
-animation = &"ATTACK_RIGHT_DOWN"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_3sk60"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_h5j7u")
-blend_point_0/pos = Vector2(-1, -1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_8vm3o")
-blend_point_1/pos = Vector2(-1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_p2xyf")
-blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_xe33q")
-blend_point_3/pos = Vector2(1, -1)
-blend_point_4/node = SubResource("AnimationNodeAnimation_1q3k2")
-blend_point_4/pos = Vector2(-1, 1)
-blend_point_5/node = SubResource("AnimationNodeAnimation_4hayi")
-blend_point_5/pos = Vector2(1, 1)
-blend_mode = 1
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k2t1h"]
 animation = &"MOVE_LEFT_DOWN"
 
@@ -1658,21 +1399,16 @@ states/DASH/node = SubResource("AnimationNodeBlendSpace2D_fqk1v")
 states/DASH/position = Vector2(624, 203.333)
 states/IDLE/node = SubResource("AnimationNodeBlendSpace2D_pkhv0")
 states/IDLE/position = Vector2(399.333, 55.5556)
-states/MELEE_ATTACK/node = SubResource("AnimationNodeBlendSpace2D_3sk60")
-states/MELEE_ATTACK/position = Vector2(376, 204.666)
 states/WALKING/node = SubResource("AnimationNodeBlendSpace2D_kc0sw")
 states/WALKING/position = Vector2(636.667, 56.5679)
 transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_au80e"), "WALKING", "IDLE", SubResource("AnimationNodeStateMachineTransition_52jqy")]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnywb"]
-size = Vector2(38, 38)
-
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(577.528, 152.247)
+position = Vector2(6069.96, -336.367)
 scale = Vector2(0.133965, 0.453551)
-zoom = Vector2(2, 2)
+zoom = Vector2(0.7, 0.7)
 process_callback = 0
 position_smoothing_speed = 3.0
 script = ExtResource("1_fqk1v")
@@ -1680,27 +1416,23 @@ player = NodePath("../Player")
 speedMultiplier = 2.0
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(70.5688, 3.61404)
+position = Vector2(5563, -485)
 scale = Vector2(8.05576, 6.71272)
 texture = ExtResource("2_dis88")
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("cardsList", "audioPlayer")]
-position = Vector2(606.569, 140.614)
-scale = Vector2(1.2, 1.2)
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(6099, -348)
 script = ExtResource("1_cb66b")
 _speed = 200.0
-cardsList = [NodePath("../BasicMeleeCard")]
-audioPlayer = NodePath("DashPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 z_index = 1
-position = Vector2(-0.999979, -3.00001)
+position = Vector2(5.22463, 4.68877)
 texture = ExtResource("3_5gf0t")
 hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-0.000115871, 4.00001)
-scale = Vector2(0.9827, 0.981672)
+position = Vector2(5.49256, 5.76048)
 shape = SubResource("CapsuleShape2D_cb5na")
 
 [node name="DashTimer" type="Timer" parent="Player"]
@@ -1717,28 +1449,6 @@ tree_root = SubResource("AnimationNodeStateMachine_5jdip")
 anim_player = NodePath("../AnimationPlayer")
 parameters/DASH/blend_position = Vector2(-0.006639, -0.308475)
 parameters/IDLE/blend_position = Vector2(0.102706, 0.0413625)
-parameters/MELEE_ATTACK/blend_position = Vector2(-0.296266, 0.475687)
 parameters/WALKING/blend_position = Vector2(0.249827, -0.0656934)
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Player"]
-
-[node name="DashPlayer" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource("22_pnywb")
-
 [node name="BasicMeleeCard" parent="." instance=ExtResource("18_5jdip")]
-position = Vector2(500.569, 29.6141)
-cooldown = 0.5
-
-[node name="EnemigoPrueba" type="CharacterBody2D" parent="."]
-position = Vector2(766, 110)
-script = ExtResource("24_fx2rd")
-initialHealth = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemigoPrueba"]
-position = Vector2(96, 44)
-shape = SubResource("RectangleShape2D_pnywb")
-
-[node name="Sprite2D" type="Sprite2D" parent="EnemigoPrueba"]
-position = Vector2(96, 44)
-scale = Vector2(0.286949, 0.286949)
-texture = ExtResource("2_dis88")
