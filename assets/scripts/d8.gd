@@ -19,7 +19,7 @@ func _physics_process(delta):
 		attack()
 	elif(!isAttacking):
 		if(getDistanceToPlayer() <= fleeDistance):
-			super._physics_process(-delta*1.5)
+			super._physics_process(-delta*0.9)
 		else:
 			super._physics_process(delta)
 

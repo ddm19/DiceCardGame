@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsuxnln24x8om"]
+[gd_scene load_steps=8 format=3 uid="uid://dsuxnln24x8om"]
 
 [ext_resource type="Script" uid="uid://xnomj0agxau" path="res://assets/scripts/projectile.gd" id="1_oe81d"]
 [ext_resource type="Texture2D" uid="uid://bxy2c6qs67gy8" path="res://assets/sprites/entitites/projectile.png" id="2_2x1bs"]
+[ext_resource type="AudioStream" uid="uid://d02j2laxe3ij3" path="res://assets/sounds/Shoot.mp3" id="3_l5a42"]
 
 [sub_resource type="Animation" id="Animation_f838r"]
 resource_name = "IDLE"
@@ -165,8 +166,13 @@ _data = {
 radius = 2.25374
 height = 8.11348
 
-[node name="Projectile" type="CharacterBody2D"]
+[node name="Projectile" type="CharacterBody2D" node_paths=PackedStringArray("audioPlayer")]
 script = ExtResource("1_oe81d")
+targetDirection = null
+speed = null
+damage = null
+shooterEntityType = null
+audioPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_2x1bs")
@@ -189,6 +195,10 @@ speed_scale = 0.25
 position = Vector2(0, -1)
 scale = Vector2(2.21853, 1.45918)
 shape = SubResource("CapsuleShape2D_l5a42")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_l5a42")
+bus = &"SFX"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="onScreenExit"]
 [connection signal="body_entered" from="Area2D" to="." method="onCollisionEntered"]

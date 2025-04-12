@@ -8,7 +8,11 @@ class_name Projectile
 @export var speed : float
 @export var damage : int
 @export var shooterEntityType : LivingEntity.TARGET_TYPE
+@export var audioPlayer : AudioStreamPlayer2D
 
+func _ready() -> void:
+	audioPlayer.play()
+	
 
 func _physics_process(delta: float) -> void:
 	if(targetDirection):
