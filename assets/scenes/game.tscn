@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/Dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
 [ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
-[ext_resource type="PackedScene" uid="uid://ckdbxtj037x5i" path="res://assets/enemies/d4.tscn" id="24_fx2rd"]
+[ext_resource type="PackedScene" uid="uid://kkj8mo1ud3ce" path="res://assets/enemies/d8.tscn" id="24_fx2rd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1732,18 +1732,9 @@ stream = ExtResource("22_pnywb")
 position = Vector2(500.569, 29.6141)
 cooldown = 0.5
 
-[node name="D4" parent="." instance=ExtResource("24_fx2rd")]
-position = Vector2(70, -154)
-
-[node name="D5" parent="." instance=ExtResource("24_fx2rd")]
-position = Vector2(296, 264)
-
-[node name="D6" parent="." instance=ExtResource("24_fx2rd")]
-position = Vector2(445, -182)
-
-[node name="D7" parent="." instance=ExtResource("24_fx2rd")]
-position = Vector2(-204, 81)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(1, 2)
 navigation_polygon = SubResource("NavigationPolygon_fx2rd")
+
+[node name="D8" parent="." instance=ExtResource("24_fx2rd")]
+position = Vector2(74, 152)

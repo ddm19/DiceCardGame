@@ -41,7 +41,8 @@ func _ready():
 	
 
 func takeDamage(amount):
-	livingData.take_damage(amount)
+	print("Taking ",amount," damage.")
+	livingData.takeDamage(amount)
 	if(livingData.currentHealth <= 0):
 		die()
 
