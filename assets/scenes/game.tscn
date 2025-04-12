@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/Dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
 [ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
-[ext_resource type="PackedScene" uid="uid://kkj8mo1ud3ce" path="res://assets/enemies/d8.tscn" id="24_fx2rd"]
+[ext_resource type="PackedScene" uid="uid://tsdxxka1xisk" path="res://assets/enemies/d10.tscn" id="24_fx2rd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1736,5 +1736,4 @@ cooldown = 0.5
 position = Vector2(1, 2)
 navigation_polygon = SubResource("NavigationPolygon_fx2rd")
 
-[node name="D8" parent="." instance=ExtResource("24_fx2rd")]
-position = Vector2(74, 152)
+[node name="D10" parent="." instance=ExtResource("24_fx2rd")]

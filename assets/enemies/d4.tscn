@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://ckdbxtj037x5i"]
 
 [ext_resource type="Texture2D" uid="uid://y3ljsrjhd87r" path="res://assets/sprites/enemies/d4/D4_Idle_Left.png" id="1_fvtir"]
-[ext_resource type="Script" uid="uid://ch04oqm5b2bxs" path="res://assets/scripts/d4.gd" id="1_hyiu5"]
+[ext_resource type="Script" uid="uid://ch04oqm5b2bxs" path="res://assets/enemies/d4.gd" id="1_hyiu5"]
 [ext_resource type="Texture2D" uid="uid://ce0lrgjlf38sf" path="res://assets/sprites/enemies/d4/D4_Idle_Right.png" id="2_ib6eh"]
 
 [sub_resource type="Animation" id="Animation_mmj6x"]
@@ -42,6 +42,46 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_fvtir")]
+}
+
+[sub_resource type="Animation" id="Animation_k5vfe"]
+resource_name = "DAMAGE_RIGHT"
+length = 0.233337
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ib6eh")]
 }
 
 [sub_resource type="Animation" id="Animation_ib6eh"]
@@ -225,46 +265,6 @@ tracks/5/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_k5vfe"]
-resource_name = "DAMAGE_RIGHT"
-length = 0.233337
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_ib6eh")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sflx6"]
 _data = {
 &"DAMAGE_LEFT": SubResource("Animation_mmj6x"),
@@ -389,6 +389,5 @@ parameters/MOVE/1/TimeScale/scale = 0.15
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="D4Body"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="D4Body"]
-visible = false
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_hyiu5")
