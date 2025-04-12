@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c72fillbopi2t"
-path="res://.godot/imported/Animacion_Left_Down_Attack.png-33ff8b6f14a71c0668cad2741dbb85c5.ctex"
+uid="uid://0aokfb3wg1nj"
+path="res://.godot/imported/StaffMouth.png-86bc85aa2f3ec0b426737e3fdb193b71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png"
-dest_files=["res://.godot/imported/Animacion_Left_Down_Attack.png-33ff8b6f14a71c0668cad2741dbb85c5.ctex"]
+source_file="res://assets/sprites/StaffMouth.png"
+dest_files=["res://.godot/imported/StaffMouth.png-86bc85aa2f3ec0b426737e3fdb193b71.ctex"]
 
 [params]
 
