@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb2l00arls3ee"
-path="res://.godot/imported/Ilustracion_sin_titulo.png-86f0bb844fc88b1abeddaf9477d9ae5a.ctex"
+uid="uid://bnesr864q2a5q"
+path="res://.godot/imported/Soul_reaper-2.png-c2ab1348c2ed1f89bb54c42fb0d2c550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/interface/Ilustracion_sin_titulo.png"
-dest_files=["res://.godot/imported/Ilustracion_sin_titulo.png-86f0bb844fc88b1abeddaf9477d9ae5a.ctex"]
+source_file="res://assets/sprites/cards/Soul_reaper-2.png"
+dest_files=["res://.godot/imported/Soul_reaper-2.png-c2ab1348c2ed1f89bb54c42fb0d2c550.ctex"]
 
 [params]
 

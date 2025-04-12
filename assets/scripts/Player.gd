@@ -10,7 +10,6 @@ var livingData: LivingEntity
 @export var isDashing : bool = false
 var dashCooldownTimer : Timer
 var canDash : bool = true
-
 var dashTimer : Timer 
 
 enum ANIMATIONSTATES {
@@ -33,13 +32,10 @@ func _ready():
 	$AnimationTree.set("parameters/IDLE/blend_position",Vector2.ZERO)
 	$AnimationTree.set("parameters/DASH/blend_position",Vector2.ZERO)
 
-	
-
 func take_damage(amount):
 	livingData.take_damage(amount)
 	if(livingData.currentHealth <= 0):
 		die()
-
 
 func _physics_process(delta: float) -> void:
 	move()
@@ -63,9 +59,6 @@ func _physics_process(delta: float) -> void:
 	if(!canDash && dashCooldownTimer != null):
 		print(dashCooldownTimer.time_left)
 	
-		
-	
-
 func move():
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity = direction * _speed
@@ -93,25 +86,20 @@ func _onDashTimeout():
 func _ondashCooldownTimeout():
 	canDash = true
 	
-
 func updateState(state: ANIMATIONSTATES):
 	match state:
 		ANIMATIONSTATES.IDLE:
-			print("IDLE")
 			if(state != currentState):
 				$AnimationTree.get("parameters/playback").travel("IDLE")
 				currentState = state
 		ANIMATIONSTATES.WALKING:
-			print("WALK")
 			if(state != currentState):
 				$AnimationTree.get("parameters/playback").travel("WALKING")
 				currentState = state
 		ANIMATIONSTATES.DASH:
-			print("DASH")
 			if(state != currentState):
 				$AnimationTree.get("parameters/playback").travel("DASH")
 				currentState = state
-
 
 func die():
 	queue_free()

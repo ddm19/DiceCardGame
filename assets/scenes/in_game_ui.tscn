@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://b6qmq1ltrs8ry"]
+[gd_scene load_steps=27 format=3 uid="uid://b6qmq1ltrs8ry"]
 
 [ext_resource type="Script" uid="uid://n6661wsqfv1r" path="res://assets/scripts/in_game_ui.gd" id="1_l5x5i"]
 [ext_resource type="Texture2D" uid="uid://byg67xxlf86c5" path="res://assets/sprites/interface/HUD_BottomBox.png" id="1_qb8k6"]
 [ext_resource type="Texture2D" uid="uid://b7qe33ajarptl" path="res://assets/sprites/interface/Exit_Button.png" id="2_csxqu"]
-[ext_resource type="Texture2D" uid="uid://drra3j2ec8qef" path="res://assets/sprites/interface/Ilustracion_sin_titulo-2.png.png" id="3_6hcns"]
+[ext_resource type="Texture2D" uid="uid://drra3j2ec8qef" path="res://assets/sprites/interface/Heart_Empty.png" id="3_6hcns"]
 [ext_resource type="Texture2D" uid="uid://b4xy8vcdqgt4t" path="res://assets/sprites/interface/Settings_Button.png" id="3_cjvv2"]
 [ext_resource type="Texture2D" uid="uid://coosncavlqc44" path="res://assets/sprites/interface/Exit_Button_Pressed.png" id="3_par0i"]
 [ext_resource type="Texture2D" uid="uid://t0uhilpo4usw" path="res://assets/sprites/interface/Settings_Pressed.png" id="4_grbm3"]
@@ -13,8 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://bwbn7xapblvm1" path="res://assets/sprites/interface/Inventory_Pressed.png" id="6_6hcns"]
 [ext_resource type="FontFile" uid="uid://bkp4s1vnkof4s" path="res://assets/fonts/Pixelfont.ttf" id="6_a0tli"]
 [ext_resource type="Texture2D" uid="uid://drgdowo7ghyvl" path="res://assets/sprites/interface/Quit_Button.png" id="6_bnqwo"]
-[ext_resource type="Texture2D" uid="uid://rn4hp47m8led" path="res://assets/sprites/interface/Ilustracion_sin_titulo-1.png.png" id="6_cjvv2"]
+[ext_resource type="Texture2D" uid="uid://rn4hp47m8led" path="res://assets/sprites/interface/Heart.png" id="6_cjvv2"]
 [ext_resource type="Texture2D" uid="uid://455rmrdcuobt" path="res://assets/sprites/interface/Quit_Button_Pressed.png" id="7_8ju7j"]
+[ext_resource type="Texture2D" uid="uid://bnesr864q2a5q" path="res://assets/sprites/cards/Soul_reaper-2.png" id="7_somqu"]
 [ext_resource type="Texture2D" uid="uid://bhcdjjn7aeuxp" path="res://assets/sprites/interface/Inventory_Hover.png" id="8_ksudb"]
 [ext_resource type="Texture2D" uid="uid://ddos7xg54r3vi" path="res://assets/sprites/interface/Quit_Button_Hover.png" id="8_lo7nl"]
 [ext_resource type="Texture2D" uid="uid://byc64gvo01tc1" path="res://assets/sprites/interface/Object_Slot.png" id="10_ksudb"]
@@ -57,19 +58,99 @@ texture_pressed = ExtResource("3_par0i")
 texture_hover = ExtResource("4_l5x5i")
 stretch_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="Inventory_Menu/Inventory_Container"]
+[node name="Item_Slot_Inv" type="TextureButton" parent="Inventory_Menu/Inventory_Container"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -20.0
-offset_right = 59.0
-offset_bottom = 20.0
+offset_left = -39.0
+offset_top = -39.0
+offset_right = 39.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("10_ksudb")
+stretch_mode = 0
+
+[node name="Cards_Player" type="GridContainer" parent="Inventory_Menu/Inventory_Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -219.5
+offset_right = 510.0
+offset_bottom = -64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 75
+columns = 6
+
+[node name="Card1" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = ExtResource("7_somqu")
+
+[node name="Card2" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = ExtResource("7_somqu")
+
+[node name="Card3" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = ExtResource("7_somqu")
+
+[node name="Card4" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = ExtResource("7_somqu")
+
+[node name="Card5" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = ExtResource("7_somqu")
+
+[node name="Card6" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = ExtResource("7_somqu")
+
+[node name="Panel" type="Panel" parent="Inventory_Menu/Inventory_Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -511.5
+offset_top = -249.0
+offset_right = 511.5
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Info" type="Label" parent="Inventory_Menu/Inventory_Container/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -481.5
+offset_top = -52.5
+offset_right = 481.5
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("6_a0tli")
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="Settings_Menu" type="CanvasLayer" parent="."]
 visible = false
@@ -104,7 +185,7 @@ texture_pressed = ExtResource("3_par0i")
 texture_hover = ExtResource("4_l5x5i")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Settings_Menu/Settings_Container"]
+[node name="Music_Label" type="Label" parent="Settings_Menu/Settings_Container"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -122,7 +203,7 @@ text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Settings_Menu/Settings_Container"]
+[node name="SFX_Label" type="Label" parent="Settings_Menu/Settings_Container"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -168,6 +249,7 @@ offset_bottom = 399.0
 grow_horizontal = 2
 pivot_offset = Vector2(280, 8)
 focus_mode = 0
+theme_override_icons/grabber = ExtResource("6_cjvv2")
 max_value = 1.0
 step = 0.1
 

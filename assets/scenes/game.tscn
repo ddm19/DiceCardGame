@@ -1,23 +1,22 @@
 [gd_scene load_steps=61 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
-[ext_resource type="Script" uid="uid://3sk4n8xqdib1" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
+[ext_resource type="Script" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
 [ext_resource type="Texture2D" uid="uid://bhqb6wrc8td6c" path="res://icon.svg" id="2_dis88"]
-[ext_resource type="Texture2D" uid="uid://gbdhtqbk385q" path="res://assets/sprites/Dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
+[ext_resource type="Texture2D" uid="uid://cuwmgt2hbwhlg" path="res://assets/sprites/dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
 [ext_resource type="Shader" uid="uid://btmf5sbgdykuu" path="res://assets/shaders/dash.gdshader" id="4_fc420"]
 [ext_resource type="Shader" uid="uid://bjilgan5m7dap" path="res://assets/shaders/dicey.gdshader" id="4_kc0sw"]
-[ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/Dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
-[ext_resource type="Texture2D" uid="uid://bsnhyvr0lht2b" path="res://assets/sprites/Dicey/Spritesheet_Up_Left_Dicey_.png" id="6_5aext"]
-[ext_resource type="Texture2D" uid="uid://b7h2eayt1qc3d" path="res://assets/sprites/Dicey/Spritesheet_Left_Down_Dicey.png" id="7_3w2km"]
-[ext_resource type="Texture2D" uid="uid://dsc31lntajkd0" path="res://assets/sprites/Dicey/Spritesheet_Right_Dicey_.png" id="8_wfsp4"]
-[ext_resource type="Texture2D" uid="uid://b6yklq7mkl10g" path="res://assets/sprites/Dicey/Spritesheet_Right_Down_Dicey.png" id="9_k2t1h"]
-[ext_resource type="Texture2D" uid="uid://co1ecisyayloi" path="res://assets/sprites/Dicey/Spritesheet_Up_Right_Dicey_.png" id="10_phsto"]
-[ext_resource type="Texture2D" uid="uid://d2nauyp25l01r" path="res://assets/sprites/Dicey/Spritesheet_Left_Idle_Dicey.png" id="10_pkhv0"]
-[ext_resource type="Texture2D" uid="uid://chvwe5vxgty8j" path="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Left_Dicey_.png" id="11_i358u"]
-[ext_resource type="Texture2D" uid="uid://huo71bogy2pp" path="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Right_Dicey_.png" id="12_pkhv0"]
-[ext_resource type="Texture2D" uid="uid://ctebihq8iurkf" path="res://assets/sprites/Dicey/Spritesheet_Idle_Left_Down_Dicey.png" id="13_i358u"]
-[ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/Dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
-
+[ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
+[ext_resource type="Texture2D" uid="uid://bsnhyvr0lht2b" path="res://assets/sprites/dicey/Spritesheet_Up_Left_Dicey_.png" id="6_5aext"]
+[ext_resource type="Texture2D" uid="uid://b7h2eayt1qc3d" path="res://assets/sprites/dicey/Spritesheet_Left_Down_Dicey.png" id="7_3w2km"]
+[ext_resource type="Texture2D" uid="uid://dsc31lntajkd0" path="res://assets/sprites/dicey/Spritesheet_Right_Dicey_.png" id="8_wfsp4"]
+[ext_resource type="Texture2D" uid="uid://b6yklq7mkl10g" path="res://assets/sprites/dicey/Spritesheet_Right_Down_Dicey.png" id="9_k2t1h"]
+[ext_resource type="Texture2D" uid="uid://co1ecisyayloi" path="res://assets/sprites/dicey/Spritesheet_Up_Right_Dicey_.png" id="10_phsto"]
+[ext_resource type="Texture2D" uid="uid://d2nauyp25l01r" path="res://assets/sprites/dicey/Spritesheet_Left_Idle_Dicey.png" id="10_pkhv0"]
+[ext_resource type="Texture2D" uid="uid://chvwe5vxgty8j" path="res://assets/sprites/dicey/Spritesheet_Idle_Up_Left_Dicey_.png" id="11_i358u"]
+[ext_resource type="Texture2D" uid="uid://huo71bogy2pp" path="res://assets/sprites/dicey/Spritesheet_Idle_Up_Right_Dicey_.png" id="12_pkhv0"]
+[ext_resource type="Texture2D" uid="uid://ctebihq8iurkf" path="res://assets/sprites/dicey/Spritesheet_Idle_Left_Down_Dicey.png" id="13_i358u"]
+[ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 2.2774
@@ -1408,7 +1407,7 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(6069.96, -336.367)
 scale = Vector2(0.133965, 0.453551)
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_speed = 3.0
 script = ExtResource("1_fqk1v")
@@ -1422,7 +1421,6 @@ texture = ExtResource("2_dis88")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(6099, -348)
-
 script = ExtResource("1_cb66b")
 _speed = 200.0
 
