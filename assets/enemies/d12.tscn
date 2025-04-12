@@ -215,7 +215,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -348,7 +348,7 @@ advance_mode = 2
 states/DAMAGE/node = SubResource("AnimationNodeBlendSpace2D_hyiu5")
 states/DAMAGE/position = Vector2(578.667, 222.667)
 states/MOVE/node = SubResource("AnimationNodeBlendSpace2D_mmj6x")
-states/MOVE/position = Vector2(413.333, 109.333)
+states/MOVE/position = Vector2(452.666, 117.333)
 transitions = ["Start", "MOVE", SubResource("AnimationNodeStateMachineTransition_hyiu5")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyiu5"]
@@ -359,7 +359,7 @@ size = Vector2(52, 64)
 [node name="D12Body" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationTree")]
 collision_mask = 0
 script = ExtResource("1_uvaiq")
-attackDistance = 350.0
+attackDistance = 300.0
 maxCloseUpDistance = 250
 fleeDistance = 100
 projectileScene = ExtResource("2_d13n4")
@@ -375,7 +375,7 @@ animationTree = NodePath("Sprite2D/AnimationTree")
 
 [node name="Sprite2D" type="Sprite2D" parent="D12Body"]
 texture = ExtResource("5_d13n4")
-hframes = 4
+hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="D12Body/Sprite2D"]
 libraries = {
@@ -389,7 +389,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/DAMAGE/blend_position = Vector2(-0.298755, 0.0951374)
 parameters/DAMAGE/0/TimeScale/scale = 0.35
 parameters/DAMAGE/1/TimeScale/scale = 0.35
-parameters/MOVE/blend_position = Vector2(-0.421577, -0.0190275)
+parameters/MOVE/blend_position = Vector2(-0.0639004, -0.137421)
 parameters/MOVE/0/TimeScale/scale = 0.15
 parameters/MOVE/1/TimeScale/scale = 0.15
 

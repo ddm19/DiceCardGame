@@ -37,6 +37,8 @@ func attack():
 		isAttacking = false
 
 func shootProjectile():
+	animationPlayer.get_parent().set("parameters/MOVE/blend_position", getDirectionToPlayer())
+	
 	var playerDirection = player.global_position
 	velocity = 0.3 * velocity
 	await get_tree().create_timer(0.1).timeout
