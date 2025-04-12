@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
 [ext_resource type="Script" uid="uid://ch26emp2fd58r" path="res://assets/scripts/EnemyBasic.gd" id="24_fx2rd"]
 
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
 height = 28.0
@@ -1686,6 +1687,9 @@ texture = ExtResource("2_dis88")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("cardsList", "audioPlayer")]
 position = Vector2(606.569, 140.614)
+scale = Vector2(14.9375, 8.4375)
+texture = ExtResource("2_dis88")
+
 script = ExtResource("1_cb66b")
 _speed = 200.0
 cardsList = [NodePath("../BasicMeleeCard")]
