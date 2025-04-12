@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/Dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
 [ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
-[ext_resource type="Script" uid="uid://ch26emp2fd58r" path="res://assets/scripts/EnemyBasic.gd" id="24_fx2rd"]
+[ext_resource type="PackedScene" uid="uid://ckdbxtj037x5i" path="res://assets/enemies/d4.tscn" id="24_fx2rd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1664,8 +1664,10 @@ states/WALKING/node = SubResource("AnimationNodeBlendSpace2D_kc0sw")
 states/WALKING/position = Vector2(636.667, 56.5679)
 transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_au80e"), "WALKING", "IDLE", SubResource("AnimationNodeStateMachineTransition_52jqy")]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnywb"]
-size = Vector2(38, 38)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fx2rd"]
+vertices = PackedVector2Array(1231, -435.008, 1231, 634.969, -473.859, 630.023, -459.133, -436.977)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-469, -447, 1241, -445, 1241, 645, -484, 640)])
 
 [node name="Game" type="Node2D"]
 
@@ -1729,16 +1731,9 @@ stream = ExtResource("22_pnywb")
 position = Vector2(500.569, 29.6141)
 cooldown = 0.5
 
-[node name="EnemigoPrueba" type="CharacterBody2D" parent="."]
-position = Vector2(766, 110)
-script = ExtResource("24_fx2rd")
-initialHealth = 10
+[node name="D4" parent="." instance=ExtResource("24_fx2rd")]
+position = Vector2(70, -154)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemigoPrueba"]
-position = Vector2(96, 44)
-shape = SubResource("RectangleShape2D_pnywb")
-
-[node name="Sprite2D" type="Sprite2D" parent="EnemigoPrueba"]
-position = Vector2(96, 44)
-scale = Vector2(0.286949, 0.286949)
-texture = ExtResource("2_dis88")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(1, 2)
+navigation_polygon = SubResource("NavigationPolygon_fx2rd")

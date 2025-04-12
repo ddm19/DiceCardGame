@@ -36,8 +36,6 @@ func _ready():
 	dashTimer = $DashTimer
 	dashTimer.wait_time = dashDuration
 	dashTimer.timeout.connect(self._onDashTimeout)
-	print("Mi nombre es: ", livingData.name)
-	print("Salud actual: ", livingData.currentHealth)
 	updateAnimationsDirection(Vector2.ZERO)
 
 	

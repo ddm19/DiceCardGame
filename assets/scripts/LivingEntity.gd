@@ -15,6 +15,8 @@ func _init(name: String = "",  maxHealth: int = 100):
 	super(name)
 	self.maxHealth = maxHealth
 	self.currentHealth = maxHealth
+	print("Mi nombre es: ", name)
+	print("Salud actual: ", maxHealth)
 
 func takeDamage(amount: int):
 	currentHealth = max(currentHealth - amount, 0)
