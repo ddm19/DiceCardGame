@@ -57,7 +57,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Area2D/CollisionPolygon2D:disabled")
+tracks/4/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -69,7 +69,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Area2D/CollisionPolygon2D:position")
+tracks/5/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -81,7 +81,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Area2D/CollisionPolygon2D:rotation")
+tracks/6/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -93,7 +93,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Area2D/CollisionPolygon2D:scale")
+tracks/7/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -157,7 +157,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Area2D/CollisionPolygon2D:disabled")
+tracks/4/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -169,38 +169,38 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Area2D/CollisionPolygon2D:position")
+tracks/5/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.0333333, 0.0833333, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.0333333, 0.0833333, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(9, 3), Vector2(8, 1), Vector2(7, -9.53674e-07), Vector2(-3, -5), Vector2(-7, 1.49012e-08), Vector2(-4, 2), Vector2(-4, 2), Vector2(-8, -10)]
+"values": [Vector2(9.14414, 7.96425), Vector2(8, 1), Vector2(8.84917, 5.60447), Vector2(7.66928, 4.42458), Vector2(-2.06481, 0.884917), Vector2(-5.3095, 6.19442), Vector2(-2.94972, 7.37431), Vector2(-1.76983, 7.3743), Vector2(-7.96425, -2.94972)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Area2D/CollisionPolygon2D:rotation")
+tracks/6/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0333333, 0.0833333, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.0333333, 0.0833333, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [1.53456, 1.22207, 0.971657, 0.515668, -0.0187692, -0.286931, -0.469711, -1.07219]
+"values": [1.53456, 1.22207, 1.22207, 0.971657, 0.515668, -0.0187692, -0.286931, -0.469711, -0.656184]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Area2D/CollisionPolygon2D:scale")
+tracks/7/path = NodePath("AttackSprite/Area2D/CollisionPolygon2D:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.0333333, 0.0833333, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.0333333, 0.0833333, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0.148728, 0.274969), Vector2(0.232484, 0.498125), Vector2(0.297191, 0.797613), Vector2(0.793169, 0.986192), Vector2(1.02739, 1.07663), Vector2(1.02728, 1.07386), Vector2(1.02728, 1.07386), Vector2(0.414281, 0.433065)]
+"values": [Vector2(0.148728, 0.274969), Vector2(0.232484, 0.498125), Vector2(0.232484, 0.498125), Vector2(0.297191, 0.797613), Vector2(0.793169, 0.986192), Vector2(1.02739, 1.07663), Vector2(1.02728, 1.07386), Vector2(1.02728, 1.07386), Vector2(0.766191, 0.520772)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_akcxk"]
@@ -231,14 +231,17 @@ hframes = 5
 vframes = 2
 frame = 9
 
-[node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(3.39015, 3.39015)
+[node name="Area2D" type="Area2D" parent="AttackSprite"]
+position = Vector2(0, 5.74552)
+rotation = -0.356839
+scale = Vector2(2.06172, 2.73717)
+skew = 0.16658
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackSprite/Area2D"]
 position = Vector2(9, 3)
 rotation = 1.53456
 scale = Vector2(0.148728, 0.274969)
 polygon = PackedVector2Array(20, 5, 25, 3, 28, -2, 29, -11, 25, -19, 16, -24, 6, -26, -5, -25, -11, -22, -15, -19, -10, -14, -4, -10, 0, -12, 7, -13, 14, -9, 20, -5, 19, 1)
 disabled = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="AttackSprite/Area2D" to="." method="_on_area_2d_body_entered"]
