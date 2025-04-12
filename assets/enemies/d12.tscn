@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://kkj8mo1ud3ce"]
+[gd_scene load_steps=28 format=3 uid="uid://b52fk4ykrgewm"]
 
-[ext_resource type="Script" uid="uid://dcp1206qdrtqy" path="res://assets/enemies/d8.gd" id="1_850jl"]
-[ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/enemies/projectile.tscn" id="2_a25kw"]
-[ext_resource type="Texture2D" uid="uid://y3ljsrjhd87r" path="res://assets/sprites/enemies/d4/D4_Idle_Left.png" id="2_cb4c0"]
-[ext_resource type="Texture2D" uid="uid://calv8v8arscu5" path="res://assets/sprites/enemies/d8/D8_Idle_Left.png" id="4_cb4c0"]
-[ext_resource type="Texture2D" uid="uid://cuilt38xcrxvb" path="res://assets/sprites/enemies/d8/D8_Idle_Right.png" id="5_850jl"]
+[ext_resource type="Script" uid="uid://cc8w34du83jue" path="res://assets/enemies/d12.gd" id="1_uvaiq"]
+[ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/enemies/projectile.tscn" id="2_d13n4"]
+[ext_resource type="Texture2D" uid="uid://drwb1wc7ntdc1" path="res://assets/sprites/enemies/d12/D12_Idle_Left.png" id="5_d13n4"]
+[ext_resource type="Texture2D" uid="uid://cu4hflbhr86fi" path="res://assets/sprites/enemies/d12/D12_Idle_Right.png" id="6_6sqg7"]
 
 [sub_resource type="Animation" id="Animation_mmj6x"]
 resource_name = "DAMAGE_LEFT"
@@ -43,7 +42,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_cb4c0")]
+"values": [ExtResource("5_d13n4")]
 }
 
 [sub_resource type="Animation" id="Animation_k5vfe"]
@@ -83,7 +82,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_850jl")]
+"values": [ExtResource("6_6sqg7")]
 }
 
 [sub_resource type="Animation" id="Animation_ib6eh"]
@@ -100,7 +99,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_cb4c0")]
+"values": [ExtResource("5_d13n4")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -153,7 +152,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_850jl")]
+"values": [ExtResource("6_6sqg7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -204,7 +203,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_cb4c0")]
+"values": [ExtResource("5_d13n4")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -355,35 +354,36 @@ transitions = ["Start", "MOVE", SubResource("AnimationNodeStateMachineTransition
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyiu5"]
 size = Vector2(52, 64)
 
-[node name="D8" type="Node2D"]
+[node name="D12" type="Node2D"]
 
-[node name="D8Body" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationTree")]
+[node name="D12Body" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationTree")]
 collision_mask = 0
-script = ExtResource("1_850jl")
-attackDistance = 300.0
-maxCloseUpDistance = 300
-fleeDistance = 250
-projectileScene = ExtResource("2_a25kw")
-projectileSpeed = 150.0
+script = ExtResource("1_uvaiq")
+attackDistance = 350.0
+maxCloseUpDistance = 250
+fleeDistance = 100
+projectileScene = ExtResource("2_d13n4")
+projectileSpeed = 200.0
 projectileDamage = 10
-cooldownAttackTime = 1.0
-initialHealth = 10
-speed = 60.0
+projectileQuantity = 6
+cooldownAttackTime = 3.0
+initialHealth = 30
+speed = 70.0
 maxFollowDistance = 500
-acceleration = 2.0
+acceleration = 8.0
 animationTree = NodePath("Sprite2D/AnimationTree")
 
-[node name="Sprite2D" type="Sprite2D" parent="D8Body"]
-texture = ExtResource("2_cb4c0")
+[node name="Sprite2D" type="Sprite2D" parent="D12Body"]
+texture = ExtResource("5_d13n4")
 hframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="D8Body/Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="D12Body/Sprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_sflx6")
 }
 speed_scale = 0.15
 
-[node name="AnimationTree" type="AnimationTree" parent="D8Body/Sprite2D"]
+[node name="AnimationTree" type="AnimationTree" parent="D12Body/Sprite2D"]
 tree_root = SubResource("AnimationNodeStateMachine_hyiu5")
 anim_player = NodePath("../AnimationPlayer")
 parameters/DAMAGE/blend_position = Vector2(-0.298755, 0.0951374)
@@ -393,8 +393,8 @@ parameters/MOVE/blend_position = Vector2(-0.421577, -0.0190275)
 parameters/MOVE/0/TimeScale/scale = 0.15
 parameters/MOVE/1/TimeScale/scale = 0.15
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="D8Body"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="D12Body"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="D8Body"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D12Body"]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_hyiu5")
