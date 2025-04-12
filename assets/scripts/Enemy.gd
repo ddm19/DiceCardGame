@@ -11,6 +11,7 @@ var livingData : LivingEntity
 @export var acceleration : float
 @export var animationTree : AnimationTree
 @onready var navigation : NavigationAgent2D = $NavigationAgent2D
+@export var type : LivingEntity.TARGET_TYPE = LivingEntity.TARGET_TYPE.ENEMY
 var isRecievingDamage : bool
 
 func _ready() -> void:

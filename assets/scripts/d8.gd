@@ -38,7 +38,7 @@ func attack():
 		projectile.setTargetDirection(player.global_position)
 		projectile.speed = projectileSpeed
 		projectile.damage = projectileDamage
-		
+		projectile.shooterEntityType = self.type
 		
 		var backDirection = -getDirectionToPlayer()
 		velocity = backDirection * (speed * 3.5)

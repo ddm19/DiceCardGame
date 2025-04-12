@@ -13,6 +13,8 @@ var livingData: LivingEntity
 @export var isAttacking : bool = false
 @export var cardsList : Array[Card] = []
 @export var audioPlayer : AudioStreamPlayer2D
+@export var type : LivingEntity.TARGET_TYPE = LivingEntity.TARGET_TYPE.PLAYER
+
 
 var dashCooldownTimer : Timer
 var canDash : bool = true

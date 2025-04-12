@@ -7,6 +7,12 @@ extends Entity
 var currentHealth: int
 var livingData : LivingEntity
 
+enum TARGET_TYPE 
+{
+	ENEMY,
+	PLAYER
+}
+
 func _ready() -> void:
 	if(livingData):
 		livingData = LivingEntity.new()
