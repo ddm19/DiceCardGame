@@ -1691,6 +1691,7 @@ position = Vector2(606.569, 140.614)
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_cb66b")
 _speed = 200.0
+dashMultiplier = 5.0
 cardsList = [NodePath("../BasicMeleeCard")]
 audioPlayer = NodePath("DashPlayer")
 
@@ -1733,6 +1734,15 @@ cooldown = 0.5
 
 [node name="D4" parent="." instance=ExtResource("24_fx2rd")]
 position = Vector2(70, -154)
+
+[node name="D5" parent="." instance=ExtResource("24_fx2rd")]
+position = Vector2(296, 264)
+
+[node name="D6" parent="." instance=ExtResource("24_fx2rd")]
+position = Vector2(445, -182)
+
+[node name="D7" parent="." instance=ExtResource("24_fx2rd")]
+position = Vector2(-204, 81)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(1, 2)
