@@ -357,14 +357,15 @@ size = Vector2(52, 64)
 [node name="D12" type="Node2D"]
 
 [node name="D12Body" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationTree")]
-collision_mask = 0
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_uvaiq")
 attackDistance = 300.0
 maxCloseUpDistance = 250
 fleeDistance = 100
 projectileScene = ExtResource("2_d13n4")
 projectileSpeed = 200.0
-projectileDamage = 10
+projectileDamage = 3
 projectileQuantity = 6
 cooldownAttackTime = 3.0
 initialHealth = 30

@@ -37,7 +37,7 @@ var attackAnimationDuration := 0.5
 
 func _ready():
 	if livingData == null:
-		livingData = LivingEntity.new("Player", 100)
+		livingData = LivingEntity.new("Player", 6)
 	
 	dashTimer = $DashTimer
 	dashTimer.wait_time = dashDuration
@@ -52,9 +52,13 @@ func _ready():
 	dice.connect("spin_finished", _on_dice_finished)
 
 func takeDamage(amount):
-	print("Taking ",amount," damage.")
+	print("Taking ", amount, " damage.")
 	livingData.takeDamage(amount)
-	if(livingData.currentHealth <= 0):
+	var heart_node = get_tree().get_root().get_node("InGameUi")
+	if heart_node:
+		heart_node.update_hearts(livingData.currentHealth)
+
+	if livingData.currentHealth <= 0:
 		die()
 
 func _physics_process(delta: float) -> void:

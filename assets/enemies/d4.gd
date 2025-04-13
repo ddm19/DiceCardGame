@@ -2,6 +2,7 @@ extends Enemy
 
 @export var attackDistance : float
 var attackSpeedMultiplier : int = 500.5
+@export var damage : float
 var isAttacking : bool
 @onready var animationPlayer : AnimationPlayer = $Sprite2D/AnimationPlayer
 
@@ -32,3 +33,10 @@ func attack():
 func takeDamage(damage):
 	super.takeDamage(damage)
 	
+func onCollisionEntered(body: Node2D) -> void:
+	if(typeof(body == LivingEntity) && body.type == LivingEntity.TARGET_TYPE.PLAYER):
+		body.takeDamage(damage)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass 

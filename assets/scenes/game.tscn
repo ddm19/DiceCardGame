@@ -1,8 +1,7 @@
-[gd_scene load_steps=82 format=3 uid="uid://7halnlk3iywh"]
+[gd_scene load_steps=91 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
-[ext_resource type="Script" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
-[ext_resource type="Texture2D" uid="uid://bhqb6wrc8td6c" path="res://icon.svg" id="2_dis88"]
+[ext_resource type="Script" uid="uid://3sk4n8xqdib1" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
 [ext_resource type="Texture2D" uid="uid://cuwmgt2hbwhlg" path="res://assets/sprites/dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
 [ext_resource type="Shader" uid="uid://btmf5sbgdykuu" path="res://assets/shaders/dash.gdshader" id="4_fc420"]
 [ext_resource type="Shader" uid="uid://bjilgan5m7dap" path="res://assets/shaders/dicey.gdshader" id="4_kc0sw"]
@@ -23,8 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
 [ext_resource type="PackedScene" uid="uid://deox468vgf3pn" path="res://assets/cards/basicRangedCard.tscn" id="23_pnywb"]
-[ext_resource type="PackedScene" uid="uid://kkj8mo1ud3ce" path="res://assets/enemies/d8.tscn" id="24_fx2rd"]
-[ext_resource type="PackedScene" uid="uid://b52fk4ykrgewm" path="res://assets/enemies/d12.tscn" id="25_jdjof"]
+[ext_resource type="Texture2D" uid="uid://c1p7j1n80rj6" path="res://assets/sprites/maps/Chest1.png" id="24_8vm3o"]
+[ext_resource type="Texture2D" uid="uid://bugops327ke7a" path="res://assets/sprites/maps/Map1.png" id="25_h5j7u"]
+[ext_resource type="Texture2D" uid="uid://eomwoakcrlkf" path="res://assets/sprites/maps/Chest2.png" id="25_p2xyf"]
+[ext_resource type="Texture2D" uid="uid://dp1wxwndog55e" path="res://assets/sprites/maps/Bones.png" id="26_xe33q"]
+[ext_resource type="Texture2D" uid="uid://jsrasdl1hgk" path="res://assets/sprites/maps/Torch.png" id="27_1q3k2"]
+[ext_resource type="PackedScene" uid="uid://ckdbxtj037x5i" path="res://assets/enemies/d4.tscn" id="28_p2xyf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1667,17 +1670,39 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(1, 3)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fx2rd"]
-vertices = PackedVector2Array(1231, -435.008, 1231, 634.969, -473.859, 630.023, -459.133, -436.977)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-469, -447, 1241, -445, 1241, 645, -484, 640)])
+vertices = PackedVector2Array(1549.98, -396.828, 1543.01, 1570.19, 1353.5, 1783.99, 539, 713, 539, 477, 1351.89, -592, 479, 477, 479, 417, -627.992, -593.992, 243, 417, -828.992, -401.719, 243, 477, 183, 477, -828, 1595.6, 183, 713, -624.102, 1783, 243, 713, 243, 773, 479, 773, 479, 713)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(4, 6, 7, 5), PackedInt32Array(8, 5, 7, 9, 10), PackedInt32Array(9, 11, 12, 10), PackedInt32Array(13, 10, 12, 14, 15), PackedInt32Array(14, 16, 17, 15), PackedInt32Array(2, 15, 17, 18), PackedInt32Array(3, 2, 18, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-632, -604, 253, 427, 253, 487, 193, 487, 193, 703, 253, 703, 253, 763, 469, 763, 469, 703, 529, 703, 529, 487, 469, 487, 469, 427, 253, 427, -632, -604, 1356, -602, 1560, -401, 1553, 1574, 1358, 1794, -628, 1793, -838, 1600, -839, -406)])
 
 [sub_resource type="Resource" id="Resource_jdjof"]
 metadata/__load_path__ = "res://assets/scripts/projectile.tscn"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdjof"]
+size = Vector2(108.188, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5j7u"]
+size = Vector2(168.5, 108)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p2xyf"]
+normal = Vector2(-0.00616185, -0.999981)
+distance = -597.461
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xe33q"]
+normal = Vector2(0.000790514, 1)
+distance = -598.021
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1q3k2"]
+normal = Vector2(1, 0)
+distance = -598.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4hayi"]
+normal = Vector2(-1, 0)
+distance = -597.0
+
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(577.528, 152.247)
+position = Vector2(1200, 2200)
 scale = Vector2(0.133965, 0.453551)
 zoom = Vector2(2, 2)
 process_callback = 0
@@ -1686,14 +1711,11 @@ script = ExtResource("1_fqk1v")
 player = NodePath("../Player")
 speedMultiplier = 2.0
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(70.5688, 3.61404)
-scale = Vector2(8.05576, 6.71272)
-texture = ExtResource("2_dis88")
-
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("audioPlayer")]
-position = Vector2(606.569, 140.614)
+position = Vector2(1200, 2200)
 scale = Vector2(1.2, 1.2)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_cb66b")
 _speed = 200.0
 dashMultiplier = 5.0
@@ -1737,15 +1759,158 @@ bus = &"SFX"
 wait_time = 6.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(1, 2)
+position = Vector2(839, 605)
 navigation_polygon = SubResource("NavigationPolygon_fx2rd")
 
 [node name="BasicRangedCard" parent="." instance=ExtResource("23_pnywb")]
 projectileScene = SubResource("Resource_jdjof")
-type = null
 
-[node name="D8" parent="." instance=ExtResource("24_fx2rd")]
+[node name="Map1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1200, 1200)
+scale = Vector2(2, 2)
+texture = ExtResource("25_h5j7u")
 
-[node name="D12" parent="D8" instance=ExtResource("25_jdjof")]
+[node name="MapBody" type="StaticBody2D" parent="Map1"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="MapCollision" type="CollisionShape2D" parent="Map1/MapBody"]
+position = Vector2(-0.09375, 0)
+shape = SubResource("RectangleShape2D_jdjof")
+
+[node name="MapCollision2" type="CollisionShape2D" parent="Map1/MapBody"]
+position = Vector2(-0.25, 0)
+shape = SubResource("RectangleShape2D_h5j7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map1/MapBody"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("WorldBoundaryShape2D_p2xyf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map1/MapBody"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("WorldBoundaryShape2D_xe33q")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map1/MapBody"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("WorldBoundaryShape2D_1q3k2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Map1/MapBody"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("WorldBoundaryShape2D_4hayi")
+
+[node name="Chest1" type="Sprite2D" parent="Map1"]
+position = Vector2(448.5, 414.5)
+texture = ExtResource("24_8vm3o")
+
+[node name="Chest2" type="Sprite2D" parent="Map1"]
+position = Vector2(-454.5, 530)
+texture = ExtResource("25_p2xyf")
+
+[node name="Bones" type="Sprite2D" parent="Map1"]
+position = Vector2(95.5, 493)
+scale = Vector2(1.38461, 1.38461)
+texture = ExtResource("26_xe33q")
+
+[node name="Torch" type="Sprite2D" parent="Map1"]
+position = Vector2(-164.5, 337.688)
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("27_1q3k2")
+
+[node name="Bones2" type="Sprite2D" parent="Map1"]
+position = Vector2(-138.5, 204)
+texture = ExtResource("26_xe33q")
+
+[node name="Chest3" type="Sprite2D" parent="Map1"]
+position = Vector2(-343, 252.5)
+texture = ExtResource("24_8vm3o")
+
+[node name="Chest4" type="Sprite2D" parent="Map1"]
+position = Vector2(-253.5, 129.5)
+texture = ExtResource("25_p2xyf")
+
+[node name="Chest5" type="Sprite2D" parent="Map1"]
+position = Vector2(286, 179)
+texture = ExtResource("24_8vm3o")
+
+[node name="Bones3" type="Sprite2D" parent="Map1"]
+position = Vector2(367.5, 252.5)
+texture = ExtResource("26_xe33q")
+
+[node name="Torch2" type="Sprite2D" parent="Map1"]
+position = Vector2(102.5, 295)
+texture = ExtResource("27_1q3k2")
+
+[node name="Chest6" type="Sprite2D" parent="Map1"]
+position = Vector2(181, 31)
+texture = ExtResource("25_p2xyf")
+
+[node name="Bones4" type="Sprite2D" parent="Map1"]
+position = Vector2(425, -92)
+texture = ExtResource("26_xe33q")
+
+[node name="Bones5" type="Sprite2D" parent="Map1"]
+position = Vector2(-137, -341.5)
+texture = ExtResource("26_xe33q")
+
+[node name="Chest7" type="Sprite2D" parent="Map1"]
+position = Vector2(115.5, -373)
+texture = ExtResource("24_8vm3o")
+
+[node name="Chest8" type="Sprite2D" parent="Map1"]
+position = Vector2(-351, -219)
+texture = ExtResource("25_p2xyf")
+
+[node name="Torch3" type="Sprite2D" parent="Map1"]
+position = Vector2(-341, -421.5)
+texture = ExtResource("27_1q3k2")
+
+[node name="Torch4" type="Sprite2D" parent="Map1"]
+position = Vector2(-391, -69)
+texture = ExtResource("27_1q3k2")
+
+[node name="Torch5" type="Sprite2D" parent="Map1"]
+position = Vector2(55.5, -134.5)
+texture = ExtResource("27_1q3k2")
+
+[node name="D4" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(59.5, 203)
+scale = Vector2(0.5, 0.5)
+
+[node name="D5" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(-33.5, -387)
+scale = Vector2(0.5, 0.5)
+
+[node name="D6" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(-58.5, -454.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="D7" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(424, 174.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="D8" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(-163, -18.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="D9" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(-19.5, -453)
+scale = Vector2(0.5, 0.5)
+
+[node name="D10" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(-394.5, 28.5)
+scale = Vector2(0.5, 0.5)
+
+[node name="D11" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(447.5, -438)
+scale = Vector2(0.5, 0.5)
+
+[node name="D12" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(-392.5, -426)
+scale = Vector2(0.5, 0.5)
+
+[node name="D13" parent="Map1" instance=ExtResource("28_p2xyf")]
+position = Vector2(434.5, -109.5)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="Player/AttackTimer" to="Player" method="attack"]

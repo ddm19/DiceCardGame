@@ -360,12 +360,13 @@ transitions = ["Start", "MOVE", SubResource("AnimationNodeStateMachineTransition
 [node name="D10" type="Node2D"]
 
 [node name="D10Body" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationTree")]
-collision_mask = 0
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_so1pj")
 attackDistance = 200.0
-damage = 10.0
+damage = 2.0
 maxRotationSpeed = 5.0
-initialHealth = 50
+initialHealth = 20
 speed = 60.0
 maxFollowDistance = 450
 acceleration = 5.0

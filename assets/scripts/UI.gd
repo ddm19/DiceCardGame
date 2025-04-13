@@ -12,7 +12,14 @@ extends CanvasLayer
 @onready var music_slider = $Settings_Menu/Settings_Container/Music_Slider
 @onready var sfx_slider = $Settings_Menu/Settings_Container/Sound_Slider
 @onready var quit_button = $Settings_Menu/Settings_Container/QuitGame_Button
+@onready var hearts := [
+	$Heart_1, $Heart_2, $Heart_3, $Heart_4, $Heart_5, $Heart_6
+]
 
+func update_hearts(current_health: int):
+	for i in range(hearts.size()):
+		hearts[i].disabled = i >= current_health
+		
 enum Estado { CARGANDO, GIRANDO, PAUSADO }
 var estado_actual = Estado.CARGANDO
 var estado_anterior = Estado.CARGANDO

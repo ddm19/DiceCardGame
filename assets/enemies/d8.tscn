@@ -358,16 +358,17 @@ size = Vector2(52, 64)
 [node name="D8" type="Node2D"]
 
 [node name="D8Body" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationTree")]
-collision_mask = 0
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_850jl")
 attackDistance = 300.0
 maxCloseUpDistance = 300
 fleeDistance = 250
 projectileScene = ExtResource("2_a25kw")
 projectileSpeed = 150.0
-projectileDamage = 10
+projectileDamage = 1
 cooldownAttackTime = 1.0
-initialHealth = 10
+initialHealth = 15
 speed = 60.0
 maxFollowDistance = 500
 acceleration = 2.0

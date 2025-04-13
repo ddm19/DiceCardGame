@@ -356,10 +356,12 @@ size = Vector2(52, 59)
 [node name="D4" type="Node2D"]
 
 [node name="D4Body" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationTree")]
-collision_mask = 0
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_hyiu5")
 attackDistance = 120.0
-initialHealth = 20
+damage = 1.0
+initialHealth = 10
 speed = 85.0
 maxFollowDistance = 350
 acceleration = 7.0
@@ -386,8 +388,12 @@ parameters/MOVE/blend_position = Vector2(-0.421577, -0.0190275)
 parameters/MOVE/0/TimeScale/scale = 0.15
 parameters/MOVE/1/TimeScale/scale = 0.15
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="D4Body"]
+[node name="Area2D" type="Area2D" parent="D4Body/Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="D4Body"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D4Body/Sprite2D/Area2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_hyiu5")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="D4Body"]
+
+[connection signal="body_entered" from="D4Body/Sprite2D/Area2D" to="D4Body" method="onCollisionEntered"]
