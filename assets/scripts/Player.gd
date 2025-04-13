@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 var livingData: LivingEntity
+
 @onready var playerSprite: Sprite2D = $Sprite2D
 @export var _speed: float = 300
 @export var dashMultiplier: float = 3
@@ -11,6 +12,7 @@ var livingData: LivingEntity
 @export var isAttacking: bool = false
 @export var cardsList: Array[CardInstance] = []
 @export var audioPlayer: AudioStreamPlayer2D
+@export var type : LivingEntity.TARGET_TYPE = LivingEntity.TARGET_TYPE.PLAYER
 @onready var dice: Sprite2D = get_tree().get_root().get_node("InGameUi/LowerHUD/Dices")
 
 var sceneInstance
@@ -41,6 +43,12 @@ func _ready():
 	updateAnimationsDirection(Vector2.DOWN)
 	add_starting_cards()
 	dice.connect("spin_finished", _on_dice_finished)
+
+func takeDamage(amount):
+	print("Taking ",amount," damage.")
+	livingData.takeDamage(amount)
+	if(livingData.currentHealth <= 0):
+		die()
 
 func _physics_process(delta: float) -> void:
 	move()

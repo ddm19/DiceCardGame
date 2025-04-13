@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be6lt658gae7b"
-path="res://.godot/imported/Spritesheet_Left_Dicey_.png-c34111c44b7aa08a3fb14b798ba0a3e8.ctex"
+path="res://.godot/imported/Spritesheet_Left_Dicey_.png-f00f8fcf8c9ec7a2be4ce90cbd55c2ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicey/Spritesheet_Left_Dicey_.png"
-dest_files=["res://.godot/imported/Spritesheet_Left_Dicey_.png-c34111c44b7aa08a3fb14b798ba0a3e8.ctex"]
+source_file="res://assets/sprites/Dicey/Spritesheet_Left_Dicey_.png"
+dest_files=["res://.godot/imported/Spritesheet_Left_Dicey_.png-f00f8fcf8c9ec7a2be4ce90cbd55c2ec.ctex"]
 
 [params]
 

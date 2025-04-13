@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cetffjdlwdubb"]
+
+[ext_resource type="Script" uid="uid://bfq0j6ruj4isk" path="res://assets/cards/basicRangedCard.gd" id="1_lrppf"]
+[ext_resource type="Texture2D" uid="uid://cp2u23fa2tove" path="res://assets/sprites/crosshair.png" id="2_c0xjr"]
+[ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/scenes/projectile.tscn" id="2_e8jbj"]
+
+[node name="BasicRangedCard" type="Node2D"]
+script = ExtResource("1_lrppf")
+projectileScene = ExtResource("2_e8jbj")
+projectileSpeed = 250.0
+projectileDamage = 1.0
+cooldown = 1.0
+type = null
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(583, 281)
+texture = ExtResource("2_c0xjr")

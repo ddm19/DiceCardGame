@@ -399,7 +399,6 @@ script = ExtResource("20_d60m0")
 stream = ExtResource("21_qx0xf")
 volume_db = -6.222
 pitch_scale = 0.86
-bus = &"SFX"
 
 [node name="Dash_Image" type="Sprite2D" parent="LowerHUD"]
 position = Vector2(86, 75.625)
