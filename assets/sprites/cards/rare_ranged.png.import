@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drra3j2ec8qef"
-path="res://.godot/imported/Ilustracion_sin_titulo-2.png.png-0017d0c833c51b2009ff281ff86778ff.ctex"
+uid="uid://xf0ahjnyhl2n"
+path="res://.godot/imported/rare_ranged.png-3bbe8d2c5c5ff1a9dfa4544c582ed8ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/interface/Ilustracion_sin_titulo-2.png.png"
-dest_files=["res://.godot/imported/Ilustracion_sin_titulo-2.png.png-0017d0c833c51b2009ff281ff86778ff.ctex"]
+source_file="res://assets/sprites/cards/rare_ranged.png"
+dest_files=["res://.godot/imported/rare_ranged.png-3bbe8d2c5c5ff1a9dfa4544c582ed8ab.ctex"]
 
 [params]
 

@@ -21,7 +21,7 @@ buses/default_bus_layout="res://assets/sounds/Default_bus_layout.tres"
 
 [autoload]
 
-InGameUi="*res://assets/scenes/in_game_ui.tscn"
+InGameUi="*res://assets/scenes/UI.tscn"
 
 [display]
 

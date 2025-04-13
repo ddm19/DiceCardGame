@@ -13,6 +13,7 @@ signal spin_finished
 var spin_timer: Timer
 var spin_time_elapsed: float = 0.0
 var spinning: bool = false
+var FinalDice: int = 0
 
 func _ready():
 	region_enabled = true
@@ -38,7 +39,9 @@ func _spin_step():
 	else:
 		spin_timer.stop()
 		spinning = false
-		_set_random_face()
+		var final_face = randi() % total_faces
+		FinalDice = final_face + 1
+		region_rect = Rect2(final_face * frame_width, 0, frame_width, frame_height)
 		emit_signal("spin_finished")
 
 func _set_random_face():

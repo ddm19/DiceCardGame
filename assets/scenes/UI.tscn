@@ -1,0 +1,507 @@
+[gd_scene load_steps=27 format=3 uid="uid://b6qmq1ltrs8ry"]
+
+[ext_resource type="Script" uid="uid://n6661wsqfv1r" path="res://assets/scripts/UI.gd" id="1_hrs6j"]
+[ext_resource type="Texture2D" uid="uid://byg67xxlf86c5" path="res://assets/sprites/interface/HUD_BottomBox.png" id="2_tllph"]
+[ext_resource type="Texture2D" uid="uid://b7qe33ajarptl" path="res://assets/sprites/interface/Exit_Button.png" id="3_tv3yn"]
+[ext_resource type="Texture2D" uid="uid://coosncavlqc44" path="res://assets/sprites/interface/Exit_Button_Pressed.png" id="4_4loci"]
+[ext_resource type="Texture2D" uid="uid://o6rufnupube5" path="res://assets/sprites/interface/Exit_Button_Hover.png" id="5_jbjbn"]
+[ext_resource type="Texture2D" uid="uid://byc64gvo01tc1" path="res://assets/sprites/interface/Object_Slot.png" id="6_txxwi"]
+[ext_resource type="FontFile" uid="uid://bkp4s1vnkof4s" path="res://assets/fonts/Pixelfont.ttf" id="7_uq13i"]
+[ext_resource type="Texture2D" uid="uid://rn4hp47m8led" path="res://assets/sprites/interface/Heart.png" id="8_trufw"]
+[ext_resource type="Texture2D" uid="uid://drgdowo7ghyvl" path="res://assets/sprites/interface/Quit_Button.png" id="9_qywqd"]
+[ext_resource type="Texture2D" uid="uid://455rmrdcuobt" path="res://assets/sprites/interface/Quit_Button_Pressed.png" id="10_fxg8d"]
+[ext_resource type="Texture2D" uid="uid://ddos7xg54r3vi" path="res://assets/sprites/interface/Quit_Button_Hover.png" id="11_nxthv"]
+[ext_resource type="Texture2D" uid="uid://b4xy8vcdqgt4t" path="res://assets/sprites/interface/Settings_Button.png" id="12_y7vfa"]
+[ext_resource type="Texture2D" uid="uid://t0uhilpo4usw" path="res://assets/sprites/interface/Settings_Pressed.png" id="13_fgv5f"]
+[ext_resource type="Texture2D" uid="uid://c1uu7ffx8v8ty" path="res://assets/sprites/interface/Settings_Hover.png" id="14_jisb6"]
+[ext_resource type="Texture2D" uid="uid://dav5g1o0w7ic" path="res://assets/sprites/interface/Inventory_Button.png" id="15_i262w"]
+[ext_resource type="Texture2D" uid="uid://bwbn7xapblvm1" path="res://assets/sprites/interface/Inventory_Pressed.png" id="16_xxbf1"]
+[ext_resource type="Texture2D" uid="uid://bhcdjjn7aeuxp" path="res://assets/sprites/interface/Inventory_Hover.png" id="17_ylmw0"]
+[ext_resource type="Texture2D" uid="uid://rdfcma20f33r" path="res://assets/sprites/interface/Card_Slot.png" id="18_ng1bb"]
+[ext_resource type="Texture2D" uid="uid://bl62g4qpiv1v7" path="res://assets/sprites/interface/Dices.png" id="19_ogd04"]
+[ext_resource type="Script" uid="uid://mehgf7m842tc" path="res://assets/scripts/Dice.gd" id="20_d60m0"]
+[ext_resource type="AudioStream" uid="uid://ci0expaqvgqsw" path="res://assets/sounds/Dice_Roll.mp3" id="21_qx0xf"]
+[ext_resource type="Texture2D" uid="uid://cggud2x458lgb" path="res://assets/sprites/interface/Dash_Image.png" id="22_qjkml"]
+[ext_resource type="Texture2D" uid="uid://c0xrki0x0g1d7" path="res://assets/sprites/interface/Progress_Bar_Left.png" id="23_5ek13"]
+[ext_resource type="Texture2D" uid="uid://mr3ikso2r0n5" path="res://assets/sprites/interface/Progress_Bar_Right.png" id="24_d6p7m"]
+[ext_resource type="Texture2D" uid="uid://drra3j2ec8qef" path="res://assets/sprites/interface/Heart_Empty.png" id="25_ajlrb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a0tli"]
+load_path = "res://.godot/imported/legendary_sword.png-023f3472e3740de57825fac985fc5338.ctex"
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hrs6j")
+
+[node name="Inventory_Menu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Inventory_Container" type="NinePatchRect" parent="Inventory_Menu"]
+offset_left = 91.0
+offset_top = 92.0
+offset_right = 1811.0
+offset_bottom = 822.0
+texture = ExtResource("2_tllph")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Inventory_Exit_Button" type="TextureButton" parent="Inventory_Menu/Inventory_Container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_top = 23.0
+offset_right = -26.0
+offset_bottom = 101.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_tv3yn")
+texture_pressed = ExtResource("4_4loci")
+texture_hover = ExtResource("5_jbjbn")
+stretch_mode = 0
+
+[node name="Item_Slot_Inv" type="TextureButton" parent="Inventory_Menu/Inventory_Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -4.0
+offset_right = 39.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("6_txxwi")
+stretch_mode = 0
+
+[node name="Cards_Player" type="GridContainer" parent="Inventory_Menu/Inventory_Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -511.5
+offset_top = -227.5
+offset_right = 511.5
+offset_bottom = -72.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(512.5, 77.5)
+theme_override_constants/h_separation = 75
+columns = 6
+
+[node name="Card1" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+z_index = 1
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_a0tli")
+
+[node name="Card2" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_a0tli")
+
+[node name="Card3" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_a0tli")
+
+[node name="Card4" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_a0tli")
+
+[node name="Card5" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_a0tli")
+
+[node name="Card6" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_a0tli")
+
+[node name="Panel" type="Panel" parent="Inventory_Menu/Inventory_Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -511.5
+offset_top = -249.0
+offset_right = 511.5
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Info" type="Label" parent="Inventory_Menu/Inventory_Container/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -481.5
+offset_top = -52.5
+offset_right = 481.5
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("7_uq13i")
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Settings_Menu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Settings_Container" type="NinePatchRect" parent="Settings_Menu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -430.0
+offset_top = 122.0
+offset_right = 430.0
+offset_bottom = 852.0
+grow_horizontal = 2
+texture = ExtResource("2_tllph")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Settings_Exit_Button" type="TextureButton" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -104.0
+offset_top = 23.0
+offset_right = -26.0
+offset_bottom = 101.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_tv3yn")
+texture_pressed = ExtResource("4_4loci")
+texture_hover = ExtResource("5_jbjbn")
+stretch_mode = 0
+
+[node name="Music_Label" type="Label" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 156.0
+offset_right = 200.0
+offset_bottom = 244.0
+grow_horizontal = 2
+pivot_offset = Vector2(200, 25)
+theme_override_colors/font_color = Color(0, 0, 0, 0.611765)
+theme_override_fonts/font = ExtResource("7_uq13i")
+theme_override_font_sizes/font_size = 72
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX_Label" type="Label" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 299.0
+offset_right = 200.0
+offset_bottom = 387.0
+grow_horizontal = 2
+pivot_offset = Vector2(200, 25)
+theme_override_colors/font_color = Color(0, 0, 0, 0.611765)
+theme_override_fonts/font = ExtResource("7_uq13i")
+theme_override_font_sizes/font_size = 72
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music_Slider" type="HSlider" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 240.0
+offset_right = 280.0
+offset_bottom = 256.0
+grow_horizontal = 2
+pivot_offset = Vector2(280, 8)
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("8_trufw")
+max_value = 1.0
+step = 0.1
+
+[node name="Sound_Slider" type="HSlider" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 383.0
+offset_right = 280.0
+offset_bottom = 399.0
+grow_horizontal = 2
+pivot_offset = Vector2(280, 8)
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("8_trufw")
+max_value = 1.0
+step = 0.1
+
+[node name="QuitGame_Button" type="TextureButton" parent="Settings_Menu/Settings_Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -214.0
+offset_right = 78.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(78, 39)
+texture_normal = ExtResource("9_qywqd")
+texture_pressed = ExtResource("10_fxg8d")
+texture_hover = ExtResource("11_nxthv")
+
+[node name="LowerHUD" type="TextureRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_tllph")
+
+[node name="Settings_Slot" type="TextureButton" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -37.5
+offset_right = -47.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("12_y7vfa")
+texture_pressed = ExtResource("13_fgv5f")
+texture_hover = ExtResource("14_jisb6")
+stretch_mode = 0
+
+[node name="Inventory_Slot" type="TextureButton" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -37.5
+offset_right = -141.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("15_i262w")
+texture_pressed = ExtResource("16_xxbf1")
+texture_hover = ExtResource("17_ylmw0")
+stretch_mode = 0
+
+[node name="Dash_Slot" type="TextureButton" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 47.0
+offset_top = -37.5
+offset_right = 127.0
+offset_bottom = 37.5
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("6_txxwi")
+stretch_mode = 0
+
+[node name="Item_Slot" type="TextureButton" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 141.0
+offset_top = -37.5
+offset_right = 221.0
+offset_bottom = 37.5
+grow_vertical = 2
+pivot_offset = Vector2(40, 37.5)
+focus_mode = 0
+texture_normal = ExtResource("6_txxwi")
+stretch_mode = 0
+
+[node name="Card_Slot_1" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(349.5, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("18_ng1bb")
+
+[node name="Card_Slot_2" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(566, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("18_ng1bb")
+
+[node name="Card_Slot_3" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(783, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("18_ng1bb")
+
+[node name="Card_Slot_4" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(1136, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("18_ng1bb")
+
+[node name="Card_Slot_5" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(1353, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("18_ng1bb")
+
+[node name="Card_Slot_6" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(1570, 96)
+scale = Vector2(1.17, 0.75)
+texture = ExtResource("18_ng1bb")
+
+[node name="Dices" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(960, 75)
+scale = Vector2(2.75714, 2.75714)
+texture = ExtResource("19_ogd04")
+region_enabled = true
+region_rect = Rect2(0, 0, 35, 35)
+script = ExtResource("20_d60m0")
+
+[node name="Roll_Sound" type="AudioStreamPlayer" parent="LowerHUD/Dices"]
+stream = ExtResource("21_qx0xf")
+volume_db = -6.222
+pitch_scale = 0.86
+
+[node name="Dash_Image" type="Sprite2D" parent="LowerHUD"]
+position = Vector2(86, 75.625)
+scale = Vector2(2.47727, 2.51137)
+texture = ExtResource("22_qjkml")
+
+[node name="Left_Load" type="TextureProgressBar" parent="LowerHUD"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 960.0
+texture_progress = ExtResource("23_5ek13")
+
+[node name="Right_Load" type="TextureProgressBar" parent="LowerHUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -960.0
+offset_top = -15.0
+grow_horizontal = 0
+fill_mode = 1
+texture_progress = ExtResource("24_d6p7m")
+
+[node name="Heart_1" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = -501.0
+offset_right = 89.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("8_trufw")
+texture_disabled = ExtResource("25_ajlrb")
+stretch_mode = 0
+
+[node name="Heart_2" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -501.0
+offset_right = 134.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("8_trufw")
+texture_disabled = ExtResource("25_ajlrb")
+stretch_mode = 0
+
+[node name="Heart_3" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 133.0
+offset_top = -501.0
+offset_right = 179.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("8_trufw")
+texture_disabled = ExtResource("25_ajlrb")
+stretch_mode = 0
+
+[node name="Heart_4" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 178.0
+offset_top = -501.0
+offset_right = 224.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("8_trufw")
+texture_disabled = ExtResource("25_ajlrb")
+stretch_mode = 0
+
+[node name="Heart_5" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 223.0
+offset_top = -501.0
+offset_right = 269.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("8_trufw")
+texture_disabled = ExtResource("25_ajlrb")
+stretch_mode = 0
+
+[node name="Heart_6" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 268.0
+offset_top = -501.0
+offset_right = 314.0
+offset_bottom = -457.0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("8_trufw")
+texture_disabled = ExtResource("25_ajlrb")
+stretch_mode = 0

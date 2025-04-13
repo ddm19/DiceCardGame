@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsnhyvr0lht2b"
-path="res://.godot/imported/Spritesheet_Up_Left_Dicey_.png-b1764c9a144dd698b3788af5e6197e5b.ctex"
+uid="uid://c6a02ce3mlqyy"
+path="res://.godot/imported/legendary_sword.png-023f3472e3740de57825fac985fc5338.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicey/Spritesheet_Up_Left_Dicey_.png"
-dest_files=["res://.godot/imported/Spritesheet_Up_Left_Dicey_.png-b1764c9a144dd698b3788af5e6197e5b.ctex"]
+source_file="res://assets/sprites/cards/legendary_sword.png"
+dest_files=["res://.godot/imported/legendary_sword.png-023f3472e3740de57825fac985fc5338.ctex"]
 
 [params]
 

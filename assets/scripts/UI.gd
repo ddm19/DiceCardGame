@@ -23,6 +23,11 @@ func _ready():
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	inventory_menu.process_mode = Node.PROCESS_MODE_ALWAYS
 	settings_menu.process_mode = Node.PROCESS_MODE_ALWAYS
+	inventory_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	settings_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	inventory_exit_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	settings_exit_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	quit_button.mouse_filter = Control.MOUSE_FILTER_STOP
 	inventory_button.pressed.connect(_on_inventory_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	inventory_exit_button.pressed.connect(_on_exit_button_pressed)
@@ -74,32 +79,37 @@ func _on_spin_finished():
 	estado_actual = Estado.CARGANDO
 
 func _on_inventory_button_pressed():
-	inventory_menu.visible = not inventory_menu.visible
 	if inventory_menu.visible:
+		_on_exit_button_pressed()
+	else:
+		inventory_menu.visible = true
 		settings_menu.visible = false
-	_update_pause_state()
+		_set_menu_buttons_enabled(false)
+		_update_pause_state()
 
 func _on_settings_button_pressed():
-	settings_menu.visible = not settings_menu.visible
 	if settings_menu.visible:
+		_on_exit_button_pressed()
+	else:
+		settings_menu.visible = true
 		inventory_menu.visible = false
-	_update_pause_state()
+		_set_menu_buttons_enabled(false)
+		_update_pause_state()
 
 func _on_exit_button_pressed():
 	inventory_menu.visible = false
 	settings_menu.visible = false
+	_set_menu_buttons_enabled(true)
 	_update_pause_state()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		if inventory_menu.visible:
-			inventory_menu.visible = false
-		elif settings_menu.visible:
-			settings_menu.visible = false
+		if inventory_menu.visible or settings_menu.visible:
+			_on_exit_button_pressed()
 		else:
 			settings_menu.visible = true
-			inventory_menu.visible = false
-		_update_pause_state()
+			_set_menu_buttons_enabled(false)
+			_update_pause_state()
 
 func _update_pause_state():
 	var is_paused = inventory_menu.visible or settings_menu.visible
@@ -128,4 +138,8 @@ func linear2db(value: float) -> float:
 	return 20.0 * log(value) / log(10.0)
 
 func _on_quit_button_pressed():
-	get_tree().quit() 
+	get_tree().quit()
+
+func _set_menu_buttons_enabled(enabled: bool):
+	inventory_button.disabled = not enabled
+	settings_button.disabled = not enabled

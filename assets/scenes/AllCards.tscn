@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3 uid="uid://cx62hhn3u7803"]
+
+[ext_resource type="Texture2D" uid="uid://c0eqbgrspvwh" path="res://assets/sprites/cards/basic_ranged.png" id="1_6hu16"]
+[ext_resource type="Script" uid="uid://d2wg708jvg1ix" path="res://assets/scripts/CardInstance.gd" id="1_exknf"]
+[ext_resource type="Texture2D" uid="uid://b01ddwbhcj5tq" path="res://assets/sprites/cards/basic_magic.png" id="2_exknf"]
+[ext_resource type="Texture2D" uid="uid://fntaw4uw4ce8" path="res://assets/sprites/cards/basic_sword.png" id="3_ncwro"]
+[ext_resource type="Texture2D" uid="uid://xf0ahjnyhl2n" path="res://assets/sprites/cards/rare_ranged.png" id="4_not51"]
+[ext_resource type="Texture2D" uid="uid://djs6sdl4oi2tj" path="res://assets/sprites/cards/rare_magic.png" id="5_nvshq"]
+[ext_resource type="Texture2D" uid="uid://cwojc316lxl3w" path="res://assets/sprites/cards/rare_sword.png" id="6_b2wke"]
+[ext_resource type="Texture2D" uid="uid://deo4c3qxm7x0u" path="res://assets/sprites/cards/medium_magic.png" id="7_2vels"]
+[ext_resource type="Texture2D" uid="uid://br3tbxw680bkt" path="res://assets/sprites/cards/medium_sword.png" id="8_xdtum"]
+[ext_resource type="Texture2D" uid="uid://0aokfb3wg1nj" path="res://assets/sprites/cards/epic_magic.png" id="9_lil6g"]
+[ext_resource type="Texture2D" uid="uid://c25no6alqhgjy" path="res://assets/sprites/cards/legendary_ranged.png" id="10_lj467"]
+[ext_resource type="Texture2D" uid="uid://ckxvrs20ipraj" path="res://assets/sprites/cards/legendary_magic.png" id="11_l3j7k"]
+[ext_resource type="Texture2D" uid="uid://c6a02ce3mlqyy" path="res://assets/sprites/cards/legendary_sword.png" id="12_brlj8"]
+
+[node name="All Cards" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_exknf")
+
+[node name="BasicRanged" type="Sprite2D" parent="."]
+position = Vector2(54, 78)
+texture = ExtResource("1_6hu16")
+
+[node name="BasicMagic" type="Sprite2D" parent="."]
+position = Vector2(190, 78)
+texture = ExtResource("2_exknf")
+
+[node name="BasicSword" type="Sprite2D" parent="."]
+position = Vector2(331, 74)
+texture = ExtResource("3_ncwro")
+
+[node name="RareRanged" type="Sprite2D" parent="."]
+position = Vector2(56, 255)
+texture = ExtResource("4_not51")
+
+[node name="RareMagic" type="Sprite2D" parent="."]
+position = Vector2(192, 258)
+texture = ExtResource("5_nvshq")
+
+[node name="RareSword" type="Sprite2D" parent="."]
+position = Vector2(330, 256)
+texture = ExtResource("6_b2wke")
+
+[node name="MediumMagic" type="Sprite2D" parent="."]
+position = Vector2(192, 430)
+texture = ExtResource("7_2vels")
+
+[node name="MediumSword" type="Sprite2D" parent="."]
+position = Vector2(331, 430)
+texture = ExtResource("8_xdtum")
+
+[node name="EpicMagic" type="Sprite2D" parent="."]
+position = Vector2(192, 591)
+texture = ExtResource("9_lil6g")
+
+[node name="LegendaryRanged" type="Sprite2D" parent="."]
+position = Vector2(58, 755)
+texture = ExtResource("10_lj467")
+
+[node name="LegendaryMagic" type="Sprite2D" parent="."]
+position = Vector2(193, 756)
+texture = ExtResource("11_l3j7k")
+
+[node name="LegendarySword" type="Sprite2D" parent="."]
+position = Vector2(332, 756)
+texture = ExtResource("12_brlj8")

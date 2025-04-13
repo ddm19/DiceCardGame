@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsnhyvr0lht2b"
-path="res://.godot/imported/Spritesheet_Up_Left_Dicey_.png-b1764c9a144dd698b3788af5e6197e5b.ctex"
+uid="uid://deo4c3qxm7x0u"
+path="res://.godot/imported/medium_magic.png-56a337eda81a6e67d5d936f187af37c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicey/Spritesheet_Up_Left_Dicey_.png"
-dest_files=["res://.godot/imported/Spritesheet_Up_Left_Dicey_.png-b1764c9a144dd698b3788af5e6197e5b.ctex"]
+source_file="res://assets/sprites/cards/medium_magic.png"
+dest_files=["res://.godot/imported/medium_magic.png-56a337eda81a6e67d5d936f187af37c5.ctex"]
 
 [params]
 

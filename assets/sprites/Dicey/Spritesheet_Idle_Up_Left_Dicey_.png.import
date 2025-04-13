@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chvwe5vxgty8j"
-path="res://.godot/imported/Spritesheet_Idle_Up_Left_Dicey_.png-403e2d295b099e5166a77290d371570d.ctex"
+path="res://.godot/imported/Spritesheet_Idle_Up_Left_Dicey_.png-36b5257c6dd8d0493771bd3bad9de54b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Left_Dicey_.png"
-dest_files=["res://.godot/imported/Spritesheet_Idle_Up_Left_Dicey_.png-403e2d295b099e5166a77290d371570d.ctex"]
+source_file="res://assets/sprites/dicey/Spritesheet_Idle_Up_Left_Dicey_.png"
+dest_files=["res://.godot/imported/Spritesheet_Idle_Up_Left_Dicey_.png-36b5257c6dd8d0493771bd3bad9de54b.ctex"]
 
 [params]
 
