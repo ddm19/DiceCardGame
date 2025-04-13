@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/Dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
 [ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
-[ext_resource type="PackedScene" uid="uid://cetffjdlwdubb" path="res://assets/cards/basicRangedCard.tscn" id="23_pnywb"]
+[ext_resource type="PackedScene" path="res://assets/cards/basicRangedCard.tscn" id="23_pnywb"]
 [ext_resource type="PackedScene" uid="uid://kkj8mo1ud3ce" path="res://assets/enemies/d8.tscn" id="24_fx2rd"]
 [ext_resource type="PackedScene" uid="uid://b52fk4ykrgewm" path="res://assets/enemies/d12.tscn" id="25_jdjof"]
 [ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basic_melee_card.tscn" id="18_5jdip"]
