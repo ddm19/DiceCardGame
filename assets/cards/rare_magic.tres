@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://dudxgaf5td5o4"]
+
+[ext_resource type="Texture2D" uid="uid://djs6sdl4oi2tj" path="res://assets/sprites/cards/rare_magic.png" id="1_bdck3"]
+[ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="1_mxurl"]
+
+[resource]
+script = ExtResource("1_mxurl")
+card_name = "Fire Grail"
+description = "You wouldn't want to take a sip in this grail, it would hurt"
+icon = ExtResource("1_bdck3")
+type = 2
+cooldown = 2.0
+metadata/_custom_type_script = "uid://bvk63icgq4v00"

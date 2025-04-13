@@ -111,7 +111,21 @@ _data = {
 &"RESET": SubResource("Animation_oiwv1")
 }
 
-[node name="Projectile" type="Sprite2D"]
+[node name="BasicRangedCard" type="Node2D" node_paths=PackedStringArray("projectileSprite", "animationPlayer")]
+script = ExtResource("1_lrppf")
+projectileScene = ExtResource("2_btj7s")
+projectileSpeed = 300.0
+projectileDamage = 1.0
+projectileSprite = NodePath("Projectile")
+cooldown = 1.0
+type = null
+animationPlayer = NodePath("AnimationPlayer")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(583, 281)
+texture = ExtResource("2_c0xjr")
+
+[node name="Projectile" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(0.269501, 0.269501)
 texture = ExtResource("1_jjtb4")

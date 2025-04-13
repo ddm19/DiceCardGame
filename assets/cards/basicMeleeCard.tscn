@@ -210,6 +210,10 @@ _data = {
 
 [node name="BasicMeleeCard" type="Node2D" node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("2_drig3")
+animationName = null
+damage = null
+cooldown = null
+type = null
 animationPlayer = NodePath("AnimationPlayer")
 
 [node name="CardController" type="Node2D" parent="."]
