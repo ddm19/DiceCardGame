@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj4tf4o30mwub"]
+
+[ext_resource type="Texture2D" uid="uid://fntaw4uw4ce8" path="res://assets/sprites/cards/basic_sword.png" id="1_l8tc5"]
+[ext_resource type="Script" uid="uid://biga586cb8s26" path="res://assets/scenes/pickupCard.gd" id="2_y1wpl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exknf"]
+size = Vector2(99, 129)
+
+[node name="BasicSword" type="Sprite2D"]
+texture = ExtResource("1_l8tc5")
+script = ExtResource("2_y1wpl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 7.5)
+shape = SubResource("RectangleShape2D_exknf")

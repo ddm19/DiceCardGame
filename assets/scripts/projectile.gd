@@ -31,6 +31,7 @@ func setTargetDirection(target: Vector2):
 	targetDirection = (target - global_position).normalized()
 
 func onCollisionEntered(body: Node2D) -> void:
+	print(body.name)
 	if(typeof(body == LivingEntity) && body.type != shooterEntityType):
 		body.takeDamage(damage)
 		queue_free()

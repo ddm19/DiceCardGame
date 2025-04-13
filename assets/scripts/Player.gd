@@ -35,6 +35,7 @@ var currentState: ANIMATIONSTATES
 var attackAnimationDuration := 0.5 
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	if livingData == null:
 		livingData = LivingEntity.new("Player", 6)
 	

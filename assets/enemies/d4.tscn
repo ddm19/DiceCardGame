@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://ch04oqm5b2bxs" path="res://assets/enemies/d4.gd" id="1_hyiu5"]
 [ext_resource type="Texture2D" uid="uid://ce0lrgjlf38sf" path="res://assets/sprites/enemies/d4/D4_Idle_Right.png" id="2_ib6eh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyiu5"]
+size = Vector2(52, 59)
+
 [sub_resource type="Animation" id="Animation_mmj6x"]
 resource_name = "DAMAGE_LEFT"
 length = 0.133337
@@ -350,9 +353,6 @@ states/MOVE/node = SubResource("AnimationNodeBlendSpace2D_mmj6x")
 states/MOVE/position = Vector2(413.333, 109.333)
 transitions = ["Start", "MOVE", SubResource("AnimationNodeStateMachineTransition_hyiu5")]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyiu5"]
-size = Vector2(52, 59)
-
 [node name="D4" type="Node2D"]
 
 [node name="D4Body" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationTree")]
@@ -366,6 +366,9 @@ speed = 85.0
 maxFollowDistance = 350
 acceleration = 7.0
 animationTree = NodePath("Sprite2D/AnimationTree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D4Body"]
+shape = SubResource("RectangleShape2D_hyiu5")
 
 [node name="Sprite2D" type="Sprite2D" parent="D4Body"]
 texture = ExtResource("1_fvtir")

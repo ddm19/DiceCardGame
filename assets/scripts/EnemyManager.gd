@@ -8,11 +8,13 @@ var countdown_time : float = 10.0
 var countdown_timer : Timer
 var is_counting_down : bool = false
 @export var new_map_texture: Texture2D
+@export var card_sprites : Array[PackedScene]
 
 @onready var player: Player = get_node("/root/Game/Player")
 @onready var wave_label: Label = get_node("/root/InGameUi/Panel/Label")
 
 func _ready():
+	
 	countdown_timer = Timer.new()
 	add_child(countdown_timer)
 	countdown_timer.wait_time = 1.0  
@@ -32,35 +34,9 @@ func enemy_died(position: Vector2):
 			start_countdown()
 
 func drop_card(position: Vector2):
-	if cards_pool_scene == null:
-		return
+	pass
 
-	var pool_instance = cards_pool_scene.instantiate()
-	var card_sprites = pool_instance.get_children().filter(func(c):
-		return c is Sprite2D and not (
-			c.name == "BasicRanged" or
-			c.name == "BasicMagic" or
-			c.name == "BasicSword"
-		)
-	)
 	
-	if card_sprites.is_empty():
-		print("No hay cartas disponibles para dropear.")
-		return
-
-	var random_index = randi() % card_sprites.size()
-	var selected_card = card_sprites[random_index]
-	var card_instance = selected_card.duplicate()
-	get_tree().get_root().get_node("Game/Map1").add_child(card_instance)
-	card_instance.global_position = position
-	card_instance.scale = Vector2(0.3, 0.3)
-
-	var collision_shape = CollisionShape2D.new()
-	var shape = RectangleShape2D.new()
-	shape.extents = Vector2(card_instance.texture.get_width() * 0.3 / 2, card_instance.texture.get_height() * 0.3 / 2)
-	collision_shape.shape = shape
-	card_instance.add_child(collision_shape)
-
 	print("Carta droppeada en: ", position)
 
 func start_countdown():

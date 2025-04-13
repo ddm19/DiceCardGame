@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl5hqufw5qgv2"]
+
+[ext_resource type="Texture2D" uid="uid://ckxvrs20ipraj" path="res://assets/sprites/cards/legendary_magic.png" id="1_kuydx"]
+[ext_resource type="Script" uid="uid://biga586cb8s26" path="res://assets/scenes/pickupCard.gd" id="2_qqbgq"]
+[ext_resource type="Resource" uid="uid://dudxgaf5td5o4" path="res://assets/cards/rare_magic.tres" id="3_qqbgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exknf"]
+size = Vector2(99, 129)
+
+[node name="LegendaryMagic" type="Sprite2D"]
+texture = ExtResource("1_kuydx")
+script = ExtResource("2_qqbgq")
+cardData = ExtResource("3_qqbgq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 7.5)
+shape = SubResource("RectangleShape2D_exknf")
+
+[connection signal="body_entered" from="Area2D" to="." method="onCollisionEnter"]
