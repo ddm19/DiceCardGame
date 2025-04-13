@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://ccagm6hnmq515"]
+
+[ext_resource type="Texture2D" uid="uid://0aokfb3wg1nj" path="res://assets/sprites/cards/epic_magic.png" id="1_qv7fs"]
+[ext_resource type="PackedScene" uid="uid://5hevsatxxdwg" path="res://assets/cards/mouthBeam/mouthBeam.tscn" id="2_g8gsb"]
+[ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="3_lnags"]
+
+[resource]
+script = ExtResource("3_lnags")
+card_name = "Whoops!"
+description = "No one knows why, but this living staff likes to calcinate  dices"
+icon = ExtResource("1_qv7fs")
+type = 2
+cooldown = 1.0
+scene = ExtResource("2_g8gsb")
