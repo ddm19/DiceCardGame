@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cetffjdlwdubb"]
+
+[ext_resource type="Script" uid="uid://bfq0j6ruj4isk" path="res://assets/cards/basicRangedCard.gd" id="1_lrppf"]
+[ext_resource type="Texture2D" uid="uid://cp2u23fa2tove" path="res://assets/sprites/crosshair.png" id="2_c0xjr"]
+
+[node name="BasicRangedCard" type="Node2D"]
+script = ExtResource("1_lrppf")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(583, 281)
+texture = ExtResource("2_c0xjr")

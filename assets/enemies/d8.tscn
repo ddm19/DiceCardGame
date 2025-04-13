@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://kkj8mo1ud3ce"]
 
 [ext_resource type="Script" uid="uid://dcp1206qdrtqy" path="res://assets/enemies/d8.gd" id="1_850jl"]
-[ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/enemies/projectile.tscn" id="2_a25kw"]
+[ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/scripts/projectile.tscn" id="2_a25kw"]
 [ext_resource type="Texture2D" uid="uid://y3ljsrjhd87r" path="res://assets/sprites/enemies/d4/D4_Idle_Left.png" id="2_cb4c0"]
 [ext_resource type="Texture2D" uid="uid://calv8v8arscu5" path="res://assets/sprites/enemies/d8/D8_Idle_Left.png" id="4_cb4c0"]
 [ext_resource type="Texture2D" uid="uid://cuilt38xcrxvb" path="res://assets/sprites/enemies/d8/D8_Idle_Right.png" id="5_850jl"]

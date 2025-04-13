@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dsuxnln24x8om"]
 
-[ext_resource type="Script" uid="uid://xnomj0agxau" path="res://assets/scripts/projectile.gd" id="1_oe81d"]
-[ext_resource type="Texture2D" uid="uid://bxy2c6qs67gy8" path="res://assets/sprites/entitites/projectile.png" id="2_2x1bs"]
-[ext_resource type="AudioStream" uid="uid://d02j2laxe3ij3" path="res://assets/sounds/Shoot.mp3" id="3_l5a42"]
+[ext_resource type="Script" uid="uid://xnomj0agxau" path="res://assets/scripts/projectile.gd" id="1_i8ayt"]
+[ext_resource type="Texture2D" uid="uid://bxy2c6qs67gy8" path="res://assets/sprites/entitites/projectile.png" id="2_32ab1"]
+[ext_resource type="AudioStream" uid="uid://d02j2laxe3ij3" path="res://assets/sounds/Shoot.mp3" id="3_feybo"]
 
 [sub_resource type="Animation" id="Animation_f838r"]
 resource_name = "IDLE"
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_2x1bs")]
+"values": [ExtResource("2_32ab1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -93,7 +93,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_2x1bs")]
+"values": [ExtResource("2_32ab1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -167,15 +167,11 @@ radius = 2.25374
 height = 8.11348
 
 [node name="Projectile" type="CharacterBody2D" node_paths=PackedStringArray("audioPlayer")]
-script = ExtResource("1_oe81d")
-targetDirection = null
-speed = null
-damage = null
-shooterEntityType = null
+script = ExtResource("1_i8ayt")
 audioPlayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_2x1bs")
+texture = ExtResource("2_32ab1")
 offset = Vector2(47.86, 0.39)
 hframes = 2
 vframes = 3
@@ -197,7 +193,7 @@ scale = Vector2(2.21853, 1.45918)
 shape = SubResource("CapsuleShape2D_l5a42")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_l5a42")
+stream = ExtResource("3_feybo")
 bus = &"SFX"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="onScreenExit"]

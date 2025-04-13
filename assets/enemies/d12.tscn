@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://b52fk4ykrgewm"]
 
 [ext_resource type="Script" uid="uid://cc8w34du83jue" path="res://assets/enemies/d12.gd" id="1_uvaiq"]
-[ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/enemies/projectile.tscn" id="2_d13n4"]
+[ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/scripts/projectile.tscn" id="2_d13n4"]
 [ext_resource type="Texture2D" uid="uid://drwb1wc7ntdc1" path="res://assets/sprites/enemies/d12/D12_Idle_Left.png" id="5_d13n4"]
 [ext_resource type="Texture2D" uid="uid://cu4hflbhr86fi" path="res://assets/sprites/enemies/d12/D12_Idle_Right.png" id="6_6sqg7"]
 

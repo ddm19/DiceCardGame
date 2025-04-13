@@ -74,8 +74,7 @@ func _physics_process(delta: float) -> void:
 		get_tree().create_timer(0.5).connect("timeout",attackEnded)
 	
 	
-	if(isDashing):
-		dash()
+	if(isDashing):		dash()
 	if(!canDash && dashCooldownTimer != null):
 		print(dashCooldownTimer.time_left)
 

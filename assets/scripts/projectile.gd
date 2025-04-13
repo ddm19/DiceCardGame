@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-class_name Projectile
-
-
+class_name Projectile 
 
 @export var targetDirection : Vector2
 @export var speed : float
@@ -13,15 +11,22 @@ class_name Projectile
 func _ready() -> void:
 	audioPlayer.play()
 	
-
+	
+func changeSprite(sprite : Sprite2D):
+	if(sprite != null):
+		$Sprite2D.queue_free()
+		var newSprite = sprite.duplicate()
+		add_child(newSprite)
+		newSprite.visible = true
+		
 func _physics_process(delta: float) -> void:
 	if(targetDirection):
 		velocity = targetDirection * speed
 		rotation = targetDirection.angle()
 	move_and_slide()
 
-func onScreenExit():
-	queue_free()
+#func onScreenExit():
+	#queue_free()
 
 func setTargetDirection(target: Vector2):
 	targetDirection = (target - global_position).normalized()

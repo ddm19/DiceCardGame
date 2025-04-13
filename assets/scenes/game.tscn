@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://7halnlk3iywh"]
+[gd_scene load_steps=81 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
 [ext_resource type="Script" uid="uid://3sk4n8xqdib1" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
 [ext_resource type="PackedScene" uid="uid://cetffjdlwdubb" path="res://assets/cards/basicRangedCard.tscn" id="23_pnywb"]
+[ext_resource type="PackedScene" uid="uid://kkj8mo1ud3ce" path="res://assets/enemies/d8.tscn" id="24_fx2rd"]
+[ext_resource type="PackedScene" uid="uid://b52fk4ykrgewm" path="res://assets/enemies/d12.tscn" id="25_jdjof"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1691,7 +1693,7 @@ scale = Vector2(1.2, 1.2)
 script = ExtResource("1_cb66b")
 _speed = 200.0
 dashMultiplier = 5.0
-cardsList = [null]
+cardsList = [NodePath("../BasicRangedCard")]
 audioPlayer = NodePath("DashPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -1726,9 +1728,14 @@ parameters/WALKING/blend_position = Vector2(0.249827, -0.0656934)
 
 [node name="DashPlayer" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("22_pnywb")
+bus = &"SFX"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(1, 2)
 navigation_polygon = SubResource("NavigationPolygon_fx2rd")
 
-[node name="BasicMeleeCard" parent="." instance=ExtResource("23_pnywb")]
+[node name="BasicRangedCard" parent="." instance=ExtResource("23_pnywb")]
+
+[node name="D8" parent="." instance=ExtResource("24_fx2rd")]
+
+[node name="D12" parent="D8" instance=ExtResource("25_jdjof")]
