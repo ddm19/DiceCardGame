@@ -118,10 +118,9 @@ _data = {
 script = ExtResource("1_lrppf")
 projectileScene = ExtResource("2_btj7s")
 projectileSpeed = 300.0
-projectileDamage = 1.0
+projectileDamage = 10.0
 projectileSprite = NodePath("Projectile")
 cooldown = 1.0
-type = null
 animationPlayer = NodePath("AnimationPlayer")
 
 [node name="Sprite" type="Sprite2D" parent="."]

@@ -233,6 +233,7 @@ grow_horizontal = 2
 pivot_offset = Vector2(280, 8)
 focus_mode = 0
 theme_override_icons/grabber = ExtResource("8_trufw")
+theme_override_icons/grabber_highlight = ExtResource("25_ajlrb")
 max_value = 1.0
 step = 0.1
 
@@ -249,6 +250,7 @@ grow_horizontal = 2
 pivot_offset = Vector2(280, 8)
 focus_mode = 0
 theme_override_icons/grabber = ExtResource("8_trufw")
+theme_override_icons/grabber_highlight = ExtResource("25_ajlrb")
 max_value = 1.0
 step = 0.1
 
@@ -351,31 +353,37 @@ texture_normal = ExtResource("6_txxwi")
 stretch_mode = 0
 
 [node name="Card_Slot_1" type="Sprite2D" parent="LowerHUD"]
+z_index = 1
 position = Vector2(349.5, 96)
 scale = Vector2(1.17, 0.75)
 texture = ExtResource("18_ng1bb")
 
 [node name="Card_Slot_2" type="Sprite2D" parent="LowerHUD"]
+z_index = 1
 position = Vector2(566, 96)
 scale = Vector2(1.17, 0.75)
 texture = ExtResource("18_ng1bb")
 
 [node name="Card_Slot_3" type="Sprite2D" parent="LowerHUD"]
+z_index = 1
 position = Vector2(783, 96)
 scale = Vector2(1.17, 0.75)
 texture = ExtResource("18_ng1bb")
 
 [node name="Card_Slot_4" type="Sprite2D" parent="LowerHUD"]
+z_index = 1
 position = Vector2(1136, 96)
 scale = Vector2(1.17, 0.75)
 texture = ExtResource("18_ng1bb")
 
 [node name="Card_Slot_5" type="Sprite2D" parent="LowerHUD"]
+z_index = 1
 position = Vector2(1353, 96)
 scale = Vector2(1.17, 0.75)
 texture = ExtResource("18_ng1bb")
 
 [node name="Card_Slot_6" type="Sprite2D" parent="LowerHUD"]
+z_index = 1
 position = Vector2(1570, 96)
 scale = Vector2(1.17, 0.75)
 texture = ExtResource("18_ng1bb")
@@ -498,3 +506,29 @@ focus_mode = 0
 texture_normal = ExtResource("8_trufw")
 texture_disabled = ExtResource("25_ajlrb")
 stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -142.0
+offset_bottom = 60.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -18.5
+offset_right = 58.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_uq13i")
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+vertical_alignment = 1

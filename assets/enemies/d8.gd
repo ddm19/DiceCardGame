@@ -30,8 +30,6 @@ func attack():
 		velocity = 0.3 * velocity
 		await get_tree().create_timer(1).timeout
 		
-		
-		
 		var projectile : Projectile = projectileScene.instantiate() 
 		projectile.position = self.position + getDirectionToPlayer() * 30
 		get_parent().add_child(projectile)

@@ -21,7 +21,6 @@ func doAttack():
 	get_parent().add_child(projectile)
 	projectile.top_level = true
 	projectile.setTargetDirection(get_global_mouse_position())
-
 	projectile.speed = projectileSpeed 
 	projectile.damage = projectileDamage
 	projectile.changeSprite(projectileSprite)

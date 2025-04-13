@@ -37,6 +37,5 @@ func onCollisionEntered(body: Node2D) -> void:
 	if(typeof(body == LivingEntity) && body.type == LivingEntity.TARGET_TYPE.PLAYER):
 		body.takeDamage(damage)
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass 

@@ -15,7 +15,6 @@ var livingData: LivingEntity
 @export var type : LivingEntity.TARGET_TYPE = LivingEntity.TARGET_TYPE.PLAYER
 @onready var dice: Sprite2D = get_tree().get_root().get_node("InGameUi/LowerHUD/Dices")
 
-
 var sceneInstance
 var dashCooldownTimer: Timer
 var canDash: bool = true
@@ -44,10 +43,11 @@ func _ready():
 	dashTimer.timeout.connect(self._onDashTimeout)
 	updateAnimationsDirection(Vector2.DOWN)
 	add_starting_cards()
-	await get_tree().create_timer(0).timeout 
+	await get_tree().create_timer(0).timeout
 	var cards_player_node = get_tree().get_root().get_node("InGameUi/Inventory_Menu/Inventory_Container/Cards_Player")
 	if cards_player_node:
 		cards_player_node.updateCardTextures()
+		update_cards()
 	
 	dice.connect("spin_finished", _on_dice_finished)
 
@@ -134,9 +134,15 @@ func updateState(state: ANIMATIONSTATES):
 func add_card_from_data(data: CardData):
 	var card_scene = preload("res://assets/scenes/AllCards.tscn")
 	var card = card_scene.instantiate()
+	
 	if card is CardInstance:
 		card.setup(data, self)
-		cardsList.append(card)
+		if cardsList.size() < 6:
+			cardsList.append(card)
+		else:
+			var random_index = randi() % 6
+			cardsList[random_index] = card
+
 
 func add_starting_cards():
 	var melee_card = preload("res://assets/cards/basic_sword.tres")
@@ -148,6 +154,11 @@ func add_starting_cards():
 	add_card_from_data(ranged_card)
 	add_card_from_data(magic_card)
 	add_card_from_data(magic_card)
+
+func update_cards():
+	var hud = get_node("/root/InGameUi/")
+	if hud:
+		hud.update_card_sprites()
 
 func _on_dice_finished():
 	if cardsList.size() > 0:

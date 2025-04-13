@@ -8,5 +8,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is Player:
-		body.add_card_from_data(card_data)
-		queue_free()
+		print("hola")
+		if not body.has_card(card_data):  
+			body.add_card_from_data(card_data)
+			queue_free()

@@ -16,7 +16,7 @@ func _ready():
 	for i in range(cardSlots.size()):
 		var textureRect = cardSlots[i] as TextureRect
 		if textureRect:
-			textureRect.connect("mouse_entered", Callable(self, "_on_card_hovered").bind(i))  # Usamos bind para pasar el índice
+			textureRect.connect("mouse_entered", Callable(self, "_on_card_hovered").bind(i))
 			textureRect.connect("mouse_exited", Callable(self, "_on_card_exited"))
 
 func _on_card_hovered(card_index: int):

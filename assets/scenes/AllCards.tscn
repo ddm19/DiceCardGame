@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d2wg708jvg1ix" path="res://assets/scripts/CardInstance.gd" id="1_exknf"]
 [ext_resource type="Texture2D" uid="uid://b01ddwbhcj5tq" path="res://assets/sprites/cards/basic_magic.png" id="2_exknf"]
 [ext_resource type="Texture2D" uid="uid://fntaw4uw4ce8" path="res://assets/sprites/cards/basic_sword.png" id="3_ncwro"]
-[ext_resource type="Texture2D" uid="uid://xf0ahjnyhl2n" path="res://assets/sprites/cards/rare_ranged.png" id="4_not51"]
+[ext_resource type="Texture2D" uid="uid://yl1q2h5rjpxt" path="res://assets/sprites/cards/rare_ranged.png" id="5_exknf"]
 [ext_resource type="Texture2D" uid="uid://djs6sdl4oi2tj" path="res://assets/sprites/cards/rare_magic.png" id="5_nvshq"]
 [ext_resource type="Texture2D" uid="uid://cwojc316lxl3w" path="res://assets/sprites/cards/rare_sword.png" id="6_b2wke"]
 [ext_resource type="Texture2D" uid="uid://deo4c3qxm7x0u" path="res://assets/sprites/cards/medium_magic.png" id="7_2vels"]
@@ -37,7 +37,7 @@ texture = ExtResource("3_ncwro")
 
 [node name="RareRanged" type="Sprite2D" parent="."]
 position = Vector2(56, 255)
-texture = ExtResource("4_not51")
+texture = ExtResource("5_exknf")
 
 [node name="RareMagic" type="Sprite2D" parent="."]
 position = Vector2(192, 258)

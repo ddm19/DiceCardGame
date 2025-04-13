@@ -14,7 +14,7 @@ enum TARGET_TYPE
 }
 
 func _ready() -> void:
-	if(livingData):
+	if livingData == null:
 		livingData = LivingEntity.new()
 
 func _init(name: String = "",  maxHealth: int = 100):

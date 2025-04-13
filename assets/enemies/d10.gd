@@ -34,9 +34,6 @@ func attack():
 		isAttacking = false
 		rotationSpeed = 0
 
-func takeDamage(damage):
-	super.takeDamage(damage)
-	
 func onCollisionEntered(body: Node2D) -> void:
 	if(typeof(body == LivingEntity) && body.type == LivingEntity.TARGET_TYPE.PLAYER):
 		body.takeDamage(damage)

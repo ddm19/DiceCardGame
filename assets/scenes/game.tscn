@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://7halnlk3iywh"]
+[gd_scene load_steps=95 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
 [ext_resource type="Script" uid="uid://3sk4n8xqdib1" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
@@ -28,6 +28,12 @@
 [ext_resource type="Texture2D" uid="uid://dp1wxwndog55e" path="res://assets/sprites/maps/Bones.png" id="26_xe33q"]
 [ext_resource type="Texture2D" uid="uid://jsrasdl1hgk" path="res://assets/sprites/maps/Torch.png" id="27_1q3k2"]
 [ext_resource type="PackedScene" uid="uid://ckdbxtj037x5i" path="res://assets/enemies/d4.tscn" id="28_p2xyf"]
+[ext_resource type="PackedScene" uid="uid://kkj8mo1ud3ce" path="res://assets/enemies/d8.tscn" id="29_4hayi"]
+[ext_resource type="Script" uid="uid://br4ra5x4jfb6k" path="res://assets/scripts/EnemyManager.gd" id="29_xe33q"]
+[ext_resource type="PackedScene" uid="uid://cx62hhn3u7803" path="res://assets/scenes/AllCards.tscn" id="30_1q3k2"]
+[ext_resource type="PackedScene" uid="uid://tsdxxka1xisk" path="res://assets/enemies/d10.tscn" id="31_4hayi"]
+[ext_resource type="PackedScene" uid="uid://b52fk4ykrgewm" path="res://assets/enemies/d12.tscn" id="31_tcehl"]
+[ext_resource type="Texture2D" uid="uid://c3cxw1te1g6be" path="res://assets/sprites/backgrounds/General_Back.png" id="32_tcehl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1670,18 +1676,12 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(1, 3)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fx2rd"]
-vertices = PackedVector2Array(1549.98, -396.828, 1543.01, 1570.19, 1353.5, 1783.99, 539, 713, 539, 477, 1351.89, -592, 479, 477, 479, 417, -627.992, -593.992, 243, 417, -828.992, -401.719, 243, 477, 183, 477, -828, 1595.6, 183, 713, -624.102, 1783, 243, 713, 243, 773, 479, 773, 479, 713)
+vertices = PackedVector2Array(1550, -396.813, 1550.99, 1586.86, 1353.86, 1783.99, 539, 713, 539, 477, 1351.89, -592, 479, 477, 479, 417, -628.008, -593.992, 243, 417, -829.992, -402.688, 243, 477, 183, 477, -828, 1595.6, 183, 713, -624.102, 1783, 243, 713, 243, 773, 479, 773, 479, 713)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(4, 6, 7, 5), PackedInt32Array(8, 5, 7, 9, 10), PackedInt32Array(9, 11, 12, 10), PackedInt32Array(13, 10, 12, 14, 15), PackedInt32Array(14, 16, 17, 15), PackedInt32Array(2, 15, 17, 18), PackedInt32Array(3, 2, 18, 19)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-632, -604, 253, 427, 253, 487, 193, 487, 193, 703, 253, 703, 253, 763, 469, 763, 469, 703, 529, 703, 529, 487, 469, 487, 469, 427, 253, 427, -632, -604, 1356, -602, 1560, -401, 1553, 1574, 1358, 1794, -628, 1793, -838, 1600, -839, -406)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-632, -604, 253, 427, 253, 487, 193, 487, 193, 703, 253, 703, 253, 763, 469, 763, 469, 703, 529, 703, 529, 487, 469, 487, 469, 427, 253, 427, -632, -604, 1361, -603, 1560, -401, 1561, 1591, 1358, 1794, -628, 1793, -838, 1600, -840, -407)])
 
 [sub_resource type="Resource" id="Resource_jdjof"]
 metadata/__load_path__ = "res://assets/scripts/projectile.tscn"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdjof"]
-size = Vector2(108.188, 168)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5j7u"]
-size = Vector2(168.5, 108)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p2xyf"]
 normal = Vector2(-0.00616185, -0.999981)
@@ -1775,14 +1775,6 @@ texture = ExtResource("25_h5j7u")
 collision_layer = 2
 collision_mask = 2
 
-[node name="MapCollision" type="CollisionShape2D" parent="Map1/MapBody"]
-position = Vector2(-0.09375, 0)
-shape = SubResource("RectangleShape2D_jdjof")
-
-[node name="MapCollision2" type="CollisionShape2D" parent="Map1/MapBody"]
-position = Vector2(-0.25, 0)
-shape = SubResource("RectangleShape2D_h5j7u")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map1/MapBody"]
 position = Vector2(0.5, 0.5)
 shape = SubResource("WorldBoundaryShape2D_p2xyf")
@@ -1873,44 +1865,55 @@ texture = ExtResource("27_1q3k2")
 position = Vector2(55.5, -134.5)
 texture = ExtResource("27_1q3k2")
 
-[node name="D4" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(59.5, 203)
+[node name="EnemyManager" type="Node2D" parent="Map1"]
+script = ExtResource("29_xe33q")
+cards_pool_scene = ExtResource("30_1q3k2")
+enemy_scenes = Array[PackedScene]([ExtResource("28_p2xyf"), ExtResource("31_4hayi"), ExtResource("31_tcehl"), ExtResource("29_4hayi")])
+
+[node name="D4" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(-441, -98.5)
 scale = Vector2(0.5, 0.5)
 
-[node name="D5" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(-33.5, -387)
+[node name="D5" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(-346.5, -261.5)
 scale = Vector2(0.5, 0.5)
 
-[node name="D6" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(-58.5, -454.5)
+[node name="D6" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(-205.5, -356.5)
 scale = Vector2(0.5, 0.5)
 
-[node name="D7" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(424, 174.5)
+[node name="D7" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(-31, -415)
 scale = Vector2(0.5, 0.5)
 
-[node name="D8" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(-163, -18.5)
+[node name="D8" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(133, -394.5)
 scale = Vector2(0.5, 0.5)
 
-[node name="D9" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(-19.5, -453)
+[node name="D9" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(282.5, -303)
 scale = Vector2(0.5, 0.5)
 
-[node name="D10" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(-394.5, 28.5)
+[node name="D10" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(382.5, -126)
 scale = Vector2(0.5, 0.5)
 
-[node name="D11" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(447.5, -438)
+[node name="D11" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(-3.5, -176)
 scale = Vector2(0.5, 0.5)
 
-[node name="D12" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(-392.5, -426)
+[node name="D12" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(-316, 146.5)
 scale = Vector2(0.5, 0.5)
 
-[node name="D13" parent="Map1" instance=ExtResource("28_p2xyf")]
-position = Vector2(434.5, -109.5)
+[node name="D13" parent="Map1/EnemyManager" instance=ExtResource("28_p2xyf")]
+position = Vector2(280, 131)
 scale = Vector2(0.5, 0.5)
+
+[node name="GeneralBack" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1200, 1195)
+scale = Vector2(1.69479, 1.55)
+texture = ExtResource("32_tcehl")
 
 [connection signal="timeout" from="Player/AttackTimer" to="Player" method="attack"]

@@ -5,6 +5,4 @@ extends Camera2D
 
 func _physics_process(delta: float) -> void:
 	var direction : Vector2 = player.transform.get_origin()
-	
 	self.position = self.position.lerp(player.position,delta*speedMultiplier)
-	
