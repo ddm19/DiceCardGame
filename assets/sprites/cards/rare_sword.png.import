@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c72fillbopi2t"
-path="res://.godot/imported/Animacion_Left_Down_Attack.png-37c681e11dadff598bd5d30b8ee6422f.ctex"
+uid="uid://cwojc316lxl3w"
+path="res://.godot/imported/rare_sword.png-3bcf7cc692a218575dc74bdcbf49ec3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/dicey/Animacion_Left_Down_Attack.png"
-dest_files=["res://.godot/imported/Animacion_Left_Down_Attack.png-37c681e11dadff598bd5d30b8ee6422f.ctex"]
+source_file="res://assets/sprites/cards/rare_sword.png"
+dest_files=["res://.godot/imported/rare_sword.png-3bcf7cc692a218575dc74bdcbf49ec3e.ctex"]
 
 [params]
 

@@ -209,9 +209,12 @@ _data = {
 &"Slash": SubResource("Animation_kum14")
 }
 
-[node name="BasicMeleeCard" type="Node2D" node_paths=PackedStringArray("animationPlayer")]
+[node name="BasicMeleeCard" type="Node2D"]
 script = ExtResource("2_drig3")
-animationPlayer = NodePath("AnimationPlayer")
+animationName = null
+damage = null
+cooldown = null
+type = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(583, 281)

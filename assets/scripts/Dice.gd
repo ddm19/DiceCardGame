@@ -43,7 +43,6 @@ func _spin_step():
 		FinalDice = final_face + 1
 		region_rect = Rect2(final_face * frame_width, 0, frame_width, frame_height)
 		emit_signal("spin_finished")
-		## Hay que coger la variable FinalDice para determinar que ataque ha salido
 
 func _set_random_face():
 	var face = randi() % total_faces

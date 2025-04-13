@@ -3,27 +3,27 @@
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
 [ext_resource type="Script" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
 [ext_resource type="Texture2D" uid="uid://bhqb6wrc8td6c" path="res://icon.svg" id="2_dis88"]
-[ext_resource type="Texture2D" uid="uid://cuwmgt2hbwhlg" path="res://assets/sprites/Dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
+[ext_resource type="Texture2D" uid="uid://cuwmgt2hbwhlg" path="res://assets/sprites/dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
 [ext_resource type="Shader" uid="uid://btmf5sbgdykuu" path="res://assets/shaders/dash.gdshader" id="4_fc420"]
 [ext_resource type="Shader" uid="uid://bjilgan5m7dap" path="res://assets/shaders/dicey.gdshader" id="4_kc0sw"]
-[ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/Dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
-[ext_resource type="Texture2D" uid="uid://bsnhyvr0lht2b" path="res://assets/sprites/Dicey/Spritesheet_Up_Left_Dicey_.png" id="6_5aext"]
-[ext_resource type="Texture2D" uid="uid://b7h2eayt1qc3d" path="res://assets/sprites/Dicey/Spritesheet_Left_Down_Dicey.png" id="7_3w2km"]
-[ext_resource type="Texture2D" uid="uid://dsc31lntajkd0" path="res://assets/sprites/Dicey/Spritesheet_Right_Dicey_.png" id="8_wfsp4"]
-[ext_resource type="Texture2D" uid="uid://b6yklq7mkl10g" path="res://assets/sprites/Dicey/Spritesheet_Right_Down_Dicey.png" id="9_k2t1h"]
-[ext_resource type="Texture2D" uid="uid://co1ecisyayloi" path="res://assets/sprites/Dicey/Spritesheet_Up_Right_Dicey_.png" id="10_phsto"]
-[ext_resource type="Texture2D" uid="uid://d2nauyp25l01r" path="res://assets/sprites/Dicey/Spritesheet_Left_Idle_Dicey.png" id="10_pkhv0"]
-[ext_resource type="Texture2D" uid="uid://chvwe5vxgty8j" path="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Left_Dicey_.png" id="11_i358u"]
-[ext_resource type="Texture2D" uid="uid://huo71bogy2pp" path="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Right_Dicey_.png" id="12_pkhv0"]
-[ext_resource type="Texture2D" uid="uid://ctebihq8iurkf" path="res://assets/sprites/Dicey/Spritesheet_Idle_Left_Down_Dicey.png" id="13_i358u"]
-[ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/Dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
+[ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
+[ext_resource type="Texture2D" uid="uid://bsnhyvr0lht2b" path="res://assets/sprites/dicey/Spritesheet_Up_Left_Dicey_.png" id="6_5aext"]
+[ext_resource type="Texture2D" uid="uid://b7h2eayt1qc3d" path="res://assets/sprites/dicey/Spritesheet_Left_Down_Dicey.png" id="7_3w2km"]
+[ext_resource type="Texture2D" uid="uid://dsc31lntajkd0" path="res://assets/sprites/dicey/Spritesheet_Right_Dicey_.png" id="8_wfsp4"]
+[ext_resource type="Texture2D" uid="uid://b6yklq7mkl10g" path="res://assets/sprites/dicey/Spritesheet_Right_Down_Dicey.png" id="9_k2t1h"]
+[ext_resource type="Texture2D" uid="uid://co1ecisyayloi" path="res://assets/sprites/dicey/Spritesheet_Up_Right_Dicey_.png" id="10_phsto"]
+[ext_resource type="Texture2D" uid="uid://d2nauyp25l01r" path="res://assets/sprites/dicey/Spritesheet_Left_Idle_Dicey.png" id="10_pkhv0"]
+[ext_resource type="Texture2D" uid="uid://chvwe5vxgty8j" path="res://assets/sprites/dicey/Spritesheet_Idle_Up_Left_Dicey_.png" id="11_i358u"]
+[ext_resource type="Texture2D" uid="uid://huo71bogy2pp" path="res://assets/sprites/dicey/Spritesheet_Idle_Up_Right_Dicey_.png" id="12_pkhv0"]
+[ext_resource type="Texture2D" uid="uid://ctebihq8iurkf" path="res://assets/sprites/dicey/Spritesheet_Idle_Left_Down_Dicey.png" id="13_i358u"]
+[ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
 [ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basic_melee_card.tscn" id="18_5jdip"]
-[ext_resource type="Texture2D" uid="uid://c5lkhqbh7e67g" path="res://assets/sprites/Dicey/Animacion_Left_Attack_Dicey_.png" id="18_rojm1"]
-[ext_resource type="Texture2D" uid="uid://c0wgq2yirt7n6" path="res://assets/sprites/Dicey/Animacion_Right_Attack_Dicey_.png" id="19_pnywb"]
-[ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/Dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
-[ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
+[ext_resource type="Texture2D" uid="uid://c5lkhqbh7e67g" path="res://assets/sprites/dicey/Animacion_Left_Attack_Dicey_.png" id="18_rojm1"]
+[ext_resource type="Texture2D" uid="uid://c0wgq2yirt7n6" path="res://assets/sprites/dicey/Animacion_Right_Attack_Dicey_.png" id="19_pnywb"]
+[ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
+[ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
-[ext_resource type="Script" uid="uid://ch26emp2fd58r" path="res://assets/scripts/EnemyBasic.gd" id="24_fx2rd"]
+[ext_resource type="Script" path="res://assets/scripts/EnemyBasic.gd" id="24_fx2rd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1663,6 +1663,7 @@ states/MELEE_ATTACK/position = Vector2(376, 204.666)
 states/WALKING/node = SubResource("AnimationNodeBlendSpace2D_kc0sw")
 states/WALKING/position = Vector2(636.667, 56.5679)
 transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_au80e"), "WALKING", "IDLE", SubResource("AnimationNodeStateMachineTransition_52jqy")]
+graph_offset = Vector2(1, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnywb"]
 size = Vector2(38, 38)
@@ -1684,12 +1685,11 @@ position = Vector2(70.5688, 3.61404)
 scale = Vector2(8.05576, 6.71272)
 texture = ExtResource("2_dis88")
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("cardsList", "audioPlayer")]
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("audioPlayer")]
 position = Vector2(606.569, 140.614)
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_cb66b")
 _speed = 200.0
-cardsList = [NodePath("../BasicMeleeCard")]
 audioPlayer = NodePath("DashPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -1725,6 +1725,10 @@ parameters/WALKING/blend_position = Vector2(0.249827, -0.0656934)
 [node name="DashPlayer" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("22_pnywb")
 
+[node name="AttackTimer" type="Timer" parent="Player"]
+wait_time = 15.0
+autostart = true
+
 [node name="BasicMeleeCard" parent="." instance=ExtResource("18_5jdip")]
 position = Vector2(500.569, 29.6141)
 cooldown = 0.5
@@ -1742,3 +1746,5 @@ shape = SubResource("RectangleShape2D_pnywb")
 position = Vector2(96, 44)
 scale = Vector2(0.286949, 0.286949)
 texture = ExtResource("2_dis88")
+
+[connection signal="timeout" from="Player/AttackTimer" to="Player" method="attack"]

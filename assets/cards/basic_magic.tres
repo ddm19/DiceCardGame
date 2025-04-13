@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://cuvqy7n1v08kw"]
+
+[ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basic_melee_card.tscn" id="1_5odli"]
+[ext_resource type="Texture2D" uid="uid://b01ddwbhcj5tq" path="res://assets/sprites/cards/basic_magic.png" id="1_080a2"]
+[ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="1_sxi2i"]
+
+[resource]
+script = ExtResource("1_sxi2i")
+card_name = "Magic Staff"
+description = "Magic is always powerful"
+icon = ExtResource("1_080a2")
+type = 2
+cooldown = 1.0
+scene = ExtResource("1_5odli")
+metadata/_custom_type_script = "uid://bvk63icgq4v00"

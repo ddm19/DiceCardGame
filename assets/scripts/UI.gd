@@ -23,6 +23,11 @@ func _ready():
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	inventory_menu.process_mode = Node.PROCESS_MODE_ALWAYS
 	settings_menu.process_mode = Node.PROCESS_MODE_ALWAYS
+	inventory_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	settings_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	inventory_exit_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	settings_exit_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	quit_button.mouse_filter = Control.MOUSE_FILTER_STOP
 	inventory_button.pressed.connect(_on_inventory_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	inventory_exit_button.pressed.connect(_on_exit_button_pressed)
