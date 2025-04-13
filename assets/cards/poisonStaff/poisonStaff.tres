@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://c3wb0f08n2x6t"]
+
+[ext_resource type="Texture2D" uid="uid://b01ddwbhcj5tq" path="res://assets/sprites/cards/basic_magic.png" id="1_li8pt"]
+[ext_resource type="PackedScene" uid="uid://bllgp5mhb4tro" path="res://assets/cards/poisonStaff/poisonStaff.tscn" id="2_m5xss"]
+[ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="3_tmmgq"]
+
+[resource]
+script = ExtResource("3_tmmgq")
+card_name = "Poison Staff"
+description = "Don't Lick it (seriously)"
+icon = ExtResource("1_li8pt")
+type = 2
+cooldown = 1.0
+scene = ExtResource("2_m5xss")
