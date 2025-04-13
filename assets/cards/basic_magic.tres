@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b01ddwbhcj5tq" path="res://assets/sprites/cards/basic_magic.png" id="1_080a2"]
 [ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="1_sxi2i"]
-[ext_resource type="PackedScene" uid="uid://deox468vgf3pn" path="res://assets/cards/basicRangedCard.tscn" id="2_080a2"]
+[ext_resource type="PackedScene" uid="uid://blge4sw4mnprp" path="res://assets/cards/basicMagicCard.tscn" id="2_080a2"]
 
 [resource]
 script = ExtResource("1_sxi2i")

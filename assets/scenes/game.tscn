@@ -1,9 +1,10 @@
-[gd_scene load_steps=80 format=3 uid="uid://7halnlk3iywh"]
+[gd_scene load_steps=79 format=3 uid="uid://7halnlk3iywh"]
 
 [ext_resource type="Script" uid="uid://box65p8yjt2db" path="res://assets/scripts/Player.gd" id="1_cb66b"]
 [ext_resource type="Script" uid="uid://3sk4n8xqdib1" path="res://assets/scripts/FollowCamera.gd" id="1_fqk1v"]
 [ext_resource type="Texture2D" uid="uid://bhqb6wrc8td6c" path="res://icon.svg" id="2_dis88"]
 [ext_resource type="Texture2D" uid="uid://cuwmgt2hbwhlg" path="res://assets/sprites/Dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
+[ext_resource type="PackedScene" uid="uid://ckdbxtj037x5i" path="res://assets/enemies/d4.tscn" id="3_pnywb"]
 [ext_resource type="Shader" uid="uid://btmf5sbgdykuu" path="res://assets/shaders/dash.gdshader" id="4_fc420"]
 [ext_resource type="Shader" uid="uid://bjilgan5m7dap" path="res://assets/shaders/dicey.gdshader" id="4_kc0sw"]
 [ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/Dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
@@ -22,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/Dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
 [ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
-[ext_resource type="PackedScene" uid="uid://deox468vgf3pn" path="res://assets/cards/basicRangedCard.tscn" id="23_pnywb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1669,9 +1669,6 @@ vertices = PackedVector2Array(1231, -435.008, 1231, 634.969, -473.859, 630.023, 
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-469, -447, 1241, -445, 1241, 645, -484, 640)])
 
-[sub_resource type="Resource" id="Resource_jdjof"]
-metadata/__load_path__ = "res://assets/scripts/projectile.tscn"
-
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
@@ -1688,6 +1685,8 @@ speedMultiplier = 2.0
 position = Vector2(70.5688, 3.61404)
 scale = Vector2(8.05576, 6.71272)
 texture = ExtResource("2_dis88")
+
+[node name="D4" parent="." instance=ExtResource("3_pnywb")]
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("audioPlayer")]
 position = Vector2(606.569, 140.614)
@@ -1737,8 +1736,5 @@ wait_time = 7.0
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(1, 2)
 navigation_polygon = SubResource("NavigationPolygon_fx2rd")
-
-[node name="BasicRangedCard" parent="." instance=ExtResource("23_pnywb")]
-projectileScene = SubResource("Resource_jdjof")
 
 [connection signal="timeout" from="Player/AttackTimer" to="Player" method="attack"]

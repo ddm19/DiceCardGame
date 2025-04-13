@@ -144,15 +144,15 @@ func _on_dice_finished():
 		if card_index >= 0 and card_index < cardsList.size():
 			if(sceneInstance != null):
 				sceneInstance.queue_free()
-			sceneInstance = cardsList[card_index].scene.instantiate()
+			#TODO: cambiar por el card_index
+			sceneInstance = cardsList[5].scene.instantiate()
 			add_child(sceneInstance)
-			$AttackTimer.wait_time = cardsList[card_index].cooldown
+			$AttackTimer.wait_time = cardsList[5].cooldown
 			$AttackTimer.start()
 		else:
 			print("Número de dado fuera de rango de cartas disponibles")
 
 func attack():
-	print(sceneInstance.name)
 	sceneInstance.attack()
 	get_tree().create_timer(0.2).connect("timeout", attackEnded)
 
