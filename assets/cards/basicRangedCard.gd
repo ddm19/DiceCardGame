@@ -20,10 +20,9 @@ func doAttack():
 	projectile.position = player.position
 	get_parent().add_child(projectile)
 	projectile.setTargetDirection(get_global_mouse_position())
-	
+
 	projectile.speed = projectileSpeed 
 	projectile.damage = projectileDamage
 	projectile.changeSprite(projectileSprite)
 	projectile.shooterEntityType = LivingEntity.TARGET_TYPE.PLAYER
 	player.updateAnimationsDirection(lastDirection)
-	

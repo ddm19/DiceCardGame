@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://fntaw4uw4ce8" path="res://assets/sprites/cards/basic_sword.png" id="1_bvyak"]
 [ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="1_uamug"]
-[ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basic_melee_card.tscn" id="2_1twu6"]
+[ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basicMeleeCard.tscn" id="2_1twu6"]
 
 [resource]
 script = ExtResource("1_uamug")

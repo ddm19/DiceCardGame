@@ -10,15 +10,14 @@ class_name Projectile
 
 func _ready() -> void:
 	audioPlayer.play()
-	
-	
+
 func changeSprite(sprite : Sprite2D):
 	if(sprite != null):
 		$Sprite2D.queue_free()
 		var newSprite = sprite.duplicate()
 		add_child(newSprite)
 		newSprite.visible = true
-		
+
 func _physics_process(delta: float) -> void:
 	if(targetDirection):
 		velocity = targetDirection * speed
@@ -30,8 +29,6 @@ func _physics_process(delta: float) -> void:
 
 func setTargetDirection(target: Vector2):
 	targetDirection = (target - global_position).normalized()
-
-
 
 func onCollisionEntered(body: Node2D) -> void:
 	if(typeof(body == LivingEntity) && body.type != shooterEntityType):
