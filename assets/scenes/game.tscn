@@ -6,26 +6,25 @@
 [ext_resource type="Texture2D" uid="uid://cuwmgt2hbwhlg" path="res://assets/sprites/dicey/Spritesheet_Idle_Dicey.png" id="3_5gf0t"]
 [ext_resource type="Shader" uid="uid://btmf5sbgdykuu" path="res://assets/shaders/dash.gdshader" id="4_fc420"]
 [ext_resource type="Shader" uid="uid://bjilgan5m7dap" path="res://assets/shaders/dicey.gdshader" id="4_kc0sw"]
-[ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/Dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
-[ext_resource type="Texture2D" uid="uid://bsnhyvr0lht2b" path="res://assets/sprites/Dicey/Spritesheet_Up_Left_Dicey_.png" id="6_5aext"]
-[ext_resource type="Texture2D" uid="uid://b7h2eayt1qc3d" path="res://assets/sprites/Dicey/Spritesheet_Left_Down_Dicey.png" id="7_3w2km"]
-[ext_resource type="Texture2D" uid="uid://dsc31lntajkd0" path="res://assets/sprites/Dicey/Spritesheet_Right_Dicey_.png" id="8_wfsp4"]
-[ext_resource type="Texture2D" uid="uid://b6yklq7mkl10g" path="res://assets/sprites/Dicey/Spritesheet_Right_Down_Dicey.png" id="9_k2t1h"]
-[ext_resource type="Texture2D" uid="uid://co1ecisyayloi" path="res://assets/sprites/Dicey/Spritesheet_Up_Right_Dicey_.png" id="10_phsto"]
-[ext_resource type="Texture2D" uid="uid://d2nauyp25l01r" path="res://assets/sprites/Dicey/Spritesheet_Left_Idle_Dicey.png" id="10_pkhv0"]
-[ext_resource type="Texture2D" uid="uid://chvwe5vxgty8j" path="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Left_Dicey_.png" id="11_i358u"]
-[ext_resource type="Texture2D" uid="uid://huo71bogy2pp" path="res://assets/sprites/Dicey/Spritesheet_Idle_Up_Right_Dicey_.png" id="12_pkhv0"]
-[ext_resource type="Texture2D" uid="uid://ctebihq8iurkf" path="res://assets/sprites/Dicey/Spritesheet_Idle_Left_Down_Dicey.png" id="13_i358u"]
-[ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/Dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
-[ext_resource type="Texture2D" uid="uid://c5lkhqbh7e67g" path="res://assets/sprites/Dicey/Animacion_Left_Attack_Dicey_.png" id="18_rojm1"]
-[ext_resource type="Texture2D" uid="uid://c0wgq2yirt7n6" path="res://assets/sprites/Dicey/Animacion_Right_Attack_Dicey_.png" id="19_pnywb"]
-[ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/Dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
-[ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/Dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
+[ext_resource type="Texture2D" uid="uid://be6lt658gae7b" path="res://assets/sprites/dicey/Spritesheet_Left_Dicey_.png" id="5_j62u1"]
+[ext_resource type="Texture2D" uid="uid://bsnhyvr0lht2b" path="res://assets/sprites/dicey/Spritesheet_Up_Left_Dicey_.png" id="6_5aext"]
+[ext_resource type="Texture2D" uid="uid://b7h2eayt1qc3d" path="res://assets/sprites/dicey/Spritesheet_Left_Down_Dicey.png" id="7_3w2km"]
+[ext_resource type="Texture2D" uid="uid://dsc31lntajkd0" path="res://assets/sprites/dicey/Spritesheet_Right_Dicey_.png" id="8_wfsp4"]
+[ext_resource type="Texture2D" uid="uid://b6yklq7mkl10g" path="res://assets/sprites/dicey/Spritesheet_Right_Down_Dicey.png" id="9_k2t1h"]
+[ext_resource type="Texture2D" uid="uid://co1ecisyayloi" path="res://assets/sprites/dicey/Spritesheet_Up_Right_Dicey_.png" id="10_phsto"]
+[ext_resource type="Texture2D" uid="uid://d2nauyp25l01r" path="res://assets/sprites/dicey/Spritesheet_Left_Idle_Dicey.png" id="10_pkhv0"]
+[ext_resource type="Texture2D" uid="uid://chvwe5vxgty8j" path="res://assets/sprites/dicey/Spritesheet_Idle_Up_Left_Dicey_.png" id="11_i358u"]
+[ext_resource type="Texture2D" uid="uid://huo71bogy2pp" path="res://assets/sprites/dicey/Spritesheet_Idle_Up_Right_Dicey_.png" id="12_pkhv0"]
+[ext_resource type="Texture2D" uid="uid://ctebihq8iurkf" path="res://assets/sprites/dicey/Spritesheet_Idle_Left_Down_Dicey.png" id="13_i358u"]
+[ext_resource type="Texture2D" uid="uid://dl3uqtx4qmuvo" path="res://assets/sprites/dicey/Animacion_Idle_Right_Down_Dicey.png" id="14_s2rys"]
+[ext_resource type="Texture2D" uid="uid://c5lkhqbh7e67g" path="res://assets/sprites/dicey/Animacion_Left_Attack_Dicey_.png" id="18_rojm1"]
+[ext_resource type="Texture2D" uid="uid://c0wgq2yirt7n6" path="res://assets/sprites/dicey/Animacion_Right_Attack_Dicey_.png" id="19_pnywb"]
+[ext_resource type="Texture2D" uid="uid://ty5qhssjxii" path="res://assets/sprites/dicey/Animacion_Right_Down_Attack.png" id="20_fx2rd"]
+[ext_resource type="Texture2D" uid="uid://c72fillbopi2t" path="res://assets/sprites/dicey/Animacion_Left_Down_Attack.png" id="21_jdjof"]
 [ext_resource type="AudioStream" uid="uid://du8bu6evi1yge" path="res://assets/sounds/Dash.mp3" id="22_pnywb"]
 [ext_resource type="PackedScene" path="res://assets/cards/basicRangedCard.tscn" id="23_pnywb"]
 [ext_resource type="PackedScene" uid="uid://kkj8mo1ud3ce" path="res://assets/enemies/d8.tscn" id="24_fx2rd"]
 [ext_resource type="PackedScene" uid="uid://b52fk4ykrgewm" path="res://assets/enemies/d12.tscn" id="25_jdjof"]
-[ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basic_melee_card.tscn" id="18_5jdip"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cb5na"]
 radius = 5.08789
@@ -1695,7 +1694,6 @@ scale = Vector2(1.2, 1.2)
 script = ExtResource("1_cb66b")
 _speed = 200.0
 dashMultiplier = 5.0
-cardsList = [NodePath("../BasicRangedCard")]
 audioPlayer = NodePath("DashPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -1732,16 +1730,18 @@ parameters/WALKING/blend_position = Vector2(0.249827, -0.0656934)
 stream = ExtResource("22_pnywb")
 bus = &"SFX"
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(1, 2)
-navigation_polygon = SubResource("NavigationPolygon_fx2rd")
 [node name="AttackTimer" type="Timer" parent="Player"]
 wait_time = 15.0
 autostart = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(1, 2)
+navigation_polygon = SubResource("NavigationPolygon_fx2rd")
 
 [node name="BasicRangedCard" parent="." instance=ExtResource("23_pnywb")]
 
 [node name="D8" parent="." instance=ExtResource("24_fx2rd")]
 
 [node name="D12" parent="D8" instance=ExtResource("25_jdjof")]
+
 [connection signal="timeout" from="Player/AttackTimer" to="Player" method="attack"]
