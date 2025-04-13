@@ -17,8 +17,9 @@ func _physics_process(delta: float) -> void:
 
 func doAttack():
 	var projectile : Projectile = projectileScene.instantiate() 
-	projectile.position = player.position
+	projectile.global_position = self.global_position
 	get_parent().add_child(projectile)
+	projectile.top_level = true
 	projectile.setTargetDirection(get_global_mouse_position())
 
 	projectile.speed = projectileSpeed 

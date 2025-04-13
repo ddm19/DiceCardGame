@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cetffjdlwdubb"]
+[gd_scene load_steps=8 format=3 uid="uid://deox468vgf3pn"]
 
 [ext_resource type="Script" uid="uid://bfq0j6ruj4isk" path="res://assets/cards/basicRangedCard.gd" id="1_lrppf"]
 [ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/scenes/projectile.tscn" id="2_btj7s"]

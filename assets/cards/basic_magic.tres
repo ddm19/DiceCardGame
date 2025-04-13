@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://cuvqy7n1v08kw"]
 
 [ext_resource type="Texture2D" uid="uid://b01ddwbhcj5tq" path="res://assets/sprites/cards/basic_magic.png" id="1_080a2"]
-[ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="1_sxi2i"]
-[ext_resource type="PackedScene" uid="uid://bg1gna3dgtk2l" path="res://assets/cards/basicMeleeCard.tscn" id="2_080a2"]
+[ext_resource type="Script" path="res://assets/scripts/CardData.gd" id="1_sxi2i"]
+[ext_resource type="PackedScene" uid="uid://deox468vgf3pn" path="res://assets/cards/basicRangedCard.tscn" id="2_080a2"]
 
 [resource]
 script = ExtResource("1_sxi2i")
@@ -12,4 +12,3 @@ icon = ExtResource("1_080a2")
 type = 2
 cooldown = 1.0
 scene = ExtResource("2_080a2")
-metadata/_custom_type_script = "uid://bvk63icgq4v00"
