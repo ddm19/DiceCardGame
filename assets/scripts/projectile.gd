@@ -24,8 +24,8 @@ func _physics_process(delta: float) -> void:
 		rotation = targetDirection.angle()
 	move_and_slide()
 
-#func onScreenExit():
-	#queue_free()
+func onScreenExit():
+	queue_free()
 
 func setTargetDirection(target: Vector2):
 	targetDirection = (target - global_position).normalized()

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://dxb6v6s6qi2t5"]
 
 [ext_resource type="Texture2D" uid="uid://fntaw4uw4ce8" path="res://assets/sprites/cards/basic_sword.png" id="1_bvyak"]
-[ext_resource type="Script" path="res://assets/scripts/CardData.gd" id="1_uamug"]
+[ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="1_uamug"]
 [ext_resource type="PackedScene" uid="uid://deox468vgf3pn" path="res://assets/cards/basicRangedCard.tscn" id="2_1twu6"]
 
 [resource]
