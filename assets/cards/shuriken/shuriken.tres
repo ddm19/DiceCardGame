@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://bqxhlvd0b7kdo"]
+
+[ext_resource type="Texture2D" uid="uid://xf0ahjnyhl2n" path="res://assets/sprites/cards/rare_ranged.png" id="1_x6psp"]
+[ext_resource type="PackedScene" uid="uid://dvxl2tfbhrktv" path="res://assets/cards/shuriken/shuriken.tscn" id="2_0fiwb"]
+[ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="2_k3kft"]
+
+[resource]
+script = ExtResource("2_k3kft")
+card_name = "Shuriken"
+description = "Wizards can also be ninjas, magic ninjas"
+icon = ExtResource("1_x6psp")
+type = 1
+cooldown = 1.0
+scene = ExtResource("2_0fiwb")

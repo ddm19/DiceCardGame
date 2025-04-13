@@ -131,12 +131,13 @@ func add_starting_cards():
 	var melee_card = preload("res://assets/cards/basic_sword.tres")
 	var ranged_card = preload("res://assets/cards/basic_ranged.tres")
 	var magic_card = preload("res://assets/cards/basic_magic.tres")
+	var testCard = preload("res://assets/cards/shuriken/shuriken.tres")
 	add_card_from_data(melee_card)
 	add_card_from_data(melee_card)
 	add_card_from_data(ranged_card)
 	add_card_from_data(ranged_card)
 	add_card_from_data(magic_card)
-	add_card_from_data(magic_card)
+	add_card_from_data(testCard)
 
 func _on_dice_finished():
 	if cardsList.size() > 0:

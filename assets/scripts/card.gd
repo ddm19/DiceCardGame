@@ -27,7 +27,8 @@ func doAttack():
 func _ready() -> void:
 	sprite = $"Sprite"
 	player = get_tree().get_root().get_node("Game/Player")
-	animationPlayer = $AnimationPlayer
+	if(animationPlayer != null):
+		animationPlayer = $AnimationPlayer
 
 func onCardCooldownFinished():
 	canAttack = true

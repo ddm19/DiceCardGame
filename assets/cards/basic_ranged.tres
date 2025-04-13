@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://b2p04lb8duoha"]
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://b2p04lb8duoha"]
 
 [ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="1_2q58k"]
 [ext_resource type="Texture2D" uid="uid://c0eqbgrspvwh" path="res://assets/sprites/cards/basic_ranged.png" id="1_6vl6n"]
+[ext_resource type="PackedScene" uid="uid://deox468vgf3pn" path="res://assets/cards/basicRangedCard/basicRangedCard.tscn" id="2_uomg2"]
 
 [resource]
 script = ExtResource("1_2q58k")
@@ -10,3 +11,4 @@ description = "Basic slingshot, does its best"
 icon = ExtResource("1_6vl6n")
 type = 1
 cooldown = 2.0
+scene = ExtResource("2_uomg2")

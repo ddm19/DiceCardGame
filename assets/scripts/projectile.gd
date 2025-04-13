@@ -8,15 +8,16 @@ class_name Projectile
 @export var shooterEntityType : LivingEntity.TARGET_TYPE
 @export var audioPlayer : AudioStreamPlayer2D
 
+var appearanceInstance: Node
+
 func _ready() -> void:
 	audioPlayer.play()
 
-func changeSprite(sprite : Sprite2D):
-	if(sprite != null):
-		$Sprite2D.queue_free()
-		var newSprite = sprite.duplicate()
-		add_child(newSprite)
-		newSprite.visible = true
+func changeAppearance(sprite : PackedScene):
+	if appearanceInstance:
+		appearanceInstance.queue_free()
+	appearanceInstance = sprite.instantiate()
+	add_child(appearanceInstance)
 
 func _physics_process(delta: float) -> void:
 	if(targetDirection):

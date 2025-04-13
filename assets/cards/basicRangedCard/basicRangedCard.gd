@@ -3,7 +3,7 @@ extends Card
 @export var projectileScene : PackedScene
 @export var projectileSpeed : float 
 @export var projectileDamage : float 
-@export var projectileSprite : Sprite2D
+@export var projectileAppearance : PackedScene
 var lastDirection : Vector2
 
 
@@ -24,6 +24,6 @@ func doAttack():
 
 	projectile.speed = projectileSpeed 
 	projectile.damage = projectileDamage
-	projectile.changeSprite(projectileSprite)
+	projectile.changeAppearance(projectileAppearance)
 	projectile.shooterEntityType = LivingEntity.TARGET_TYPE.PLAYER
 	player.updateAnimationsDirection(lastDirection)

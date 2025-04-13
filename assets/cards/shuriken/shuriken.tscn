@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvxl2tfbhrktv"]
+
+[ext_resource type="Script" uid="uid://ckgxeeq3iynk2" path="res://assets/cards/shuriken/shuriken.gd" id="1_vbucd"]
+[ext_resource type="PackedScene" uid="uid://dsuxnln24x8om" path="res://assets/scenes/projectile.tscn" id="2_1b7t2"]
+[ext_resource type="Texture2D" uid="uid://cp2u23fa2tove" path="res://assets/sprites/crosshair.png" id="3_necn7"]
+[ext_resource type="PackedScene" uid="uid://c1dbp5r4p011q" path="res://assets/cards/shuriken/shurikenAppearance.tscn" id="4_0vhg1"]
+[ext_resource type="Texture2D" uid="uid://ci2sgkku05s4n" path="res://assets/sprites/basicRanged/basicRangedProjectile.png" id="4_j7ty0"]
+
+[node name="Shuriken" type="Node2D"]
+script = ExtResource("1_vbucd")
+projectileScene = ExtResource("2_1b7t2")
+projectileSpeed = 300.0
+projectileDamage = 5.0
+projectileAppearance = ExtResource("4_0vhg1")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(583, 281)
+texture = ExtResource("3_necn7")
+
+[node name="Projectile" parent="." instance=ExtResource("4_0vhg1")]
+texture = ExtResource("4_j7ty0")
+vframes = 2
