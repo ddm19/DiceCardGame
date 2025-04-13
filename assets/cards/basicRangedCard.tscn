@@ -121,6 +121,7 @@ projectileSpeed = 300.0
 projectileDamage = 1.0
 projectileSprite = NodePath("Projectile")
 cooldown = 1.0
+type = null
 animationPlayer = NodePath("AnimationPlayer")
 
 [node name="Sprite" type="Sprite2D" parent="."]

@@ -15,6 +15,7 @@ var livingData: LivingEntity
 @export var type : LivingEntity.TARGET_TYPE = LivingEntity.TARGET_TYPE.PLAYER
 @onready var dice: Sprite2D = get_tree().get_root().get_node("InGameUi/LowerHUD/Dices")
 
+
 var sceneInstance
 var dashCooldownTimer: Timer
 var canDash: bool = true
@@ -37,11 +38,17 @@ var attackAnimationDuration := 0.5
 func _ready():
 	if livingData == null:
 		livingData = LivingEntity.new("Player", 100)
+	
 	dashTimer = $DashTimer
 	dashTimer.wait_time = dashDuration
 	dashTimer.timeout.connect(self._onDashTimeout)
 	updateAnimationsDirection(Vector2.DOWN)
 	add_starting_cards()
+	await get_tree().create_timer(0).timeout 
+	var cards_player_node = get_tree().get_root().get_node("InGameUi/Inventory_Menu/Inventory_Container/Cards_Player")
+	if cards_player_node:
+		cards_player_node.updateCardTextures()
+	
 	dice.connect("spin_finished", _on_dice_finished)
 
 func takeDamage(amount):
@@ -145,6 +152,7 @@ func _on_dice_finished():
 			sceneInstance = cardsList[card_index].scene.instantiate()
 			add_child(sceneInstance)
 			$AttackTimer.wait_time = cardsList[card_index].cooldown
+			$AttackTimer.start()
 		else:
 			print("Número de dado fuera de rango de cartas disponibles")
 

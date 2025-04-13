@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://c42eucesy85xc"]
+
+[ext_resource type="Script" uid="uid://bvk63icgq4v00" path="res://assets/scripts/CardData.gd" id="1_04bwe"]
+[ext_resource type="Texture2D" uid="uid://cwojc316lxl3w" path="res://assets/sprites/cards/rare_sword.png" id="1_tqemw"]
+
+[resource]
+script = ExtResource("1_04bwe")
+card_name = "Ice Fang"
+description = "It's literally a big sharp stalagmite"
+icon = ExtResource("1_tqemw")
+type = 0
+cooldown = 0.0
+metadata/_custom_type_script = "uid://bvk63icgq4v00"

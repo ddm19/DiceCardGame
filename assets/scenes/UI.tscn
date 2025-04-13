@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://coosncavlqc44" path="res://assets/sprites/interface/Exit_Button_Pressed.png" id="4_4loci"]
 [ext_resource type="Texture2D" uid="uid://o6rufnupube5" path="res://assets/sprites/interface/Exit_Button_Hover.png" id="5_jbjbn"]
 [ext_resource type="Texture2D" uid="uid://byc64gvo01tc1" path="res://assets/sprites/interface/Object_Slot.png" id="6_txxwi"]
+[ext_resource type="Script" uid="uid://b7jds44alfiag" path="res://assets/scripts/InventoryCards.gd" id="7_tllph"]
 [ext_resource type="FontFile" uid="uid://bkp4s1vnkof4s" path="res://assets/fonts/Pixelfont.ttf" id="7_uq13i"]
 [ext_resource type="Texture2D" uid="uid://rn4hp47m8led" path="res://assets/sprites/interface/Heart.png" id="8_trufw"]
 [ext_resource type="Texture2D" uid="uid://drgdowo7ghyvl" path="res://assets/sprites/interface/Quit_Button.png" id="9_qywqd"]
@@ -25,9 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://c0xrki0x0g1d7" path="res://assets/sprites/interface/Progress_Bar_Left.png" id="23_5ek13"]
 [ext_resource type="Texture2D" uid="uid://mr3ikso2r0n5" path="res://assets/sprites/interface/Progress_Bar_Right.png" id="24_d6p7m"]
 [ext_resource type="Texture2D" uid="uid://drra3j2ec8qef" path="res://assets/sprites/interface/Heart_Empty.png" id="25_ajlrb"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a0tli"]
-load_path = "res://.godot/imported/legendary_sword.png-023f3472e3740de57825fac985fc5338.ctex"
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hrs6j")
@@ -96,31 +94,26 @@ scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(512.5, 77.5)
 theme_override_constants/h_separation = 75
 columns = 6
+script = ExtResource("7_tllph")
 
 [node name="Card1" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
 z_index = 1
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_a0tli")
 
 [node name="Card2" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_a0tli")
 
 [node name="Card3" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_a0tli")
 
 [node name="Card4" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_a0tli")
 
 [node name="Card5" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_a0tli")
 
 [node name="Card6" type="TextureRect" parent="Inventory_Menu/Inventory_Container/Cards_Player"]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_a0tli")
 
 [node name="Panel" type="Panel" parent="Inventory_Menu/Inventory_Container"]
 layout_mode = 1
